@@ -1,0 +1,196 @@
+// Single
+.woocommerce-variation-add-to-cart {
+	.button[onclick] {
+	  background: transparent!important;
+	  clear: both;
+	  float: left;
+	  cursor: pointer;
+	  margin-top: 12px;
+	  margin-bottom: 12px;
+	  border: 2px solid $cl-border;
+	  color: $cl-black;
+	  line-height: $e-height-base - 4px;
+	  transition: all .3s;
+
+	  &:hover {
+	  	background: $cl-primary!important;
+	    border: 2px solid $cl-primary;
+	    transition: all .3s;
+	  }
+
+	  &:before {
+	    content: '\e91f';
+	    font-family: 'phosphor';
+	    font-size: 16px;
+	    font-weight: $fw-semi-bold;
+	    margin-right: 5px;
+	    position: relative;
+	    bottom: -1px;
+		}
+	}
+}
+
+.single_variation_wrap {
+	> a[onclick] {
+    color: $cl-black!important;
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: -5px;
+    transition: all .3s;
+
+    &:hover {
+	    color: $cl-primary!important;
+	    transition: all .3s;
+		}
+
+		&:before {
+	    content: '\e959';
+	    font-family: 'phosphor';
+	    margin-right: 6px;
+	    font-size: 18px;
+		}
+	}
+}
+
+// Modal
+html {
+	&.printful-modal {
+		overflow-y: hidden;
+	}
+}
+
+.pf-size-guide-modal-wrapper {
+	padding: 60px 20px;
+}
+
+.pf-size-guide-modal {
+	background-color: transparent!important;
+	overflow-y: hidden;
+}
+
+.pf-size-guide-modal__title {
+	display: none;
+}
+
+.pf-size-guide-modal__close {
+	position: absolute;
+	top:-5px;
+	right: -5px;
+
+	&:hover {
+		img {
+			opacity: .8;
+			transition: all .3s;
+		}
+	}
+
+	img {
+		filter: brightness(0) invert(1);
+		opacity: 1;
+		transition: all .3s;
+	}
+}
+
+.pf-size-guide-modal__content {
+	overflow-y: auto;
+	height: 100%;
+	background-color: $cl-white;
+
+	@include scrollbars(3px, $cl-primary, #ededed, 0);
+
+	> div {
+		> h4 {
+			font-size: 16px;
+			text-transform: uppercase;
+
+			@media screen and (max-width: $screen-xs-max) {
+				font-size: $fs-base;
+			}
+		}
+	}
+}
+
+.pf-product-size-guide__tabs {
+	@include scrollbars(3px, $cl-primary, #ededed, 0);
+}
+
+.pf-product-size-guide__tabs,
+.pf-size-guide-modal-size-chart__tabs {
+	box-shadow: inset 0 -1px 0 0 $cl-border;
+}
+
+.pf-product-size-guide__tab {
+	font-weight: $fw-semi-bold;
+	font-size: 18px;
+	border-top-left-radius: $border-radius;
+	border-top-right-radius: $border-radius;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-bottom: 1px solid $cl-border;
+	color: $cl-text;
+
+	@media screen and (max-width: $screen-xs-max) {
+		font-size: 16px;
+	}
+
+	&.pf-product-size-guide__tab--active {
+		color: $cl-black;
+		border-bottom: none;
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.pf-size-guide-modal-size-chart__tab {
+	font-size: 16px;
+
+	@media screen and (max-width: $screen-xs-max) {
+		font-size: $fs-base;
+	}
+
+	&.pf-size-guide-modal-size-chart__tab--active {
+		box-shadow: inset 0 -3px $cl-primary;
+	}
+}
+
+.pf-size-guide-modal-size-chart__table {
+	thead {
+		font-weight: $fw-semi-bold;
+	}
+
+	td {
+		@media screen and (max-width: $screen-xs-max) {
+			font-size: $fs-base;
+		}
+	}
+}
+
+// Designer
+.pf-customize-modal {
+	padding: 60px 20px!important;
+}
+
+.product-customizer__header-title {
+	font-weight: $fw-semi-bold!important;
+	font-size: 18px!important;
+	text-transform: uppercase;
+
+	@media screen and (max-width: $screen-xs-max) {
+		font-size: 16px!important;
+	}
+}
+
+#product-customizer-error {
+	h1 {
+		font-size: 40px;
+		font-weight: $fw-semi-bold;
+
+		@media screen and (max-width: $screen-xs-max) {
+			font-size: 28px;
+		}
+	}
+}

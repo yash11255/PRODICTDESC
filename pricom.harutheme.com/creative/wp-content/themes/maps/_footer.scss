@@ -1,0 +1,347 @@
+/*-----------------------------------
+ * FOOTER
+ *-----------------------------------*/
+
+$root: '.haru-footer';
+
+#{$root} {
+  &--loading {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+// Footer for theme unit test
+.footer-default {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+// Main footer
+#haru-footer {
+  clear: both;
+}
+
+$haru-subscriber: '.haru-subscriber';
+
+#{$haru-subscriber} {
+  position: relative;
+
+  #{$haru-subscriber}__email-field {
+    background: $cl-white;
+    box-shadow: 0px 4px 34px rgba($cl-black, .05);
+    border-radius: $border-radius-e;
+    border: 1px solid $cl-white;
+    height: 56px;
+    padding: 0 20px;
+
+    @include placeholder($color: $cl-text-2);
+
+    &:focus {
+      border: 1px solid $cl-primary;
+    }
+
+    input[type='email'] {
+      padding-right: 50px;
+    }
+  }
+
+  #{$haru-subscriber}__submit {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:before {
+      content: '\e90b';
+      font-family: 'haruicons';
+      font-size: 20px;
+      color: $cl-black;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all .3s;
+    }
+
+    input[type='submit'] {
+      font-size: 0;
+      background-color: transparent;
+      padding: 0 25px;
+      height: 56px;
+      line-height: 56px;
+      position: relative;
+      z-index: 2;
+    }
+
+    &:hover {
+      &:before {
+        color: $cl-primary;
+      }
+    }
+  }
+}
+
+// Other style
+.haru-subscriber-border {
+  #{$haru-subscriber} {
+    display: flex;
+    border-bottom: 1px solid $cl-border-2;
+    margin-top: 0;
+
+    #{$haru-subscriber}__email {
+      flex: 1;
+    }
+
+    #{$haru-subscriber}__email-field {
+      background-color: transparent;
+      border: none;
+      color: $cl-heading;
+      text-align: left;
+      padding-left: 0;
+      font-size: 18px;
+
+      @include placeholder($cl-black);
+    }
+
+    #{$haru-subscriber}__submit {
+      flex: 0 0 50px;
+      margin-left: auto;
+      position: relative;
+      right: auto;
+      top: auto;
+      transform: none;
+
+      &:before {
+      //   content: '\e904';
+      //   font-family: 'haruicons';
+        font-size: 18px;
+      //   color: $cl-black;
+      }
+
+      &:hover {
+        &:before {
+          color: $cl-primary;
+          transition: all .3s;
+        }
+      }
+
+      .haru-button {
+        background-color: transparent;
+        font-size: 0;
+        padding: 0;
+        height: 56px;
+        line-height: 56px;
+      }
+    }
+  }
+}
+
+.haru-subscriber-border-dark {
+  #{$haru-subscriber} {
+    display: flex;
+    border-bottom: 1px solid rgba($cl-white, .2);
+    margin-top: 0;
+
+    #{$haru-subscriber}__email {
+      flex: 1;
+    }
+
+    #{$haru-subscriber}__email-field {
+      background-color: transparent;
+      border: none;
+      color: $cl-white;
+      text-align: left;
+      padding-left: 0;
+      font-size: 24px;
+
+      @include placeholder($cl-text-2);
+
+      @media screen and(max-width: $screen-lg-max) {
+        font-size: 20px;
+      }
+    }
+
+    #{$haru-subscriber}__submit {
+      flex: 0 0 50px;
+      margin-left: auto;
+      position: relative;
+      right: auto;
+      top: auto;
+      transform: none;
+
+      &:before {
+      //   content: '\e904';
+      //   font-family: 'haruicons';
+        font-size: 20px;
+        color: $cl-white;
+
+        @media screen and(max-width: $screen-lg-max) {
+          font-size: 18px;
+        }
+      }
+
+      &:hover {
+        &:before {
+          color: $cl-primary;
+          transition: all .3s;
+        }
+      }
+
+      .haru-button {
+        background-color: transparent;
+        font-size: 0;
+        padding: 0;
+        height: 56px;
+        line-height: 56px;
+      }
+    }
+  }
+}
+
+.haru-subscriber-classic {
+  #{$haru-subscriber} {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #{$haru-subscriber}__email {
+    margin-bottom: 20px;
+  }
+
+  #{$haru-subscriber}__email-field {
+    background-color: $cl-gray;
+    box-shadow: none;
+    border: 1px solid $cl-gray;
+    height: $e-height-base;
+
+    &:focus {
+      border: 1px solid $cl-primary;
+      box-shadow: none;
+    }
+  }
+
+  #{$haru-subscriber}__submit {
+    position: unset;
+    top: 0;
+    transform: none;
+    
+    &:before {
+      display: none;
+    }
+
+    input[type='submit'] {
+      background-color: $cl-primary;
+      font-size: inherit;
+      height: $e-height-base;
+      line-height: $e-height-base;
+      box-shadow: 0 3px 8px rgba($cl-black, .18);
+
+      &:hover,
+      &:active {
+        background-color: darken($cl-primary, 5%);
+      }
+    }
+  }
+}
+
+// Instagram Feed
+#sb_instagram {
+  .sbi_photo_wrap {
+    border-radius: $border-radius;
+    overflow: hidden;
+  }
+}
+
+#sb_instagram.grid-layout-square {
+  width: auto!important;
+
+  @media screen and (max-width: $screen-xs-max) {
+    width: auto!important;
+  }
+
+  &.padding-5 {
+    margin: -10px -10px 0 -10px;
+
+    &.instagram-footer {
+      margin-top: 5px;
+    }
+  }
+
+  &.padding-10 {
+    margin: -20px -20px 0 -20px;
+  }
+}
+
+.footer-bg-gray {
+  background-color: $cl-gray;
+}
+
+.footer-bg-white {
+  background-color: $cl-white;
+}
+
+.haru-subscriber-dark {
+  #{$haru-subscriber}__email-field {
+    background-color: $cl-bg-dark-2;
+    border: 1px solid $cl-bg-dark-2;
+    color: $cl-white;
+  }
+
+  #{$haru-subscriber}__submit {
+    &:before {
+      color: $cl-primary;
+    }
+
+    &:hover {
+      &:before {
+        color: darken($cl-primary, 5%);
+      }
+    }
+  }
+}
+
+#{$dark-mode},
+#{$background-dark} {
+  .footer-bg-gray {
+    background-color: $cl-black;
+  }
+
+  .footer-bg-white {
+    background-color: $cl-bg-dark-2;
+  }
+
+  #{$haru-subscriber} {
+    #{$haru-subscriber}__email-field {
+      background-color: $cl-bg-dark-3;
+      border: 1px solid $cl-bg-dark-3;
+    }
+  }
+
+  // Other style
+  .haru-subscriber-border {
+    #{$haru-subscriber} {
+      border-bottom: 1px solid $cl-white-dark;
+
+      #{$haru-subscriber}__email-field {
+        background-color: transparent;
+        border: none;
+        color: $cl-white-dark;
+
+        @include placeholder($cl-white-dark);
+      }
+
+      #{$haru-subscriber}__submit {
+        &:before {
+          color: $cl-white-dark;
+
+          &:hover {
+            color: $cl-primary;
+          }
+        }
+      }
+    }
+  }
+}
+

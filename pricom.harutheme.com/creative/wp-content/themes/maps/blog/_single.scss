@@ -1,0 +1,877 @@
+// Single style
+.haru-single-blog {
+
+}
+.single-content {
+  &.no-sidebar {
+    .post-thumbnail-wrap {
+      .post-thumbnail {
+        text-align: center;
+
+        img {
+          margin: 0 auto;
+        }
+      }
+
+      .post-meta-category {
+        display: none;
+      }
+    }
+
+    .post-content-wrap {
+      padding: 0 15%;
+
+      @media screen and (max-width: $screen-xs-max) {
+        padding: 0;
+      }
+    }
+
+    .author-info {
+      padding: 40px 15%!important;
+
+      @media screen and (max-width: $screen-xs-max) {
+        padding: 40px 0!important;
+      }
+    }
+
+    .post-related {
+      text-align: center;
+    }
+
+    #comments {
+      padding: 0 15%;
+
+      @media screen and (max-width: $screen-xs-max) {
+        padding: 0!important;
+      }
+    }
+  }
+
+  // Meta
+  .post-meta-info {
+    text-align: center;
+  }
+
+  .post-category-wrap {
+    font-size: 13px;
+    font-weight: $fw-bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    a {
+      background-color: $cl-gray;
+      // color: $cl-black;
+      padding: 5px 12px;
+      border-radius: $border-radius-small;
+      margin-left: 5px;
+      transition: all .3s;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:hover {
+        transition: all .3s;
+      }
+    }
+  }
+
+  .post-title {
+    font-size: 40px;
+    margin-top: 0;
+    line-height: 1.4;
+    word-wrap: break-word;
+
+    @media screen and (max-width: $screen-lg-max) {
+      font-size: 36px;
+    }
+
+    @media screen and (max-width: $screen-md-max) {
+      font-size: 32px;
+    }
+
+    @media screen and (max-width: $screen-sm-max) {
+      font-size: 28px;
+    }
+
+    @media screen and (max-width: $screen-xs-max) {
+      font-size: 22px;
+    }
+  }
+
+  .post-info {
+    margin-top: 15px;
+
+    a {
+      color: $cl-heading;
+      transition: all .3s;
+
+      &:hover {
+        color: $cl-primary;
+        transition: all .3s;
+      }
+    }
+  }
+
+  .post-meta-sticky {
+    font-weight: $fw-semi-bold;
+    color: $cl-primary;
+    display: inline-block;
+
+    &:before {
+      content: "\f005";
+      font-family: "Font Awesome 5 Free";
+      font-weight: $fw-normal;
+      margin-right: 10px;
+
+      @media screen and (max-width: $screen-xs-max) {
+        margin-right: 6px;
+      }
+    }
+  }
+
+  .post-meta-author {
+    display: inline-block;
+    margin-right: 30px;
+
+    @media screen and (max-width: $screen-xs-max) {
+      margin-right: 20px;
+    }
+
+    &:before {
+      content: '';
+      width: 25px;
+      height: 1px;
+      background-color: $cl-text-2;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+  }
+
+  .post-meta-date {
+    display: inline-block;
+    margin-right: 10px;
+
+    @media screen and (max-width: $screen-xs-max) {
+      margin-right: 8px;
+      padding-right: 0;
+      border-right: none;
+    }
+
+    &:before {
+      content: '\e910';
+      font-family: "haruicons";
+      font-weight: $fw-normal;
+      margin-right: 10px;
+      position: relative;
+      bottom: -1px;
+      display: none;
+
+      @media screen and (max-width: $screen-xs-max) {
+        margin-right: 6px;
+      }
+    }
+  }
+
+  .post-meta-comment {
+    display: inline-block;
+    margin-right: 10px;
+
+    &:before {
+      content: '\e91a';
+      font-family: "haruicons";
+      margin-right: 10px;
+      position: relative;
+      bottom: -1px;
+
+      @media screen and (max-width: $screen-xs-max) {
+        margin-right: 6px;
+      }
+    }
+  }
+
+  // Thumbnail
+  .post-thumbnail-wrap {
+    margin-top: 30px;
+    position: relative;
+
+    .post-thumbnail {
+      img {
+        border-radius: $border-radius;
+      }
+    }
+
+    .post-thumbnail-link {
+      display: flex;
+    }
+
+    // Gallery navigation use from _elements.scss
+    .owl-dots {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    // Audio player use from _blog.scss
+
+    // Gallery navigation use from _elements.scss
+    .owl-dots {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    // Quote
+    .post-quote-wrap {
+      padding: 15px;
+      background: #eeeeee;
+      border-radius: $border-radius;
+      margin-bottom: 30px;
+      text-align: center;
+
+      &:before {
+        content: '\e946';
+        font-family: 'haruicons';
+        font-size: 32px;
+
+        @media screen and (max-width: $screen-md-max) {
+          font-size: 30px;
+        }
+
+        @media screen and (max-width: $screen-xs-max) {
+          font-size: 28px;
+        }
+      }
+
+      blockquote {
+        font-family: $font-secondary;
+        font-size: 24px;
+        font-weight: $fw-medium;
+        color: $cl-black;
+        line-height: 1.6;
+
+        @media screen and (max-width: $screen-lg-max) {
+          font-size: 22px;
+        }
+
+        @media screen and (max-width: $screen-md-max) {
+          font-size: 20px;
+        }
+
+        @media screen and (max-width: $screen-sm-max) {
+          // font-size: 18px;
+        }
+
+        @media screen and (max-width: $screen-xs-max) {
+          
+        }
+      }
+
+      cite {
+        font-style: normal;
+      }
+
+      a {
+        font-weight: $fw-medium;
+        color: $cl-black;
+      }
+    }
+
+    // Link similar archive
+    .post-link {
+      background: #eeeeee;
+      height: 60px;
+      display: flex;
+
+      &:before {
+        content: '\f0c1';
+        font-family: "Font Awesome 5 Free";
+        font-weight: $fw-bold;
+        width: 60px;
+        line-height: 60px;
+        background: $cl-primary;
+        color: $cl-white;
+        text-align: center;
+      }
+
+      a {
+        color: $cl-heading;
+        margin-left: 20px;
+        line-height: 60px;
+        font-weight: $fw-bold;
+        font-style: italic;
+        text-transform: uppercase;
+
+        &:hover {
+          color: $cl-primary;
+          transition: all .3s;
+        }
+      }
+    }
+  }
+
+  // Content
+  .post-content-wrap {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    padding-bottom: 35px;
+    border-bottom: 1px solid $cl-border;
+
+    @media screen and (max-width: $screen-xs-max) {
+      padding-bottom: 30px;
+      margin-bottom: 20px;
+    }
+
+    .post-content {
+      blockquote {
+        font-size: 24px;
+        font-weight: $fw-medium;
+        margin: 3% 5%;
+        font-family: $font-secondary;
+        border-left: 0;
+        text-align: center;
+        
+        @media screen and (max-width: $screen-lg-max) {
+          font-size: 22px;
+        }
+
+        @media screen and (max-width: $screen-md-max) {
+          font-size: 20px;
+        }
+
+        @media screen and (max-width: $screen-sm-max) {
+          font-size: 18px;
+        }
+
+        @media screen and (max-width: $screen-xs-max) {
+          margin: 3% 0;
+        }
+
+        &:before {
+          content: '\e946';
+          font-family: 'haruicons';
+          font-size: 32px;
+
+          @media screen and (max-width: $screen-md-max) {
+            font-size: 30px;
+          }
+
+          @media screen and (max-width: $screen-xs-max) {
+            font-size: 28px;
+          }
+        }
+
+        p {
+          color: $cl-black;
+          line-height: 1.6;
+          margin-bottom: 0;
+        }
+
+        cite {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .post-other-meta {
+      clear: both; // Use for clear float on the_content
+      margin-top: 40px;
+      display: flex;
+      align-items: flex-end;
+
+      @media screen and (max-width: $screen-xs-max) {
+        display: block;    
+      }
+
+      .haru-page-links {
+        padding-top: 0;
+        padding-bottom: 3px;
+        margin-right: 20px;
+      }
+    }
+
+    .single-post-tags {
+      flex: 1;
+    }
+
+    .post-meta-tag {
+      .tag-title {
+        color: $cl-black;
+        display: none;
+        font-weight: $fw-semi-bold;
+        margin-right: 10px;
+      }
+
+      a {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: $fw-normal;
+        margin: 3px 5px 3px 0;
+        padding: 2px 10px 2px 0;
+        color: $cl-text-2;
+        transition: all .3s;
+
+        &:hover {
+          color: $cl-primary;
+          transition: all .3s;
+        }
+
+        &:before {
+          content: "#";
+          display: inline-block;
+        }
+
+        // Responsive
+        @media screen and ( max-width:$screen-xs-max ) {
+          display: inline-block;
+          font-size: $fs-base;
+          margin-bottom: 5px;
+        }
+      }
+    }
+
+    .haru-social-share {
+      flex: 0 0 50%;
+      text-align: right;
+
+      @media screen and (max-width: $screen-xs-max) {
+        text-align: left;
+      }
+    }
+  }
+
+  // Navigation
+  .single-post-navigation {
+    border-bottom: 1px solid $cl-border;
+    padding-bottom: 30px;
+
+    @media screen and (max-width: $screen-xs-max) {
+      padding-bottom: 20px;
+    }
+
+    .post-nav {
+      display: flex;
+      position: relative;
+
+      @media screen and (max-width: $screen-xs-max) {
+        display: block;
+      }
+
+      .post-nav-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+
+      .post-nav-content {
+        display: flex;
+        align-items: center;
+      }
+
+      .post-nav-label {
+        line-height: 1;
+        font-size: 14px;
+        color: $cl-text-3;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .post-nav-title {
+        margin-top: 8px;
+        margin-bottom: 0;
+        font-size: 18px;
+        font-weight: $fw-semi-bold;
+
+        @media screen and (max-width: $screen-lg-max) {
+          font-size: 17px;
+        }
+
+        @media screen and (max-width: $screen-md-max) {
+          font-size: 16px;
+        }
+
+        @media screen and (max-width: $screen-xs-max) {
+
+        }
+      }
+
+      .post-prev {
+        width: 50%;
+        position: relative;
+
+        @media screen and (max-width: $screen-xs-max) {
+          width: 100%;
+          padding-bottom: 20px;
+          margin-bottom: 20px;
+          border-bottom: 1px solid $cl-border;
+        }
+
+        .post-nav-meta {
+          padding-left: 30px;
+          position: relative;
+
+          &:before {
+            content: '\e91d';
+            font-family: 'haruicons';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            font-size: 18px;
+          }
+        }
+      }
+
+      .post-next {
+        width: 50%;
+        margin-left: auto;
+        text-align: right;
+        position: relative;
+
+        @media screen and (max-width: $screen-xs-max) {
+          width: 100%;
+        }
+
+        .post-nav-content {
+          justify-content: flex-end;
+        }
+
+        .post-nav-info {
+          justify-content: flex-end;
+        }
+
+        .post-nav-meta {
+          padding-right: 30px;
+          position: relative;
+
+          &:before {
+            content: '\e91e';
+            font-family: 'haruicons';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  // Author
+  .author-info {
+    padding: 40px 0;
+    display: flex;
+    border-bottom: 1px solid $cl-border;
+    margin-bottom: 40px;
+
+    .author-avatar {
+      flex: 0 0 120px;
+      padding-right: 25px;
+
+      @media screen and (max-width: $screen-lg-max) {
+        flex: 0 0 110px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        flex: 0 0 80px;
+        padding-right: 15px;
+      }
+
+      img {
+        border-radius: 50%;
+      }
+    }
+
+    .author-title {
+      margin-top: 0;
+      font-size: 18px;
+      font-weight: $fw-semi-bold;
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 17px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        font-size: 16px;
+      }
+    }
+
+    .author-bio {
+      
+    }
+
+    .author-url {
+      color: $cl-heading;
+      font-weight: $fw-medium;
+      font-size: 15px;
+      text-decoration: underline;
+      transition: all .3s;
+
+      @media screen and (max-width: $screen-xs-max) {
+        font-size: 14px;
+      }
+
+      &:hover {
+        color: $cl-primary;
+        
+      }
+    }
+  }
+
+  // Related Post
+  .post-related {
+    padding-bottom: 30px;
+    border-bottom: 1px solid $cl-border;
+    margin-bottom: 40px;
+    padding-top: 20px;
+
+    @media screen and ( max-width:$screen-xs-max ) {
+      padding-top: 0;
+    }
+
+    .haru-heading {
+      text-align: center;
+    }
+
+    .owl-nav {
+      @media screen and ( max-width:$screen-xs-max ) {
+        top: -65px;
+      }
+    }
+
+    .related-item {
+      
+    }
+
+    .post-image {
+      margin-bottom: 20px;
+      min-height: 30px;
+      position: relative;
+
+      img {
+        border-radius: $border-radius;
+      }
+    }
+
+    .post-meta-category {
+      font-size: 12px;
+      font-weight: $fw-bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 25px;
+      margin-bottom: 20px;
+
+      a {
+        background-color: $cl-gray;
+        // color: $cl-black;
+        padding: 5px 12px;
+        border-radius: $border-radius-small;
+        margin-left: 5px;
+        transition: all .3s;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:hover {
+          transition: all .3s;
+        }
+      }
+    }
+
+    .post-title {
+      font-size: 22px;
+      font-weight: $fw-semi-bold;
+      padding-top: 0;
+      line-height: 1.4;
+      text-align: center;
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 20px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        font-size: 18px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+
+      }
+    }
+  }
+}
+
+// Theme Unit Test
+// Password protected
+.post-password-form {
+  input[type=submit] {
+    margin-top: 10px;
+  }
+}
+
+// Similar archive-pagination
+.haru-page-links {
+  clear: both;
+  padding: 15px 0;
+
+  .haru-page-links-title {
+    color: $cl-heading;
+    font-weight: $fw-semi-bold;
+    padding-right: 6px;
+  }
+
+  .haru-page-link {
+    display: inline-block;
+    padding: 0 10px;
+    color: $cl-text;
+    margin: 0 3px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: $border-radius;
+    font-weight: $fw-semi-bold;
+    text-align: center;
+    transition: all .3s;
+  }
+
+  .current {
+    .haru-page-link {
+      background-color: $cl-primary;
+      color: $cl-white;
+    }
+  }
+
+  > a {
+    > span {
+      &:hover, 
+      &:focus {
+        color: $cl-primary;
+      }
+    }
+  }
+}
+
+// Dark Mode
+.dark-mode {
+  .single-content {
+    .post-info {
+      a {
+        color: $cl-white-dark;
+
+        &:hover {
+          color: $cl-primary;
+        }
+      }
+    }
+
+    .post-meta-date {
+      border-right: 1px solid $cl-border-dark;
+    }
+
+    // Thumbnail
+    .post-thumbnail-wrap {
+      // Quote
+      blockquote {
+        border-left: 4px solid rgba($cl-white, .5);
+        color: $cl-white-dark;
+      }
+
+      // Link similar archive
+      .post-link {
+        background: $cl-bg-dark-3;
+
+        &:before {
+          background: rgba($cl-white-dark, .5);
+          color: $cl-black;
+        }
+
+        a {
+          color: $cl-white-dark;
+
+          &:hover {
+            color: $cl-primary;
+          }
+        }
+      }
+    }
+
+    // Content
+    .post-content-wrap {
+      border-bottom: 1px solid $cl-border-dark;
+
+      .post-content {
+        blockquote {
+          font-family: $font-secondary;
+
+          p {
+            color: $cl-white-dark;
+          }
+        }
+      }
+
+      .post-meta-tag {
+        .tag-title {
+          color: $cl-white-dark;
+        }
+      }
+    }
+
+    // Navigation
+    .single-post-navigation {
+      border-bottom: 1px solid $cl-border-dark;
+
+      .post-nav {
+        .post-prev {
+          @media screen and (max-width: $screen-xs-max) {
+            border-bottom: 1px solid $cl-border-dark;
+          }
+        }
+      }
+    }
+
+    // Author
+    .author-info {
+      border-bottom: 1px solid $cl-border-dark;
+
+      .author-url {
+        color: $cl-white-dark;
+
+        &:hover {
+          color: $cl-primary;
+        }
+      }
+    }
+
+    // Related Post
+    .post-related {
+      border-bottom: 1px solid $cl-border-dark;
+    }
+  }
+
+  .haru-page-links {
+    .haru-page-links-title {
+      color: $cl-white-dark;
+    }
+
+    .haru-page-link {
+      color: $cl-text-dark;
+    }
+
+    .current {
+      .haru-page-link {
+        background-color: $cl-primary;
+        color: $cl-white;
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+// Order tracking
+.woocommerce-form.track_order {
+  margin-bottom: 80px;
+
+  @media screen and (max-width: $screen-lg-max) {
+    margin-bottom: 70px;
+  }
+
+  @media screen and (max-width: $screen-md-max) {
+    margin-bottom: 60px;
+  }
+
+  @media screen and (max-width: $screen-sm-max) {
+    margin-bottom: 50px;
+  }
+
+  @media screen and (max-width: $screen-xs-max) {
+    margin-bottom: 40px;
+  }
+
+  > p {
+    &:first-child {
+      background: $cl-gray-2;
+      border: 2px dashed $cl-border;
+      padding: 15px;
+      margin-bottom: 30px;
+    }
+  }
+
+  .form-row {
+    margin-bottom: 15px;
+
+    .button {
+      @media screen and (max-width: $screen-xs-max) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.order-info {
+  padding: 15px;
+  border: 2px dashed $cl-border;
+  background-color: $cl-gray;
+  font-weight: $fw-semi-bold;
+}
+
+#{$dark-mode} {
+  .track_order {
+    > p {
+      &:first-child {
+        background: $cl-bg-dark-3;
+        border: 2px dashed $cl-border-dark;
+      }
+    }
+  }
+
+  .order-info {
+    border: 2px dashed $cl-border-dark;
+    background-color: $cl-bg-dark-3;
+  }
+}

@@ -1,0 +1,603 @@
+/*-----------------------------------
+ * HEADER
+ *-----------------------------------*/
+@import "header/menu";
+
+$root: '.haru-header';
+
+// Header main
+#{$root} {
+  color: $cl-text-menu;
+  position: relative;
+  z-index: 98;
+
+  &--loading {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__desktop {
+    background-color: $cl-white;
+  }
+
+  &--sticky {
+    &-on {
+      &#{$root}--sticky-header {
+        #{$root}__desktop {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 100;
+          box-shadow: 0px 15px 20px rgba($cl-black, .1);
+          background-color: $cl-white;
+          animation-duration: .5s;
+          transition: all .3s ease-in-out;
+        }
+      }
+
+      &#{$root}--sticky-menu {
+        #{$root}__sticky-menu {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 100;
+          box-shadow: 0px 15px 20px rgba($cl-black, .1);
+          background-color: $cl-white;
+          animation-duration: .5s;
+          transition: all .3s ease-in-out;
+        }
+      }
+
+      // Default Header
+      .haru-header-default {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        box-shadow: 0px 15px 20px rgba($cl-black, .1);
+        background-color: $cl-white;
+        animation-duration: .5s;
+        transition: all .3s ease-in-out;
+      }
+    }
+  }
+
+  &--transparent {
+    top: 0px;
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+    left: 0;
+
+    #{$root}__desktop {
+      background-color: transparent;
+    }
+
+    &#{$root}--sticky {
+      &-on {
+        &#{$root}--sticky-header {
+          #{$root}__desktop {
+            background-color: $cl-white;
+          }
+        }
+
+        &#{$root}--sticky-menu {
+          #{$root}__sticky-menu {
+            background-color: $cl-white;
+          }
+        }
+      }
+    }
+
+    
+    // Light (Text, Logo)
+    // &-light {
+    &-light:not(.haru-header--sticky-on) {
+      // Logo
+      $haru-logo: '.haru-logo';
+
+      #{$haru-logo} {
+        #{$haru-logo}__default,
+        #{$haru-logo}__retina,
+        #{$haru-logo}__dark-retina {
+            display: none;
+        }
+
+        #{$haru-logo}__dark {
+          display: block;
+        }
+
+        @media only screen and (min--moz-device-pixel-ratio: 2),
+        only screen and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (min-device-pixel-ratio: 2) {
+            #{$haru-logo}__dark {
+                display: none;
+            }
+
+            #{$haru-logo}__dark-retina {
+                display: block;
+            }
+        }
+      }
+
+      // Menu
+      $root: '.haru-nav-menu';
+      $haru: '.haru';
+      $haru-item: '.haru-item';
+      $elementor-root: '.elementor-widget-haru-nav-menu';
+
+      #{$elementor-root} {
+        #{$root}--main {
+          #{$haru-item}--main {
+            color: $cl-white-dark;
+
+            &:hover,
+            &:focus,
+            &.highlighted,
+            &.haru-item-active {
+              color: $cl-primary;
+            }
+          }
+
+          &#{$haru} {
+            &--pointer-highlight {
+              #{$haru-item}--main {
+                &:hover,
+                // &:focus,
+                &.highlighted,
+                &.haru-item-active {
+                  color: $cl-primary;
+
+                  &:after {
+                    background-color: rgba($cl-white, .1);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // Elements
+      // color: $cl-white-dark;
+
+      // &#{$root}--sticky {
+      //   &-on {
+      //     #{$haru-logo} {
+      //       #{$haru-logo}__retina,
+      //       #{$haru-logo}__dark,
+      //       #{$haru-logo}__dark-retina {
+      //           display: none;
+      //       }
+
+      //       #{$haru-logo}__default {
+      //         display: block;
+      //       }
+
+      //       @media only screen and (min--moz-device-pixel-ratio: 2),
+      //       only screen and (-o-min-device-pixel-ratio: 2/1),
+      //       only screen and (-webkit-min-device-pixel-ratio: 2),
+      //       only screen and (min-device-pixel-ratio: 2) {
+      //           #{$haru-logo}__retina {
+      //               display: block;
+      //           }
+
+      //           #{$haru-logo}__default {
+      //               display: none;
+      //           }
+      //       }
+      //     }
+      //   }
+      // }
+    }
+
+    // Dark (Text, Logo)
+    &-dark {
+      // Don't need to do because it display as default
+      // color: $cl-text-menu;
+    }
+  }
+
+  // Siderbar style
+  &--sidebar {
+    position: fixed;
+    width: 120px;
+    height: 100vh;
+    z-index: 9;
+    border-right: 1px solid $cl-border;
+    background-color: $cl-white;
+
+    @media screen and (max-width: $screen-md-max) {
+      width: 100px;
+    }
+
+    &-hidden-tablet {
+      @media screen and (max-width: 1024px) {
+        position: relative;
+        border-right: none;
+        height: auto;
+        width: auto;
+      }
+    }
+
+    &-hidden-mobile {
+      @media screen and (max-width: 767px) {
+        position: relative;
+        border-right: none;
+        height: auto;
+        width: auto;
+      }
+    }
+  }
+}
+
+// Header Sidebar
+.header-sidebar-layout {
+  #haru-content-main,
+  #haru-footer {
+    margin-left: 120px;
+
+    @media screen and (max-width: $screen-lg-max) {
+      margin-left: 110px;
+    }
+
+    @media screen and (max-width: $screen-md-max) {
+      margin-left: 100px;
+    }
+  }
+
+  .elementor-section.elementor-section-stretched {
+    > div {
+      padding-left: 120px;
+
+      @media screen and (max-width: $screen-lg-max) {
+        padding-left: 110px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        padding-left: 100px;
+      }
+    }
+  }
+
+  .switch-theme-mode {
+    left: 140px;
+
+    @media screen and (max-width: $screen-lg-max) {
+      left: 130px;
+    }
+
+    @media screen and (max-width: $screen-md-max) {
+      left: 120px;
+    }
+  }
+
+  .full-width {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  &--hidden-tablet {
+    #haru-content-main,
+    #haru-footer {
+      @media screen and (max-width: 1024px) {
+        margin-left: 0;
+      }
+    }
+
+    .switch-theme-mode {
+      @media screen and (max-width: 1024px) {
+        left: 4vh;
+      }
+    }
+  }
+
+  &--hidden-mobile {
+    #haru-content-main,
+    #haru-footer {
+      @media screen and (max-width: 767px) {
+        margin-left: 0;
+      }
+    }
+
+    .switch-theme-mode {
+      @media screen and (max-width: 767px) {
+        left: 4vh;
+      }
+    }
+  }
+
+  .single-product-sticky {
+    padding-left: 120px;
+
+    @media screen and (max-width: $screen-lg-max) {
+      padding-left: 110px;
+    }
+
+    @media screen and (max-width: $screen-md-max) {
+      padding-left: 100px;
+    }
+  }
+}
+
+.header-rotate {
+  &--top {
+    transform: rotate(-90deg) translate(-50%, -50%);
+    transform-origin: center top;
+  }
+
+  &--center {
+    transform: rotate(-90deg);
+    transform-origin: center center;
+  }
+
+  &--bottom {
+    transform: rotate(-90deg) translate(50%, 50%);
+    transform-origin: center bottom;
+  }
+}
+
+.header-sidebar-section {
+  width: 120px;
+
+  @media screen and (max-width: $screen-md-max) {
+    width: 100px;
+  }
+
+  // Some Elements
+  .haru-menu-toggle-popup {
+    font-size: 28px;
+
+    @media screen and (max-width: $screen-md-max) {
+      font-size: 24px;
+    }
+  }
+
+  .haru-search__toggle .hicon {
+    font-size: 28px;
+
+    @media screen and (max-width: $screen-md-max) {
+      font-size: 24px;
+    }
+  }
+
+  .haru-social {
+    ul {
+      flex-wrap: nowrap;
+    }
+  }
+}
+
+// Dark Mode
+.dark-mode {
+  #{$root} {
+    &__desktop {
+      background-color: $cl-black;
+    }
+
+    &--sticky {
+      &-on {
+        &#{$root}--sticky-header {
+          #{$root}__desktop {
+            background-color: $cl-black;
+            box-shadow: 0px 15px 20px rgba($cl-white, .1);
+          }
+        }
+
+        &#{$root}--sticky-menu {
+          #{$root}__sticky-menu {
+            background-color: $cl-black;
+            box-shadow: 0px 15px 20px rgba($cl-white, .1);
+          }
+        }
+      }
+
+      // Elements
+      color: $cl-white-dark;
+    }
+
+    &--transparent {
+      #{$root}__desktop {
+        background-color: transparent;
+      }
+
+      &#{$root}--sticky {
+        &-on {
+          &#{$root}--sticky-header {
+            #{$root}__desktop {
+              background-color: $cl-black;
+            }
+          }
+
+          &#{$root}--sticky-menu {
+            #{$root}__sticky-menu {
+              background-color: $cl-black;
+            }
+          }
+        }
+      }
+
+      // Light
+      // &-light {
+      &-light:not(.haru-header--sticky-on) {
+        // Logo
+        $haru-logo: '.haru-logo';
+
+        #{$haru-logo} {
+          #{$haru-logo}__default,
+          #{$haru-logo}__retina,
+          #{$haru-logo}__dark-retina {
+              display: none;
+          }
+
+          #{$haru-logo}__dark {
+            display: block;
+          }
+
+          @media only screen and (min--moz-device-pixel-ratio: 2),
+          only screen and (-o-min-device-pixel-ratio: 2/1),
+          only screen and (-webkit-min-device-pixel-ratio: 2),
+          only screen and (min-device-pixel-ratio: 2) {
+              #{$haru-logo}__dark-retina {
+                  display: block;
+              }
+
+              #{$haru-logo}__dark {
+                  display: none;
+              }
+          }
+        }
+
+        // Don't need menu, elements
+      }
+
+      // Dark check only not sticky
+      // &-dark {
+      &-dark:not(.haru-header--sticky-on) {
+        // Logo
+        $haru-logo: '.haru-logo';
+
+        #{$haru-logo} {
+          #{$haru-logo}__retina,
+          #{$haru-logo}__dark,
+          #{$haru-logo}__dark-retina {
+              display: none;
+          }
+
+          #{$haru-logo}__default {
+            display: block;
+          }
+
+          @media only screen and (min--moz-device-pixel-ratio: 2),
+          only screen and (-o-min-device-pixel-ratio: 2/1),
+          only screen and (-webkit-min-device-pixel-ratio: 2),
+          only screen and (min-device-pixel-ratio: 2) {
+              #{$haru-logo}__retina {
+                  display: block;
+              }
+
+              #{$haru-logo}__default {
+                  display: none;
+              }
+          }
+        }
+
+        // Menu
+        $root: '.haru-nav-menu';
+        $haru-item: '.haru-item';
+        $elementor-root: '.elementor-widget-haru-nav-menu';
+
+        #{$elementor-root} {
+          #{$root}--main {
+            #{$haru-item}--main {
+              color: $cl-text-menu;
+
+              &:hover,
+              &:focus,
+              &.highlighted,
+              &.haru-item-active {
+                  color: $cl-primary;
+              }
+            }
+          }
+        }
+
+        // Elements
+        color: $cl-text-menu;
+
+      }
+    }
+
+    // Siderbar style
+    &--sidebar {
+      border-right: 1px solid $cl-border-dark;
+      background-color: $cl-black;
+    }
+  }
+}
+
+// Special case when have admin bar
+.admin-bar {
+  #{$root} {
+    &--sticky {
+      &-on {
+        &#{$root}--sticky-header {
+          #{$root}__desktop {
+            position: fixed;
+            top: 32px;
+
+            @media screen and (max-width: 782px) {
+              top: 46px;
+            }
+
+            @media screen and (max-width: 600px) {
+              top: 0;
+            }
+          }
+        }
+
+        &#{$root}--sticky-menu {
+          #{$root}__sticky-menu {
+            position: fixed;
+            top: 32px;
+
+            @media screen and (max-width: 782px) {
+              top: 46px;
+            }
+
+            @media screen and (max-width: 600px) {
+              top: 0;
+            }
+          }
+        }
+
+        // Default Header
+        .haru-header-default {
+          position: fixed;
+          top: 32px;
+
+          @media screen and (max-width: 782px) {
+            top: 46px;
+          }
+
+          @media screen and (max-width: 600px) {
+            top: 0;
+          }
+        }
+      }
+    }
+
+    &--transparent {
+      top: 32px;
+
+      @media screen and (max-width: 782px) {
+        top: 46px;
+      }
+    }
+
+    &__desktop {
+      &-sticky {
+        // top: 32px;
+
+        // @media screen and (max-width: 782px) {
+        //   top: 46px;
+        // }
+      }
+    }
+  }
+}
+
+// May be
+.layout-float {
+  #{$root} {
+    padding: 0 100px;
+
+    @media screen and (max-width: $screen-lg-max) {
+      padding: 0 50px;
+    }
+  }
+}

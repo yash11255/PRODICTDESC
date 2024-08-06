@@ -1,0 +1,338 @@
+$root: '.haru-text-scroll';
+
+#{$root} {
+  &:not(.flickity-enabled) {
+    display: flex;
+  }
+
+  .text-scroll-content {
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  .text-scroll-item {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  &--style-1 {
+    .text-scroll-item {
+      padding: 0 1vw;
+
+      @include bggradient1();
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      @media not all and (min-resolution:.001dpcm) { 
+        @supports (-webkit-appearance:none) {
+          display: inline-block;
+        }
+      }
+
+      &:nth-child(2n) {
+        h6 {
+          &:after {
+            background-image: url('#{$theme-url}assets/images/fireworks.png');
+          }
+          
+        }
+      }
+
+      &:nth-child(2n+1) {
+        h6 {
+          &:after {
+            background-image: url('#{$theme-url}assets/images/dog.png');
+          }
+        }
+      }
+
+      h6 {
+        font-size: 100px;
+
+        @media screen and(max-width: $screen-lg-max) {
+          font-size: 70px;
+        }
+
+        @media screen and(max-width: $screen-md-max) {
+          font-size: 40px;
+        }
+
+        @media screen and(max-width: $screen-sm-max) {
+          font-size: 32px;
+        }
+
+        @media screen and(max-width: $screen-xs-max) {
+          font-size: 28px;
+        }
+
+        &:after {
+          content: '';
+          display: inline-block;
+          width: 80px;
+          height: 80px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          margin-left: 2vw;
+
+          @media screen and(max-width: $screen-lg-max) {
+            width: 60px;
+            height: 60px;
+          }
+
+          @media screen and(max-width: $screen-md-max) {
+            width: 40px;
+            height: 40px;
+          }
+
+          @media screen and(max-width: $screen-sm-max) {
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  &--style-2 {
+    .text-scroll-item {
+      padding: 0 1vw;
+
+      @include bggradient1();
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      @media not all and (min-resolution:.001dpcm) { 
+        @supports (-webkit-appearance:none) {
+          display: inline-block;
+        }
+      }
+
+      &:nth-child(2n) {
+        h6 {
+          &:after {
+            background-image: url('#{$theme-url}assets/images/fireworks.png');
+          }
+          
+        }
+      }
+
+      &:nth-child(2n+1) {
+        h6 {
+          &:after {
+            background-image: url('#{$theme-url}assets/images/fire.png');
+          }
+        }
+      }
+
+      h6 {
+        font-size: 100px;
+
+        @media screen and(max-width: $screen-lg-max) {
+          font-size: 70px;
+        }
+
+        @media screen and(max-width: $screen-md-max) {
+          font-size: 40px;
+        }
+
+        @media screen and(max-width: $screen-sm-max) {
+          font-size: 32px;
+        }
+
+        @media screen and(max-width: $screen-xs-max) {
+          font-size: 28px;
+        }
+
+        &:after {
+          content: '';
+          display: inline-block;
+          width: 80px;
+          height: 80px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          margin-left: 2vw;
+
+          @media screen and(max-width: $screen-lg-max) {
+            width: 60px;
+            height: 60px;
+          }
+
+          @media screen and(max-width: $screen-md-max) {
+            width: 40px;
+            height: 40px;
+          }
+
+          @media screen and(max-width: $screen-sm-max) {
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  &--style-3 {
+    .text-scroll-item {
+      padding: 0 .8vw;
+
+      @media screen and(max-width: $screen-xs-max) {
+        padding: 0 1.6vw;
+      }
+
+      h6 {
+        display: flex;
+        align-items: center;
+        color: $cl-primary;
+        font-size: $fs-base;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+
+        @media screen and(max-width: $screen-lg-max) {
+         
+        }
+
+        @media screen and(max-width: $screen-md-max) {
+          
+        }
+
+        @media screen and(max-width: $screen-sm-max) {
+          
+        }
+
+        @media screen and(max-width: $screen-xs-max) {
+          font-size: $fs-14;
+        }
+
+        a {
+          color: $cl-secondary;
+        }
+
+        &:after {
+          content: '';
+          display: inline-block;
+          width: 4px;
+          height: 4px;
+          margin-left: 1.6vw;
+          border-radius: 50%;
+          background-color: $cl-secondary;
+
+          @media screen and(max-width: $screen-lg-max) {
+            
+          }
+
+          @media screen and(max-width: $screen-md-max) {
+           
+          }
+
+          @media screen and(max-width: $screen-sm-max) {
+          
+          }
+
+          @media screen and(max-width: $screen-xs-max) {
+            margin-left: 3.2vw;
+          }
+        }
+      }
+    }
+  }
+
+  &--style-4 {
+    .text-scroll-item {
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 6vw;
+        height: 2px;
+        background-color: $cl-text;
+        margin: 0 2.5vw;
+
+        @media screen and(max-width: $screen-lg-max) {
+          width: 5vw;
+          height: 1px;
+        }
+
+        @media screen and(max-width: $screen-md-max) {
+          // width: 6vw;
+          // height: 2px;
+        }
+
+        @media screen and(max-width: $screen-sm-max) {
+          // width: 6vw;
+          // height: 2px;
+        }
+
+        @media screen and(max-width: $screen-xs-max) {
+          // width: 6vw;
+          // height: 2px;
+        }
+      }
+
+      h6 {
+        font-size: 80px;
+        font-style: italic;
+        text-transform: uppercase;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: $cl-text;
+        -webkit-text-fill-color: transparent;
+
+        @media screen and(max-width: $screen-lg-max) {
+          font-size: 60px;
+        }
+
+        @media screen and(max-width: $screen-md-max) {
+          font-size: 40px;
+        }
+
+        @media screen and(max-width: $screen-sm-max) {
+          font-size: 32px;
+        }
+
+        @media screen and(max-width: $screen-xs-max) {
+          font-size: 28px;
+        }
+      }
+    }
+  }
+}
+
+.elementor-editor-active {
+  #{$root} {
+    display: flex;
+  }
+}
+
+#{$dark-mode},
+#{$background-dark} {
+  #{$root} {
+    &--style-1 {
+      border-bottom: 1px solid $cl-border-dark;
+
+      .text-scroll-item {
+        &:before {
+          background-color: $cl-white-dark;
+        }
+      }
+    }
+
+    &--style-3 {
+      .text-scroll-item {
+        h6 {
+          color: $cl-white;
+
+          a {
+            color: $cl-white;
+          }
+
+          &:after {
+            background-color: $cl-white;
+          }
+        }
+      }
+    }
+  }
+}

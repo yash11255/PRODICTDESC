@@ -1,0 +1,394 @@
+/*-----------------------------------
+ * BASE STYLE
+ *-----------------------------------*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+// May be add font-size
+h1,
+h2,
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+h4,
+h5,
+h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.haru-clear {
+  &:before,
+  &:after {
+    display: table;
+    content: '';
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+ol,
+ul {
+  
+}
+
+mark {
+  background-color: $cl-primary;
+  color: $cl-white;
+  padding: 0 5px;
+}
+
+a {
+  text-decoration: none;
+  color: $cl-link;
+
+  &:hover {
+    color: $cl-link-hover;
+    text-decoration: none;
+  }
+
+  &:active {
+    color: $cl-link-active;
+    text-decoration: none;
+  }
+
+  &:focus {
+    color: $cl-link-active;
+    outline: none;
+    text-decoration: none;
+  }
+}
+
+legend,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $cl-heading;
+  font-family: 'Outfit'; // Will override by Theme Options
+  font-weight: $fw-semi-bold;
+  line-height: 1.4;
+
+  a {
+    color: $cl-heading;
+    transition: all .3s;
+
+    &:hover {
+      color: $cl-primary;
+      transition: all .3s;
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  line-height: 1.8;
+}
+
+blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 18px;
+  border-left: 5px solid $cl-border;
+
+  @media screen and (max-width: $screen-xs-max) {
+    font-size: 16px;
+  }
+}
+
+.embed-responsive {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+
+  &.embed-responsive-16by9 {
+      padding-bottom: 56.25%;
+  }
+
+  .embed-responsive-item,
+  embed,
+  iframe,
+  object,
+  video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+// Theme Unit Test
+// Table
+table {
+  border-collapse: collapse;
+
+  thead {
+    background: $cl-gray;
+    color: $cl-heading;
+
+    tr {
+      > * {
+        padding: 5px 10px 4px 10px;
+      }
+    }
+
+    th {
+      font-weight: $fw-semi-bold;
+    }
+  }
+
+  tbody {
+    tr {
+      > * {
+        padding:  5px 10px 4px 10px;
+      }
+    }
+
+    strong {
+      color: $cl-heading;
+      font-weight: $fw-semi-bold;
+    }
+  }
+
+  th {
+    font-weight: $fw-medium;
+  }
+}
+
+table,
+th,
+td {
+  border: 1px solid $cl-border;
+}
+
+th,
+td {
+  padding: 5px;
+}
+
+dt {
+  font-weight: $fw-medium;
+}
+
+audio,
+video {
+  &:focus {
+    outline: none;
+  }
+}
+
+// Markup: HTML Tags and Formatting use normalize.scss
+address {
+  font-style: italic;
+}
+
+abbr {
+
+}
+
+cite {
+  font-style: italic;
+}
+
+code {
+  color: $cl-white;
+  background-color: $cl-primary;
+  padding: 1px 2px;
+}
+
+del {
+
+}
+
+figure {
+  margin: 40px 1em;
+}
+
+figcaption {
+
+}
+
+ins {
+
+}
+
+em {
+  font-style: italic;
+}
+
+kbd {
+  color: $cl-white;
+  background-color: $cl-black;
+  padding: 1px 2px;
+}
+
+pre {
+  background-color: #f7f8f9;
+  color: $cl-heading;
+  border: 1px solid $cl-border;
+  padding: 5px 10px;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+q {
+
+}
+
+strike {
+  text-decoration: line-through;
+}
+
+small {
+
+}
+
+b,
+strong {
+  font-weight: $fw-semi-bold;
+}
+
+sub {
+
+}
+
+sup {
+
+}
+
+tt {
+
+}
+
+u {
+  text-decoration: underline;
+}
+
+var {
+  font-style: italic;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  color: $cl-text;
+  font-family: 'Outfit'; // Will override by Theme Options
+  line-height: 1.8;
+  font-size: $fs-base;
+  margin: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+
+  &.dark-mode {
+    background-color: $cl-bg-dark;
+  }
+
+  &.dark-mode,
+  .background-dark {
+    color: $cl-text-dark;
+
+    a {
+      color: $cl-text-dark;
+
+      &:hover {
+        color: $cl-primary;
+      }
+
+      &:active {
+        color: $cl-primary;
+      }
+
+      &:focus {
+        color: $cl-primary;
+      }
+    }
+
+    legend,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $cl-white-dark;
+
+      a {
+        color: $cl-white-dark;
+
+        &:hover {
+          color: $cl-primary;
+        }
+      }
+    }
+
+    blockquote {
+      border-left: 5px solid rgba($cl-white-dark, .5);
+    }
+  }
+}
+
+.dark-mode,
+.background-dark {
+  // Table
+  table {
+    border-collapse: collapse;
+
+    thead {
+      background: $cl-bg-dark-2;
+      color: $cl-text-dark;
+    }
+
+    tbody {
+      strong {
+        color: $cl-white-dark;
+      }
+    }
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid $cl-border-dark;
+  }
+
+  kbd {
+    color: $cl-black;
+    background-color: $cl-white-dark;
+  }
+
+  pre {
+    background-color: $cl-bg-dark-3;
+    color: $cl-white-dark;
+    border: 1px solid $cl-border-dark;
+    padding: 5px 10px;
+  }
+}

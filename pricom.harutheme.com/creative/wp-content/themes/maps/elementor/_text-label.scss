@@ -1,0 +1,89 @@
+$root: '.haru-text-label';
+
+#{$root} {
+
+  &--style-1 {
+    // padding-bottom: 100%;
+    background-color: $cl-green;
+    border-radius: 50%;
+    position: relative;
+    width: 132px;
+    height: 132px;
+
+    @media screen and(max-width: $screen-lg-max) {
+      width: 120px;
+      height: 120px;
+    }
+
+    @media screen and(max-width: $screen-md-max) {
+      width: 100px;
+      height: 100px;
+    }
+
+    @media screen and(max-width: $screen-sm-max) {
+      width: 80px;
+      height: 80px;
+    }
+
+    #{$root}__content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: inline-block;
+      color: $cl-white;
+      font-weight: $fw-bold;
+      line-height: 1;
+      text-align: center;
+      transform: translate(-50%, -50%);
+    }
+
+    #{$root}__title {
+      font-size: 24px;
+      font-weight: $fw-semi-bold;
+      padding-bottom: 10px;
+
+      @media screen and(max-width: $screen-lg-max) {
+        font-size: 22px;
+      }
+
+      @media screen and(max-width: $screen-md-max) {
+        font-size: 20px;
+      }
+
+      @media screen and(max-width: $screen-sm-max) {
+        font-size: 18px;
+        padding-bottom: 5px;
+      }
+    }
+
+    #{$root}__sub-title {
+      font-size: 34px;
+
+      @media screen and(max-width: $screen-lg-max) {
+        font-size: 30px;
+      }
+
+      @media screen and(max-width: $screen-md-max) {
+        font-size: 28px;
+      }
+
+      @media screen and(max-width: $screen-sm-max) {
+        font-size: 24px;
+      }
+
+      @media screen and(max-width: $screen-xs-max) {
+        font-size: 22px;
+      }
+    }
+  }
+
+}
+
+#{$dark-mode},
+#{$background-dark} {
+  #{$root} {
+    &--style-1 {
+      
+    }
+  }
+}

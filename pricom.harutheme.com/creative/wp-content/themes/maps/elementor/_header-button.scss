@@ -1,0 +1,77 @@
+$root-wrap: '.haru-header-button';
+$root: '.haru-button';
+$haru-align: '.haru-align';
+
+#{$root} {
+  &#{$root}--style-2 {
+    
+  }
+}
+
+#{$root-wrap} {
+  #{$root}--style-2 {
+    padding: 0 20px;
+
+    @media screen and(max-width: $screen-lg-max) {
+      // font-size: 16px;
+    }
+
+    @media screen and(max-width: $screen-md-max) {
+      font-size: 15px;
+    }
+
+    @media screen and(max-width: $screen-sm-max) {
+      
+    }
+
+    @media screen and(max-width: $screen-xs-max) {
+      
+    }
+    
+    #{$root}-icon {
+      font-size: 18px;
+
+      @media screen and(max-width: $screen-lg-max) {
+        // font-size: 20px;
+      }
+
+      @media screen and(max-width: $screen-md-max) {
+        // font-size: 18px;
+      }
+    }
+  }
+
+  #{$root}--style-5 {
+    &:hover {
+      box-shadow: 0px 3px 8px rgba($cl-black, .18);
+      transition: all .3s;
+    }
+  }
+}
+
+// Header button widget
+#{$header} {
+  &--transparent {
+    &-light:not(.haru-header--sticky-on) {
+      #{$root} {
+        &--style-2 {
+          background-color: $cl-white;
+          color: $cl-black;
+
+          &:hover {
+            background-color: $cl-primary;
+            color: $cl-white;
+          }
+        }
+      }
+    }
+
+    &-dark:not(.haru-header--sticky-on) {
+      #{$root} {
+        &--style-2 {
+          
+        }
+      }
+    }
+  }
+}

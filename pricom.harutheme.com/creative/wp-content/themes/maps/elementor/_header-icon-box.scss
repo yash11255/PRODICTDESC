@@ -1,0 +1,151 @@
+$root: '.haru-header-icon-box';
+
+#{$root} {
+
+  #{$root}__icon {
+    svg {
+      max-height: 100px;
+
+      @media screen and (max-width: $screen-lg-max) {
+        max-height: 90px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        max-height: 80px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        max-height: 70px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        max-height: 60px;
+      }
+    }
+  }
+
+  &--style-1 {
+    display: flex;
+
+    #{$root}__icon {
+      display: inline-flex;
+      font-size: 48px;
+      color: $cl-primary;
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 42px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        
+      }
+
+      > span,
+      > a {
+        display: inline-flex;
+        width: 60px;
+        height: 60px;
+        align-items: center;
+        justify-content: center;
+
+        @media screen and (max-width: $screen-lg-max) {
+          width: 52px;
+          height: 52px;
+        }
+
+        @media screen and (max-width: $screen-sm-max) {
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      i {
+        color: $cl-primary;
+
+        @include bggradient1();
+
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color:transparent;
+      }
+
+      svg path {
+        fill: $cl-primary;
+        
+        @include bggradient1();
+      }
+    }
+
+    #{$root}__content {
+      padding-left: 10px;
+
+      @media screen and (max-width: $screen-sm-max) {
+        padding-left: 6px;
+      }
+    }
+
+    #{$root}__title {
+      font-size: 16px;
+      margin-top: 5px;
+      margin-bottom: 0;
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 15px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        
+      }
+    }
+
+    #{$root}__description {
+      color: $cl-text;
+      font-size: 14px;
+
+      @media screen and (max-width: $screen-md-max) {
+
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+
+      }
+    }
+  }
+}
+
+#{$dark-mode},
+#{$background-dark} {
+  #{$root} {
+    &--style-1 {
+      #{$root}__icon {
+        svg,
+        * {
+          // fill: $cl-white-dark;
+          // color: $cl-white-dark;
+        }
+      }
+
+      #{$root}__description {
+        // color: $cl-text-dark;
+      }
+    }
+
+  }
+}

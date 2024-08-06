@@ -1,0 +1,75 @@
+// Paging css similar haru-page-links
+.archive-pagination {
+  // Default
+  .page-numbers {
+    display: inline-block;
+    padding: 0 10px;
+    color: $cl-heading;
+    margin: 0 3px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: $border-radius;
+    font-weight: $fw-semi-bold;
+    transition: all .3s;
+
+    &.current {
+      background-color: $cl-primary;
+      color: $cl-white;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    &:hover, 
+    &:focus {
+      color: $cl-primary;
+    }
+
+    &.prev, 
+    &.next {
+      width: auto;
+      text-transform: capitalize;
+    }
+  }
+
+  // Load more
+  &.load-more {
+
+  }
+}
+
+// Dark Mode
+.dark-mode {
+  // Paging css similar haru-page-links
+  .archive-pagination {
+    // Default
+    .page-numbers {
+      color: $cl-white-dark;
+
+      &.current {
+        background-color: $cl-primary;
+        color: $cl-white;
+      }
+    }
+
+    a {
+      &:hover, 
+      &:focus {
+        color: $cl-primary;
+      }
+    }
+
+    // Load more
+    &.load-more {
+
+    }
+  }
+}

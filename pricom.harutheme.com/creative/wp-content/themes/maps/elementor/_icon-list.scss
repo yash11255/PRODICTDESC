@@ -1,0 +1,260 @@
+$root: '.haru-icon-list';
+
+#{$root} {
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__columns {
+    &-1 {
+      width: 100%;
+    }
+
+    &-2 {
+      width: 50%;
+    }
+
+    &-3 {
+      width: 33.333333%;
+    }
+
+    &-4 {
+      width: 25%;
+    }
+
+    &-5 {
+      width: 20%;
+    }
+
+    &-6 {
+      width: 16.666666%;
+    }
+
+    &-7 {
+      width: 14.285714%;
+    }
+
+    &-8 {
+      width: 12.5%;
+    }
+
+    &--tablet {
+      &-1 {
+        @media screen and (max-width: $screen-sm-max) {
+          width: 100%;
+        }
+      }
+
+      &-2 {
+        @media screen and (max-width: $screen-sm-max) {
+          width: 50%;
+        }
+      }
+
+      &-3 {
+        @media screen and (max-width: $screen-sm-max) {
+          width: 33.333333%;
+        }
+      }
+
+      &-4 {
+        @media screen and (max-width: $screen-sm-max) {
+          width: 25%;
+        }
+      }
+
+      &-5 {
+        @media screen and (max-width: $screen-sm-max) {
+          width: 20%;
+        }
+      }
+
+      &-6 {
+        @media screen and (max-width: $screen-sm-max) {
+          width: 16.666666%;
+        }
+      }
+    }
+
+    &--mobile {
+      &-1 {
+        @media screen and (max-width: $screen-xs-max) {
+          width: 100%;
+        }
+      }
+
+      &-2 {
+        @media screen and (max-width: $screen-xs-max) {
+          width: 50%;
+        }
+      }
+
+      &-3 {
+        @media screen and (max-width: $screen-xs-max) {
+          width: 33.333333%;
+        }
+      }
+
+      &-4 {
+        @media screen and (max-width: $screen-xs-max) {
+          width: 25%;
+        }
+      }
+    }
+  }
+
+  #{$root}__item {
+    position: relative;
+    overflow: hidden;
+  }
+
+  #{$root}__image {
+    width: 100%;
+    transition: all .3s;
+  }
+
+  &--style-1 {
+    #{$root}__list {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -15px;
+    }
+
+    #{$root}__item-wrap {
+      padding: 15px;
+      text-align: center;
+    }
+
+    #{$root}__image {
+      background: $cl-white;
+      box-shadow: 0 4px 30px rgba($cl-black, .1);
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    #{$root}__title {
+      font-size: 18px;
+      padding-top: 8px;
+
+      @media screen and (max-width: $screen-xs-max) {
+        font-size: 18px;
+        padding-top: 5px;
+      }
+    }
+  }
+
+  &--style-2 {
+    overflow: visible;
+    clip-path: inset( -100vw -100vw -100vw -100vw );
+
+    .slick-list {
+      overflow: visible;
+    }
+
+    #{$root}__list {
+      @media screen and(max-width: $screen-xs-max) {
+        max-width: calc(100vw - 16px);
+      }
+    }
+
+    .haru-slick {
+      margin: 0 -15px;
+
+      @media screen and(max-width: $screen-sm-max) {
+        margin: 0 -10px;
+      }
+
+      @media screen and(max-width: $screen-xs-max) {
+        margin: 0 -8px;
+      }
+    }
+
+    #{$root}__item {
+      overflow: visible;
+      padding: 50px 15px;
+
+      @media screen and(max-width: $screen-sm-max) {
+        padding: 50px 10px;
+      }
+
+      @media screen and(max-width: $screen-xs-max) {
+        padding: 50px 8px;
+      }
+    }
+
+    #{$root}__item-wrap {
+      background: $cl-white;
+      box-shadow: 0 20px 50px rgba($cl-black, .07);
+      border-radius: $border-radius;
+      padding: 30px 25px;
+      transform: translateY(0);
+      transition: all .3s;
+
+      &:hover {
+        transform: translateY(-15px);
+        transition: all .3s;
+
+        #{$root}__item {
+          box-shadow: 0 15px 50px rgba($cl-black, .08);
+          transition: all .3s;
+        }
+      }
+    }
+
+    #{$root}__title {
+      font-size: 20px;
+      padding-top: 20px;
+
+      @media screen and (max-width: $screen-xs-max) {
+        font-size: 18px;
+        padding-top: 15px;
+      }
+    }
+
+    #{$root}_description {
+      
+    }
+
+    .slick-next {
+      right: 15px;
+
+      @media screen and(max-width: $screen-sm-max) {
+        right: 10px;
+      }
+
+      @media screen and(max-width: $screen-xs-max) {
+        right: 8px;
+      }
+    }
+
+    .slick-prev {
+      left: 15px;
+
+      @media screen and(max-width: $screen-sm-max) {
+        left: 10px;
+      }
+
+      @media screen and(max-width: $screen-xs-max) {
+        left: 8px;
+      }
+    }
+  }
+}
+
+#{$dark-mode},
+#{$background-dark} {
+  #{$root} {
+    #{$root}__item {
+      img {
+        // filter: brightness(0) invert(1);
+      }
+    }
+  }
+}

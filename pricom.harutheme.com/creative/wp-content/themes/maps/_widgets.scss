@@ -1,0 +1,145 @@
+// Post thumbnail
+.widget-post-list {
+  ul {
+    list-style: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    // Thumbnail right
+    &.thumb-right {
+      .post-item {
+        flex-direction: row-reverse;
+      }
+
+      .post-content {
+        padding-left: 0;
+        padding-right: 15px;
+      }
+    }
+
+    &.thumb-full {
+      .post-item {
+        display: block;
+
+        .post-thumbnail {
+          max-width: 100%;
+        }
+      }
+
+      .post-content {
+        padding-left: 0;
+        padding-top: 5px;
+      }
+    }
+  }
+
+  .post-item {
+    display: flex;
+    margin-bottom: 20px;
+
+    .post-thumbnail {
+      flex: 0 0 35%;
+      max-width: 150px;
+
+      img {
+        border-radius: $border-radius-small;
+      }
+    }
+
+    .post-content {
+      flex: 1;
+      padding-left: 15px;
+    }
+
+    .post-category {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .post-title {
+      margin-top: 0;
+      font-weight: $fw-semi-bold;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      /* autoprefixer: ignore next */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .post-meta {
+      font-size: 14px;
+    }
+
+    .post-datetime {
+      margin-left: 6px;
+
+      &:before {
+        content: '\e910';
+        font-family: "Haruicons";
+        font-weight: $fw-normal;
+        margin-right: 6px;
+        position: relative;
+        bottom: -1px;
+      }
+    }
+
+    .post-comment {
+      margin-left: 6px;
+
+      a {
+        &:before {
+          content: '\e91a';
+          font-family: "Haruicons";
+          font-weight: $fw-normal;
+          margin-right: 6px;
+        }
+      }
+    }
+  }
+}
+
+// Haru Navigation Menu
+.single-haru_megamenu {
+  .menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li,
+    a {
+      position: relative;
+      display: block;
+    }
+
+    > li {
+      > a {
+        padding: 5px 0;
+      }
+
+      &:first-child {
+        > a {
+          padding-top: 0;
+        }
+      }
+
+      &:last-child {
+        > a {
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    .menu-label {
+      border-radius: 2px;
+      color: $cl-white;
+      padding: 2px 3px;
+      font-size: 9px;
+      text-align: center;
+      vertical-align: baseline;
+      margin-left: 5px;
+      position: relative;
+      top: -8px;
+    }
+  }
+}

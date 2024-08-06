@@ -1,0 +1,196 @@
+$root: '.haru-button';
+$haru-align: '.haru-align';
+
+#{$root} {
+  span {
+  	text-decoration: inherit;
+  }
+
+  &-content-wrapper {
+  	display: flex;
+		justify-content: center;
+  }
+
+  &-icon {
+  	flex-grow: 0;
+  	order: 5;
+  }
+
+  &-text {
+  	flex-grow: 1;
+  	order: 10;
+  	display: inline-block;
+  }
+
+  #{$haru-align} {
+  	&-icon {
+  		&-left {
+  			margin-right: 8px;
+  			order: 5;
+  		}
+
+  		&-right {
+  			margin-left: 8px;
+  			order: 15;
+  		}
+  	}
+  }
+
+  &#{$root}--style-4 {
+    font-size: 16px;
+
+    @media screen and(max-width: $screen-lg-max) {
+      // font-size: 16px;
+    }
+
+    @media screen and(max-width: $screen-md-max) {
+      font-size: 15px;
+    }
+
+    @media screen and(max-width: $screen-sm-max) {
+      
+    }
+
+    @media screen and(max-width: $screen-xs-max) {
+      
+    }
+    
+    #{$root}-icon {
+      font-size: 18px;
+
+      @media screen and(max-width: $screen-lg-max) {
+        // font-size: 20px;
+      }
+
+      @media screen and(max-width: $screen-md-max) {
+        // font-size: 18px;
+      }
+
+      .ti-arrow-top-right {
+        bottom: -3px;
+      }
+    }
+  }
+
+  &#{$root}--style-5 {
+
+  }
+
+  &#{$root}--style-7 {
+    border-bottom: 1px solid $cl-black;
+    padding-bottom: 6px;
+    transition: all .3s;
+
+    &:hover {
+      border-bottom: 1px solid $cl-primary;
+      transition: all .3s;
+    }
+  }
+}
+
+#{$haru-align} {
+	&-left {
+		text-align: left;
+
+		#{$root} {
+			width: auto;
+		}
+	}
+
+	&-right {
+		text-align: right;
+
+		#{$root} {
+			width: auto;
+		}
+	}
+	
+	&-center {
+		text-align: center;
+
+		#{$root} {
+			width: auto;
+		}
+	}
+
+	&-justify {
+		#{$root} {
+			width: 100%;
+		}
+	}
+
+  &--tabletleft {
+    @media screen and (max-width: $screen-sm-max) {
+      text-align: left;
+    }
+  }
+
+  &--tabletright {
+    @media screen and (max-width: $screen-sm-max) {
+      text-align: right;
+    }
+  }
+
+  &--tabletcenter {
+    @media screen and (max-width: $screen-sm-max) {
+      text-align: center;
+    }
+  }
+
+  &--tabletjustify {
+    @media screen and (max-width: $screen-sm-max) {
+
+    }
+  }
+
+  &--mobileleft {
+    @media screen and (max-width: $screen-xs-max) {
+      text-align: left;
+    }
+  }
+
+  &--mobileright {
+    @media screen and (max-width: $screen-xs-max) {
+      text-align: right;
+    }
+  }
+
+  &--mobilecenter {
+    @media screen and (max-width: $screen-xs-max) {
+      text-align: center;
+    }
+  }
+
+  &--mobilejustify {
+    @media screen and (max-width: $screen-xs-max) {
+
+    }
+  }
+}
+
+// Header button widget
+#{$header} {
+  &--transparent {
+    &-light:not(.haru-header--sticky-on) {
+      #{$root} {
+        &--style-2 {
+          background-color: $cl-white;
+          color: $cl-black;
+
+          &:hover {
+            background-color: $cl-primary;
+            color: $cl-white;
+          }
+        }
+      }
+    }
+
+    &-dark:not(.haru-header--sticky-on) {
+      #{$root} {
+        &--style-2 {
+          
+        }
+      }
+    }
+  }
+}

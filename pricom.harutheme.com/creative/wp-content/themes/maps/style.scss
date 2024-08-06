@@ -1,0 +1,99 @@
+/*
+Theme Name: Pricom
+Theme URI: http://harutheme.com/pricom
+Author: HaruTheme
+Author URI: http://harutheme.com/
+Description: Pricom is the Printing Company & Design Services WordPress theme from HaruTheme have many features to create Print site
+Version: 1.5.7
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: two-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, featured-images, flexible-header, full-width-template, theme-options, translation-ready
+Text Domain: pricom
+Domain Path: /languages/
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/*-----------------------------------
+ * TABLE OF CONTENT
+ * 1. LIBRARIES AND DEFINED VARIABLES
+ * 2. CORE
+ * 3. THEME
+ * 4. HEADER
+ * 5. FOOTER
+ * 6. BLOG
+ * 7. WOOCOMMERCE
+ * 8. SHORTCODES
+ * 9. RESPONSIVE PAGES
+ *-----------------------------------*/
+
+
+/*-----------------------------------
+ * 1. LIBRARIES AND DEFINED VARIABLES
+ *-----------------------------------*/
+@import 'normalize/normalize';
+@import 'abstracts/variable';
+@import 'abstracts/mixins';
+@import 'abstracts/animation';
+
+/*-----------------------------------
+ * 2. CORE
+ *-----------------------------------*/
+@import 'layout';
+@import 'button';
+@import 'form';
+@import 'heading';
+@import 'wp-core';
+@import 'wp-blocks';
+@import 'loading';
+@import 'elements';
+@import 'newsletter';
+@import 'widgets';
+
+/*-----------------------------------
+ * 3. THEME
+ *-----------------------------------*/
+@import 'theme';
+@import 'page-title';
+@import '404';
+@import 'maintenance';
+@import 'rs-slider';
+
+/*-----------------------------------
+ * 4. HEADER
+ *-----------------------------------*/
+@import 'header';
+
+/*-----------------------------------
+ * 5. FOOTER
+ *-----------------------------------*/
+@import 'footer';
+
+/*-----------------------------------
+ * 6. BLOG
+ *-----------------------------------*/
+@import 'blog';
+
+/*-----------------------------------
+ * 7. WOOCOMMERCE
+ *-----------------------------------*/
+@import 'woocommerce';
+
+/*-----------------------------------
+ * 8. WIDGETS
+ *-----------------------------------*/
+@import 'components';
+@import 'pricom';
+@import 'elementor';
+
+/*-----------------------------------
+ * 9. MULTIVENDOR
+ *-----------------------------------*/
+@import 'multivendor/dokan';
+
+/*-----------------------------------
+ * 10. DESIGNER
+ *-----------------------------------*/
+@import 'designer/lumise';
+@import 'designer/fpd';

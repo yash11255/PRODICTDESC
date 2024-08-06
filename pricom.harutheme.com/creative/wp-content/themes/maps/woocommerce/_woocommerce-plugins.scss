@@ -1,0 +1,107 @@
+// Drag & Drop Multifiles Upload
+.wc-dnd-file-upload {
+  font-weight: $fw-semi-bold;
+  color: $cl-black;
+  padding: 0 0 15px;
+
+  .codedropz-upload-wrapper {
+    font-weight: $fw-normal;
+    color: $cl-text;
+  }
+
+  .codedropz-upload-handler {
+    margin-top: 10px;
+    border-radius: $border-radius;
+  }
+}
+
+.codedropz-upload-handler {
+  .codedropz-upload-inner {
+    a.cd-upload-btn {
+      background-color: $cl-black;
+      border-radius: $border-radius-e-small;
+      color: $cl-white;
+      padding: 0 15px;
+      font-weight: $fw-bold;
+      font-size: $fs-base;
+      transition: all .3s;
+
+      &:hover {
+        background-color: rgba($cl-black, .8);
+        transition: all .3s;
+      }
+    }
+
+    .codedropz-label {
+      font-size: 16px;
+      flex-wrap: wrap;
+
+      span.cd-icon {
+        margin-bottom: -6px;
+      }
+
+      .text {
+        color: $cl-black;
+      }
+    }
+  }
+}
+
+.dnd-upload-counter {
+  right: 10px;
+  bottom: 5px;
+
+  @media screen and (max-width: $screen-xs-max) {
+    bottom: 0;
+  }
+}
+
+.codedropz--results {
+  margin-bottom: 12px;
+
+  .dnd-upload-status {
+    .dnd-upload-image {
+      margin-bottom: -10px;
+    }
+
+    .dnd-upload-details {
+      .dnd-progress-bar {
+        border-radius: 10px;
+
+        span {
+          background: #11b196;
+        }
+      }
+
+      .name {
+        color: $cl-black;
+
+        em {
+          color: $cl-black;
+          font-weight: $fw-semi-bold;
+          font-style: normal;
+        }
+
+        span {
+          max-width: calc(100vw - 220px);
+        }
+      }
+    }
+  }
+}
+
+.codedropz--preview {
+  .dnd-upload-status {
+    .dnd-upload-details {
+      .name {
+        color: $cl-black;
+
+        em {
+          color: $cl-black;
+          font-weight: $fw-semi-bold;
+          font-style: normal;
+        }
+      }
+    }
+  }
+}

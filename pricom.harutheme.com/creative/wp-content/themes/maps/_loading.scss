@@ -1,0 +1,38 @@
+/*-----------------------------------
+ * LOADING
+ *-----------------------------------*/
+@import 'loading/square-1';
+@import 'loading/square-2';
+@import 'loading/square-3';
+@import 'loading/square-4';
+@import 'loading/square-5';
+@import 'loading/square-6';
+@import 'loading/square-7';
+@import 'loading/square-8';
+@import 'loading/square-9';
+@import 'loading/round-1';
+@import 'loading/round-2';
+@import 'loading/round-3';
+@import 'loading/round-4';
+@import 'loading/round-5';
+@import 'loading/round-6';
+@import 'loading/round-7';
+@import 'loading/round-8';
+@import 'loading/round-9';
+
+#haru-site-preloader {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99999;
+
+  .haru-loading-site {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

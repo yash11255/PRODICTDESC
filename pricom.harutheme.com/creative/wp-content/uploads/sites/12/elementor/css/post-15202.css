@@ -1,0 +1,87 @@
+.elementor-15202 .elementor-element.elementor-element-e13d09e {
+    --display: flex;
+    --flex-direction: column;
+    --container-widget-width: 100%;
+    --container-widget-height: initial;
+    --container-widget-flex-grow: 0;
+    --container-widget-align-self: initial;
+    --gap: 0px 0px;
+    --background-transition: 0.3s;
+    --padding-top: 15px;
+    --padding-bottom: 15px;
+    --padding-left: 0px;
+    --padding-right: 0px;
+}
+
+.elementor-15202 .elementor-element.elementor-element-c32a4bb {
+    --display: flex;
+    --flex-direction: row;
+    --container-widget-width: initial;
+    --container-widget-height: 100%;
+    --container-widget-flex-grow: 1;
+    --container-widget-align-self: stretch;
+    --gap: 0px 0px;
+    --background-transition: 0.3s;
+}
+
+.elementor-15202 .elementor-element.elementor-element-af2acbd {
+    --display: flex;
+    --background-transition: 0.3s;
+    --padding-top: 15px;
+    --padding-bottom: 15px;
+    --padding-left: 15px;
+    --padding-right: 15px;
+}
+
+.elementor-15202 .elementor-element.elementor-element-92f6511 {
+    --display: flex;
+    --background-transition: 0.3s;
+    --padding-top: 15px;
+    --padding-bottom: 15px;
+    --padding-left: 15px;
+    --padding-right: 15px;
+}
+
+.elementor-15202 .elementor-element.elementor-element-576ffd5 {
+    --display: flex;
+    --flex-direction: row;
+    --container-widget-width: initial;
+    --container-widget-height: 100%;
+    --container-widget-flex-grow: 1;
+    --container-widget-align-self: stretch;
+    --gap: 0px 0px;
+    --background-transition: 0.3s;
+}
+
+.elementor-15202 .elementor-element.elementor-element-4ef434a {
+    --display: flex;
+    --background-transition: 0.3s;
+    --padding-top: 15px;
+    --padding-bottom: 15px;
+    --padding-left: 15px;
+    --padding-right: 15px;
+}
+
+.elementor-15202 .elementor-element.elementor-element-bbff856 {
+    --display: flex;
+    --background-transition: 0.3s;
+    --padding-top: 15px;
+    --padding-bottom: 15px;
+    --padding-left: 15px;
+    --padding-right: 15px;
+}
+
+.elementor-15202 .elementor-element.elementor-element-c230a92 {
+    --display: flex;
+    --background-transition: 0.3s;
+    --padding-top: 15px;
+    --padding-bottom: 15px;
+    --padding-left: 15px;
+    --padding-right: 15px;
+}
+
+@media(min-width:768px) {
+    .elementor-15202 .elementor-element.elementor-element-e13d09e {
+        --content-width: 1440px;
+    }
+}

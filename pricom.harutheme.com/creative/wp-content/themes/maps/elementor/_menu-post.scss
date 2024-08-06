@@ -1,0 +1,60 @@
+$root: '.haru-menu-post';
+
+.post-item-menu {
+  &--style-1 {
+    display: flex;
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .post-item-menu__thumbnail {
+      flex: 0 0 35%;
+    }
+
+    .post-item-menu__content {
+      flex: 1;
+      padding-left: 15px;
+    }
+
+    .post-item-menu__category {
+      font-size: 12px;
+
+      a {
+        display: inline-block;
+        text-transform: uppercase;
+      }
+    }
+
+    .post-item-menu__title {
+      margin-top: 0;
+      font-weight: $fw-semi-bold;
+
+      a {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        /* autoprefixer: ignore next */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+
+    .post-item-menu__meta {
+      display: none;
+    }
+  }
+}
+
+#{$root} {
+
+}
+
+#{$dark-mode},
+#{$background-dark} {
+  .post-item-menu {
+    &--style-1 {
+      
+    }
+  }
+}

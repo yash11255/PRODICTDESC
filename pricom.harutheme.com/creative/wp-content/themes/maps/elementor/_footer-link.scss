@@ -1,0 +1,199 @@
+$root: '.haru-footer-link';
+
+#{$root} {
+
+  ul {
+    list-style: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: 12px;
+
+    @media screen and(max-width: $screen-xs-max) {
+      margin-bottom: 10px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &--none {
+
+  }
+
+  &--style-1 {
+    a {
+      font-size: 16px;
+      transition: all .3s;
+
+      @media screen and(max-width: $screen-lg-max) {
+        // font-size: 15px;
+      }
+
+      @media screen and(max-width: $screen-md-max) {
+        // font-size: 14px;
+      }
+
+      @media screen and(max-width: $screen-sm-max) {
+        
+      }
+
+      @media screen and(max-width: $screen-xs-max) {
+        
+      }
+
+      &:hover,
+      &:active {
+        color: $cl-primary;
+        transition: all .3s;
+      }
+    }
+  }
+
+  &--style-2 {
+    li {
+      display: inline-block;
+      position: relative;
+      margin: 0 12px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 16px;
+        background-color: rgba($cl-text-2, .5);
+        top: 50%;
+        right: -12px;
+        transform: translateY(-50%);
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    a {
+      font-size: 16px;
+      transition: all .3s;
+
+      @media screen and(max-width: $screen-lg-max) {
+        // font-size: 15px;
+      }
+
+      @media screen and(max-width: $screen-md-max) {
+        // font-size: 14px;
+      }
+
+      @media screen and(max-width: $screen-sm-max) {
+        
+      }
+
+      @media screen and(max-width: $screen-xs-max) {
+        
+      }
+
+      &:hover,
+      &:active {
+        color: $cl-primary;
+        transition: all .3s;
+      }
+    }
+  }
+
+  &--style-3 {
+    a {
+      color: $cl-heading;
+      font-size: 16px;
+      transition: all .3s;
+
+      @media screen and(max-width: $screen-xs-max) {
+        
+      }
+
+      &:hover,
+      &:active {
+        color: $cl-primary;
+        transition: all .3s;
+      }
+    }
+  }
+
+  &--style-4 {
+    a {
+      font-size: 18px;
+      transition: all .3s;
+
+      @media screen and(max-width: $screen-lg-max) {
+        font-size: Max(16px, $fs-base);
+      }
+
+      @media screen and(max-width: $screen-md-max) {
+        font-size: Max(15px, $fs-base);
+      }
+
+      @media screen and(max-width: $screen-sm-max) {
+        font-size: Max(14px, $fs-base);
+      }
+
+      @media screen and(max-width: $screen-xs-max) {
+        
+      }
+
+      &:hover,
+      &:active {
+        color: $cl-primary;
+        transition: all .3s;
+      }
+    }
+  }
+}
+
+#{$dark-mode},
+#{$background-dark} {
+  #{$root} {
+    &--style-1 {
+      a {
+        color: $cl-text-2-dark;
+
+        &:hover,
+        &:active {
+          color: $cl-primary;
+        }
+      }
+    }
+
+    &--style-2 {
+      a {
+        color: $cl-text-2-dark;
+
+        &:hover,
+        &:active {
+          color: $cl-primary;
+        }
+      }
+    }
+
+    &--style-3 {
+      a {
+        color: $cl-white-dark;
+
+        &:hover,
+        &:active {
+          color: $cl-primary;
+        }
+      }
+    }
+  }
+}

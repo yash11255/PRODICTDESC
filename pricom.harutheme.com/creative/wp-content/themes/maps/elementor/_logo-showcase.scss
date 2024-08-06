@@ -1,0 +1,320 @@
+$root: '.haru-logo-showcase';
+
+#{$root} {
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__columns {
+    &-1 {
+      width: 100%;
+    }
+
+    &-2 {
+      width: 50%;
+    }
+
+    &-3 {
+      width: 33.333333%;
+    }
+
+    &-4 {
+      width: 25%;
+    }
+
+    &-5 {
+      width: 20%;
+    }
+
+    &-6 {
+      width: 16.666666%;
+    }
+
+    &-7 {
+      width: 14.285714%;
+    }
+
+    &-8 {
+      width: 12.5%;
+    }
+
+    &--tablet {
+      &-1 {
+        @media screen and (max-width: $screen-sm-max) {
+          width: 100%;
+        }
+      }
+
+      &-2 {
+        @media screen and (max-width: $screen-sm-max) {
+          width: 50%;
+        }
+      }
+
+      &-3 {
+        @media screen and (max-width: $screen-sm-max) {
+          width: 33.333333%;
+        }
+      }
+
+      &-4 {
+        @media screen and (max-width: $screen-sm-max) {
+          width: 25%;
+        }
+      }
+
+      &-5 {
+        @media screen and (max-width: $screen-sm-max) {
+          width: 20%;
+        }
+      }
+
+      &-6 {
+        @media screen and (max-width: $screen-sm-max) {
+          width: 16.666666%;
+        }
+      }
+    }
+
+    &--mobile {
+      &-1 {
+        @media screen and (max-width: $screen-xs-max) {
+          width: 100%;
+        }
+      }
+
+      &-2 {
+        @media screen and (max-width: $screen-xs-max) {
+          width: 50%;
+        }
+      }
+
+      &-3 {
+        @media screen and (max-width: $screen-xs-max) {
+          width: 33.333333%;
+        }
+      }
+
+      &-4 {
+        @media screen and (max-width: $screen-xs-max) {
+          width: 25%;
+        }
+      }
+    }
+  }
+
+  #{$root}__item {
+    position: relative;
+    overflow: hidden;
+  }
+
+  #{$root}__image {
+    width: 100%;
+    transition: all .3s;
+  }
+
+  &__hover {
+    &-opacity {
+      #{$root}__image {
+        opacity: .5;
+        transition: all .3s;
+
+        &:hover {
+          opacity: 1;
+          transition: all .3s;
+        }
+      }
+    }
+
+    &-opacity-2 {
+      &:hover {
+        #{$root}__image {
+          opacity: 1!important;
+          transition: all .3s;
+        }
+      }
+    }
+
+    &-grayscale {
+      &:hover {
+        #{$root}__image {
+          filter: none!important;
+          opacity: 1!important;
+          transition: all .3s;
+        }
+      }
+    }
+
+    &-scale {
+      #{$root}__image {
+        transform: scale(1);
+        transition: all .3s;
+
+        &:hover {
+          transform: scale(1.1);
+          transition: all .3s;
+        }
+      }
+    }
+  }
+
+  // Hover
+  &--opacity-2 {
+    &:hover {
+      #{$root}__image {
+        opacity: .3;
+        transition: all .3s;
+      }
+    }
+  }
+
+  &--grayscale {
+    &:hover {
+      #{$root}__image {
+        filter: grayscale(100%);
+        opacity: .3;
+        transition: all .3s;
+      }
+    }
+  }
+
+  // Layout
+  &--slick {
+    .haru-slick {
+      margin: 0 -10px;
+    }
+
+    .slick-slide {
+      padding: 0 10px;
+    }
+
+    .slick-prev {
+      left: 10px;
+    }
+
+    .slick-next {
+      right: 10px;
+    }
+
+    #{$root}__list {
+      @media screen and (max-width: $screen-xs-max) {
+        max-width: calc(100vw - 20px);
+      }
+    }
+  }
+
+  &--slick-2 {
+    .haru-slick {
+      margin: 0 -10px;
+    }
+
+    .slick-slide {
+      padding: 0 10px;
+
+      #{$root}__image {
+        filter: grayscale(100%);
+        opacity: .3;
+        transition: all .3s;
+      }
+
+      &:hover,
+      &.slick-current {
+        #{$root}__image {
+          filter: none;
+          opacity: 1;
+          transition: all .3s;
+        }
+      }
+    }
+
+    .slick-prev {
+      left: 10px;
+    }
+
+    .slick-next {
+      right: 10px;
+    }
+
+    #{$root}__quote {
+      padding: 0;
+      margin: 0 0 60px;
+
+      @media screen and (max-width: $screen-lg-max) {
+        margin: 0 0 50px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        margin: 0 0 40px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        margin: 0 0 30px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        max-width: calc(100vw - 30px);
+      }
+    }
+
+    #{$root}__description {
+      color: $cl-black;
+      font-size: 44px;
+      font-weight: $fw-bold;
+      font-style: italic;
+      line-height: 1.1;
+      padding: 0 16%;
+      text-align: center;
+      text-transform: uppercase;
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 36px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        font-size: 32px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        font-size: 24px;
+        padding: 0 15%;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        font-size: 20px;
+        padding: 0 5%;
+      }
+    }
+
+    #{$root}__list {
+      @media screen and (max-width: $screen-xs-max) {
+        max-width: calc(100vw - 20px);
+      }
+    }
+
+  }
+
+  &--grid {
+    #{$root}__list {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -15px;
+    }
+
+    #{$root}__item-wrap {
+      padding: 15px;
+    }
+  }
+}
+
+#{$dark-mode},
+#{$background-dark} {
+  #{$root} {
+    #{$root}__item {
+      img {
+        // filter: brightness(0) invert(1);
+      }
+    }
+  }
+}

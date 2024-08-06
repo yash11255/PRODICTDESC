@@ -1,0 +1,159 @@
+$root: '.haru-search';
+$header: '.haru-header';
+
+#{$root} {
+
+  &__container {
+    display: flex;
+    position: relative;
+    transition: all .3s;
+    overflow: hidden;
+  }
+
+  &__submit {
+    padding: 0 15px;
+    font-size: 16px;
+    font-weight: $fw-semi-bold;
+
+    i {
+      font-size: 18px;
+
+      &.hicon {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 0 15px;
+
+    i {
+      font-size: 18px;
+
+      &.hicon {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__form {
+    .mfp-close {
+      color: $cl-white;
+      opacity: 1;
+      font-size: 0;
+      transform: translateX(100%);
+
+      &:hover {
+        color: $cl-primary;
+      }
+
+      &:before {
+        content: '\e919';
+        font-family: 'haruicons';
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__toggle {
+    display: inline-flex;
+    cursor: pointer;
+    font-size: 20px;
+
+    .hicon {
+      font-size: 22px;
+    }
+  }
+
+  &__popup {
+    #{$root}__form {
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+
+  &--classic {
+    // 
+  }
+
+  &--minimal {
+    #{$root}__input {
+      padding-left: 45px;
+    }
+
+    #{$root}__icon {
+      right: 0;
+      left: auto;
+    }
+
+    #{$root}__input {
+      padding-left: 15px;
+      padding-right: 45px;
+    }
+  }
+
+  &--full_screen {
+    display: flex;
+
+    #{$root}__form {
+      display: none;
+    }
+  }
+
+  &--toolbar {
+    color: $cl-black;
+    line-height: 1;
+    text-align: center;
+
+    #{$root}__toggle {
+      display: block;
+    }
+
+    #{$root}__form {
+      display: none;
+    }
+  }
+}
+
+#{$dark-mode},
+#{$background-dark} {
+  #{$root} {
+    &--classic {
+      
+    }
+
+    &__toggle {
+      color: $cl-white-dark;
+    }
+  }
+}
+
+#{$header} {
+  &--transparent {
+    &-light:not(.haru-header--sticky-on) {
+      &#{$header} {
+        #{$root} {
+          &__toggle {
+            color: $cl-white;
+          }
+        }
+      }
+    }
+
+    &-dark:not(.haru-header--sticky-on) {
+      &#{$header} {
+        #{$root} {
+          &__toggle {
+            color: $cl-black;
+          }
+        }
+      }
+    }
+  }
+}

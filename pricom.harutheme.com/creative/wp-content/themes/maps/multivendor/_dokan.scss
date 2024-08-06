@@ -1,0 +1,1792 @@
+/*-----------------------------------
+ * 9.1. DOKAN
+ *-----------------------------------*/
+
+input[type='submit'].dokan-btn-theme,
+a.dokan-btn-theme,
+.dokan-btn-theme {
+  font-weight: $fw-semi-bold;
+  padding: 0 36px;
+  border-radius: $border-radius;
+  background-color: $cl-primary!important;
+  border-color: $cl-primary!important;
+  border: none;
+
+  &:hover {
+    background-color: darken($cl-primary, 5%)!important;
+    border-color: darken($cl-primary, 5%)!important;
+  }
+
+  @media screen and (max-width: $screen-lg-max) {
+    padding: 0 30px;
+  }
+}
+
+
+#haru-content-main {
+  // Store Listing
+  #dokan-store-listing-filter-wrap {
+    padding: 0;
+    box-shadow: none;
+    margin-bottom: 30px;
+
+    .dokan-btn {
+      font-weight: $fw-semi-bold;
+      padding: 0 36px;
+      border-radius: $border-radius;
+
+      @media screen and (max-width: $screen-lg-max) {
+        padding: 0 30px;
+      }
+    }
+
+    select {
+
+    }
+
+    .left {
+      display: flex!important;
+      align-items: center;
+
+      .item {
+        margin-right: 14px;
+      }
+
+      .dokan-store-list-filter-button {
+        display: inline-flex;
+        align-items: center;
+
+        &:before {
+          content: '\e931';
+          font-family: 'phosphor';
+          font-size: 24px;
+          font-weight: $fw-normal;
+          margin-right: 12px;
+        }
+      }
+
+      .store-count {
+        color: $cl-black;
+        margin-right: 0;
+      } 
+    }
+
+    .right {
+      .item {
+        &.sort-by {
+          color: $cl-black;
+
+          @media screen and (max-width: $screen-xs-max) {
+            display: flex;
+            align-items: center;
+            width: 100%;
+          }
+        }
+
+        #stores_orderby {
+          position: relative;
+          background-color: $cl-gray;
+          border: 1px solid $cl-gray;
+          border-radius: $border-radius;
+          background-position: right 8px top 50%;
+          cursor: pointer;
+          background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2U9IiNiYmIiPjxwYXRoIGQ9Ik02IDlsNiA2IDYtNiIvPjwvc3ZnPg==);
+          background-size: auto 18px;
+          background-repeat: no-repeat;
+          max-width: 100%;
+          padding-right: 30px;
+          margin-left: 5px;
+
+          @media screen and (max-width: $screen-xs-max) {
+            flex: 1;
+          }
+        }
+      }
+
+      .toggle-view {
+        .active {
+          color: $cl-black;
+        }
+
+        .dashicons {
+          font-family: 'phosphor';
+          font-size: 32px;
+
+          &:first-child {
+            padding-right: 3px;
+          }
+
+          &:last-child {
+            padding-left: 3px;
+          }
+        }
+
+        .dashicons-screenoptions {
+          &:before {
+            content: '\e91e';
+          }
+        }
+
+        .dashicons-menu-alt {
+          &:before {
+            content: '\e927';
+          }
+        }
+      }
+    }
+  }
+
+  #dokan-store-listing-filter-form-wrap {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+
+    @media screen and (max-width: $screen-xs-max) {
+      padding: 15px;
+    }
+
+    .dokan-btn {
+      font-weight: $fw-semi-bold;
+      padding: 0 36px;
+      border-radius: $border-radius!important;
+
+      @media screen and (max-width: $screen-lg-max) {
+        padding: 0 30px;
+      }
+    }
+
+    .store-search {
+      flex: 1;
+
+      .store-search-input {
+        border: 1px solid $cl-gray;
+        border-radius: $border-radius;
+      }
+    }
+
+    .apply-filter {
+      margin-top: 0;
+      margin-left: 15px;
+
+      @media screen and (max-width: 430px) {
+        flex: 0 0 100%;
+        margin-left: 0;
+        margin-top: 10px;
+        justify-content: space-between;
+      }
+
+      #cancel-filter-btn,
+      #apply-filter-btn {
+        @media screen and (max-width: 430px) {
+          width: calc(50% - 5px);
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  #dokan-seller-listing-wrap {
+    margin-bottom: 80px;
+
+    @media screen and (max-width: $screen-lg-max) {
+      margin-bottom: 70px;
+    }
+
+    @media screen and (max-width: $screen-md-max) {
+      margin-bottom: 60px;
+    }
+
+    @media screen and (max-width: $screen-sm-max) {
+      margin-bottom: 50px;
+    }
+
+    @media screen and (max-width: $screen-xs-max) {
+      margin-bottom: 40px;
+    }
+
+    .store_open_is_on {
+      margin-top: 0;
+      padding-right: 60px;
+    }
+
+    .store-header {
+      position: relative;
+
+      .featured-favourite {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        z-index: 10;
+        display: none;
+
+        .featured-label {
+          font-size: 10px;
+          font-weight: $fw-semi-bold;
+          border-radius: $border-radius-small;
+          text-transform: uppercase;
+          width: max-content;
+          width: -moz-max-content;
+          width: -webkit-max-content;
+          padding: 2px 10px;
+          background: #2d54a3;
+          color: $cl-white;
+        }
+      }
+    }
+
+    .store-content {
+      .seller-avatar {
+        display: none;
+      }
+    }
+
+    ul.dokan-seller-wrap {
+      li {
+        .store-wrapper {
+          box-shadow: 0 8px 20px rgba($cl-black, .08);
+          border-radius: $border-radius;
+          overflow: hidden;
+        }
+
+        .store-footer {
+          .seller-avatar {
+            top: -40px;
+            box-shadow: none;
+            border: 1px solid $cl-border;
+          }
+        }
+      }
+
+      .dokan-single-seller {
+        .store-wrapper {
+          .store-data {
+            .dokan-seller-rating {
+              i.dashicons {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .dokan-store-is-open-close-status {
+      font-size: 12px;
+      box-shadow: none;
+    }
+
+    .dokan-store-is-closed-status {
+
+    }
+
+    &.grid-view {
+      .store-content {
+        .store-data-container {
+          .store-data {
+            h2 {
+              margin-top: 0;
+              margin-bottom: 6px;
+              display: inline-block;
+
+              a {
+                color: $cl-white;
+                font-size: 20px;
+                transition: all .3s;
+
+                &:hover {
+                  color: rgba($cl-white, .8);
+                  transition: all .3s;
+                }
+              }
+            }
+
+            .featured-favourite {
+              display: inline-block;
+              margin-left: 5px;
+              top: -4px;
+
+              .featured-label {
+                font-size: 10px;
+                font-weight: $fw-semi-bold;
+                border-radius: $border-radius-small;
+                text-transform: uppercase;
+                width: max-content;
+                width: -moz-max-content;
+                width: -webkit-max-content;
+                padding: 2px 10px;
+                background: #2d54a3;
+                color: $cl-white;
+              }
+            }
+
+            .store-address {
+              font-size: 14px;
+              color: rgba($cl-white, .8);
+            }
+
+            .store-phone {
+              font-size: 14px;
+              color: rgba($cl-white, .8);
+
+              i {
+                font-family: 'phosphor';
+                font-size: 16px;
+                font-weight: $fw-normal;
+                position: relative;
+                bottom: -1px;
+
+                &:before {
+                  content: '\e937';
+                }
+              }
+            }
+          }
+        }
+      }
+      
+      .store-footer {
+        .haru-button {
+          display: inline-flex;
+          align-items: center;
+          transition: all .3s;
+
+          &:hover {
+            color: rgba($cl-black, .8);
+            transition: all .3s;
+          }
+
+          &:before {
+            content: attr(title);
+            font-weight: $fw-medium;
+          }
+
+          &:after {
+            content: '\e90e';
+            font-family: 'phosphor';
+            font-size: 18px;
+            margin-left: 6px;
+            font-weight: $fw-normal;
+          }
+        }
+      }
+
+      .dokan-seller-wrap {
+        .dokan-single-seller {
+          &.no-banner-img {
+            .store-content {
+              .store-data-container {
+                .store-data {
+                  h2 {
+                    a {
+                      color: $cl-black;
+                    }
+                  }
+
+                  .store-address {
+                    color: $cl-text;
+                  }
+
+                  .store-phone {
+                    color: $cl-text;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.list-view {
+      .dokan-seller-wrap {
+        .dokan-single-seller {
+          .store-wrapper {
+            .store-header {
+              flex-basis: 30%;
+              min-width: 30%;
+
+              .store-banner {
+                min-height: 196px;
+
+                img {
+                  object-fit: cover;
+                  width: 100%;
+                }
+              }
+
+              .featured-favourite {
+                display: block;
+              }
+            }
+
+            .store-content {
+              flex-grow: 1;
+              position: relative;
+              padding-left: 60px;
+
+              @media screen and (max-width: $screen-sm-max) {
+                padding-left: 55px;
+              }
+
+              .seller-avatar {
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translate(-50%, -50%);
+
+                a {
+                  display: flex;
+                  align-items: flex-start;
+                  border-radius: 50%;
+                  overflow: hidden;
+                  border: 1px solid $cl-border;
+                }
+
+                img {
+                  max-width: 80px;
+                }
+              }
+
+              .store-data-container {
+                .store-data {
+                  h2 {
+                    font-size: 20px;
+                    margin-bottom: 0;
+
+                    a {
+                      transition: all .3s;
+
+                      &:hover {
+                        color: rgba($cl-black, .8);
+                        transition: all .3s;
+                      }
+                    }
+                  }
+
+                  .dokan-seller-rating[class] {
+                    top: auto;
+                    left: auto;
+                    float: none;
+                    margin-bottom: -15px;
+                    margin-top: 15px;
+
+                    .rating {
+                      display: none;
+                    }
+                  }
+
+                  .store-action {
+                    margin-top: 8px;
+
+                    .haru-button {
+                      display: inline-flex;
+                      align-items: center;
+                      transition: all .3s;
+
+                      &:hover {
+                        color: rgba($cl-black, .8);
+                        transition: all .3s;
+                      }
+
+                      &:before {
+                        content: attr(title);
+                        font-weight: $fw-medium;
+                      }
+
+                      &:after {
+                        content: '\e90e';
+                        font-family: 'phosphor';
+                        font-size: 18px;
+                        margin-left: 6px;
+                        font-weight: $fw-normal;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .store-footer {
+              display: none;
+            }
+          }
+
+          &.no-banner-img {
+
+          }
+        }
+      }
+
+      .store-content {
+        .store-data-container {
+          .featured-favourite {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .pagination-container {
+      margin: 0 15px;
+
+      ul {
+        margin: 0;
+      }
+
+      li {
+        &:first-child {
+          span,
+          a {
+            border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+          }
+        }
+
+        &:last-child {
+          span,
+          a {
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+          }
+        }
+      }
+    }
+  }
+
+  // Store Detail
+  .dokan-page-title {
+    .woocommerce-breadcrumb {
+      color: $cl-black;
+
+      a {
+        &:after {
+          display: inline-block;
+          width: 20px;
+          height: 1px;
+          background-color: $cl-text;
+          content: '';
+          position: relative;
+          top: -4px;
+          margin: 0 8px;
+        }
+      }
+    }
+  }
+
+  // Detail Sidebar
+  .dokan-store-sidebar {
+    @media screen and (max-width: $screen-xs-max) {
+      margin: 0;
+      width: 100%!important;
+    }
+  }
+
+  .dokan-store-menu {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      list-style-type: none;
+    }
+
+    li {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:hover {
+        > a {
+          color: $cl-primary;
+          border-bottom: 1px solid $cl-primary;
+        }
+      }
+
+      a {
+        border-bottom: 1px solid transparent;
+        transition: all .3s;
+      }
+    }
+
+    .children {
+      flex: 1 1 100%;
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+  }
+
+  .dokan-store-open-close {
+    .open-close-day {
+      &:first-child {
+        padding-top: 0;
+      }
+    }
+
+    .working-day {
+      color: $cl-black;
+    }
+
+    .store-open-close-notice {
+      #vendor-store-times {
+        color: $cl-text;
+
+        .store-times-heading {
+          i.fa-calendar-day {
+            color: $cl-primary;
+          }
+
+          h4 {
+            font-weight: $fw-semi-bold;
+            font-size: 18px;
+          }
+        }
+
+        .store-time-tags {
+          .store-days {
+            color: $cl-black;
+          }
+
+          .current_day,
+          .current_time {
+            font-weight: $fw-semi-bold;
+          }
+
+          .store-times {
+            .store-close {
+              background-color: $cl-red;
+              color: $cl-white;
+              font-size: 12px;
+              font-weight: $fw-semi-bold;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .dokan-store-contact {
+    .dokan-form-control {
+      font-size: 16px;
+      border: 1px solid $cl-gray;
+      border-radius: $border-radius;
+      background-color: $cl-gray;
+      padding: 10px 15px;
+
+      &:focus {
+        border: 1px solid $cl-primary;
+      }
+    }
+
+    input[type='submit'] {
+      font-weight: $fw-semi-bold;
+      font-size: inherit;
+      border-radius: $border-radius;
+      padding-left: 20px;
+      padding-right: 20px;
+
+      @media screen and (max-width: $screen-xs-max) {
+        width: 100%;
+      }
+    }
+
+    &.dokan-store-widget {
+      form.seller-form {
+        ul {
+          li {
+            margin-bottom: 10px;
+
+            &:last-child {
+              margin-bottom: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Detail Content
+  .dokan-single-store {
+    @media screen and (max-width: $screen-xs-max) {
+      margin: 0;
+      width: 100%!important;
+    }
+
+    .profile-frame {
+      background-color: transparent;
+
+      .profile-info-box {
+        &.profile-layout-default {
+          display: flex;
+          align-items: flex-start;
+          border-radius: $border-radius;
+
+          @media screen and (max-width: 1199px) {
+            display: block;
+          }
+
+          .profile-info-img {
+            border-radius: $border-radius;
+          }
+
+          .profile-info-summery-wrapper {
+            .profile-info-summery {
+              border-top-left-radius: $border-radius;
+              border-bottom-left-radius: $border-radius;
+
+              .profile-info-head {
+                .store-name {
+                  font-size: 20px;
+
+                  @media screen and (max-width: 1199px) {
+                    font-size: 28px;
+                  }
+
+                  @media screen and (max-width: $screen-sm-max) {
+                    font-size: 24px;
+                  }
+
+                  @media screen and (max-width: $screen-xs-max) {
+                    font-size: 20px;
+                  }
+                }
+              }
+
+              .profile-info {
+                color: rgba($cl-white, .8);
+                font-size: 15px;
+
+                @media screen and (max-width: 1199px) {
+                  color: $cl-text;
+                  font-size: 16px;
+                }
+
+                .dokan-store-info {
+                  padding: 0;
+
+                  i {
+                    margin-left: 0!important;
+                    margin-right: 5px;
+                    min-width: 25px;
+                    font-size: 14px;
+                    margin-top: 6px!important;
+                    text-align: center;
+                  }
+                }
+
+                .store-social-wrapper {
+                  @media screen and (max-width: 1199px) {
+                    top: -30px;
+                  }
+
+                  .store-social {
+                    padding-bottom: 6px;
+
+                    @media screen and (max-width: 1199px) {
+                      padding-bottom: 0;
+                    }
+
+                    li {
+                      a {
+                        border: 1px solid rgba($cl-white, .8);
+                        background-color: rgba($cl-white, .8);
+                        border-radius: 50%;
+                        display: block;
+                        width: 36px;
+                        height: 36px;
+                        line-height: 34px;
+                        text-align: center;
+                        transition: all .3s;
+
+                        @media screen and (max-width: 1199px) {
+                          border: 1px solid $cl-border;
+                        }
+
+                        &:hover {
+                          border: 1px solid $cl-primary;
+                          background-color: $cl-primary;
+                          transition: all .3s;
+
+                          i {
+                            color: $cl-white!important;
+                          }
+                        }
+
+                        i {
+                          font-size: 14px;
+                          text-shadow: none;
+                          color: rgba($cl-white, .8);
+
+                          @media screen and (max-width: 1199px) {
+                            color: $cl-text;
+                          }
+
+                          &.fa-facebook-f {
+                            color: #4267B2;
+                          }
+
+                          &.fa-twitter {
+                            color: #1DA1F2;
+                          }
+
+                          &.fa-pinterest-p {
+                            color: #E60023;
+                          }
+
+                          &.fa-linkedin-in {
+                            color: #0072b1;
+                          }
+
+                          &.fa-youtube {
+                            color: #FF0000;
+                          }
+
+                          &.fa-instagram {
+                            color: #3f729b;
+                          }
+
+                          &.fa-flickr {
+                            color: #0063dc;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        // @TODO
+        &.profile-layout-layout1 {
+          .profile-info-img {
+            display: flex;
+          }
+
+          .profile-info-summery-wrapper {
+            .profile-info-summery {
+              .profile-info {
+                .dokan-store-info {
+                  padding-left: 10px;
+
+                  i {
+                    margin-left: 0!important;
+                    margin-right: 5px;
+                    min-width: 25px;
+                    font-size: 14px;
+                    text-align: center;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &.profile-layout-layout2 {
+          .profile-info-img {
+            display: flex;
+          }
+
+          .profile-info-summery-wrapper {
+            .profile-info-summery {
+              .profile-info {
+                margin-top: 30px;
+
+                .store-name {
+                  font-size: 20px;
+                }
+
+                .dokan-store-info {
+                  li {
+                    padding-bottom: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &.profile-layout-layout3 {
+          .profile-info-summery-wrapper {
+            .profile-info-summery {
+              .profile-img {
+                display: flex;
+              }
+
+              .profile-info {
+                .store-name {
+                  font-size: 20px;
+                }
+
+                .dokan-store-info {
+                  i {
+                    font-size: 14px;
+                    position: relative;
+                    bottom: -4px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .dokan-store-tabs {
+      margin-top: 20px;
+
+      ul {
+        border: 1px solid $cl-border!important;
+        border-radius: $border-radius;
+
+        li {
+          a {
+            color: $cl-black!important;
+            font-weight: $fw-medium;
+          }
+        }
+      }
+    }
+
+    .dokan-store-products-filter-area {
+      .dokan-store-products-ordeby {
+        display: flex;
+        flex-wrap: wrap;
+
+        .orderby {
+          max-width: 250px;
+          margin-left: auto;
+
+          @media screen and (max-width: $screen-xs-max) {
+            max-width: none;
+          }
+        }
+      }
+    }
+
+    .seller-items {
+      .layout-grid {
+        margin: 0 -15px;
+
+        @media screen and (max-width: $screen-sm-max) {
+          margin: 0 -10px;
+        }
+
+        @media screen and (max-width: $screen-xs-max) {
+          margin: 0 -8px;
+        }
+      }
+
+      .product-item {
+        &.style-1 {
+          padding: 0 15px;
+          margin-bottom: 35px;
+
+          @media screen and (max-width: $screen-sm-max) {
+            padding: 0 10px;
+          }
+
+          @media screen and (max-width: $screen-xs-max) {
+            padding: 0 8px;
+          }
+        }
+
+        &.style-2 {
+          padding: 15px 15px 0 15px;
+          margin-bottom: 30px;
+
+          @media screen and (max-width: $screen-sm-max) {
+            padding: 10px 10px 0 10px;
+          }
+
+          @media screen and (max-width: $screen-xs-max) {
+            padding: 8px 8px 0 8px;
+          }
+        }
+      }
+    }
+  }
+
+  .dokan-store-products-filter-area {
+    .product-name-search {
+      height: $e-height-base;
+      border: 1px solid $cl-border;
+
+      @media screen and (max-width: $screen-xs-max) {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      &:focus {
+        border: 1px solid $cl-primary;
+      }
+    }
+
+    .search-store-products {
+      height: $e-height-base;
+      line-height: $e-height-base;
+      margin-left: 10px;
+
+      @media screen and (max-width: $screen-xs-max) {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 10px;
+      }
+    }
+
+    .orderby-search {
+      height: $e-height-base;
+      border: 1px solid $cl-gray;
+      background-color: $cl-gray;
+    }
+  }
+
+  .dokan-store-wrap {
+    margin-top: 0!important;
+    margin-bottom: 80px!important;
+
+    @media screen and (max-width: $screen-lg-max) {
+      margin-bottom: 70px!important;
+    }
+
+    @media screen and (max-width: $screen-md-max) {
+      margin-bottom: 60px!important;
+    }
+
+    @media screen and (max-width: $screen-sm-max) {
+      margin-bottom: 50px!important;
+    }
+
+    @media screen and (max-width: $screen-xs-max) {
+      margin-bottom: 40px!important;
+    }
+  }
+
+  .dokan-pagination-container {
+    @media screen and (max-width: $screen-sm-max) {
+      margin-bottom: 25px;
+    }
+
+    .dokan-pagination {
+      li {
+        &.disabled {
+          a {
+
+          }
+        }
+
+        &.active {
+          a {
+            background: $cl-primary!important;
+            color: $cl-white;
+            pointer-events: none;
+          }
+        }
+
+        &:first-child {
+          a {
+            margin-left: 0;
+          }
+        }
+
+        &:last-child {
+          a {
+            margin-right: 0;
+          }
+        }
+
+        a {
+          border: none!important;
+          padding: 5px 12px;
+          color: $cl-black;
+          margin: 0 3px;
+          line-height: 30px;
+          border-radius: $border-radius-small;
+          font-weight: $fw-semi-bold;
+          transition: all .3s;
+
+          &:hover {
+            color: $cl-primary;
+            transition: all .3s;
+          }
+        }
+      }
+    }
+  }
+
+  // Single Product Vendor
+  .dokan-vendor-info-wrap {
+    border: 1px solid $cl-border;
+    border-radius: $border-radius;
+    margin-bottom: 10px;
+    margin-top: 15px;
+
+    .dokan-vendor-info {
+      .dokan-vendor-name {
+        h5 {
+
+        }
+      }
+
+      .dokan-vendor-rating {
+        p {
+          color: $cl-text-2;
+        }
+      }
+
+      .dokan-ratings-count {
+        color: $cl-text-3;
+        font-size: 12px;
+        font-style: italic;
+      }
+    }
+  }
+
+  .woocommerce-Tabs-panel {
+    &--seller {
+      ul {
+        padding: 0;
+        list-style: none;
+      }
+
+      li {
+        margin-bottom: 12px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &:before {
+          content: '\e925';
+          font-family: 'phosphor';
+          font-size: 18px;
+          margin-right: 6px;
+          position: relative;
+          bottom: -2px;
+          background-color: $cl-bg-green;
+          color: $cl-green;
+          padding: 5px;
+          border-radius: 50%;
+        }
+        > span {
+          &:first-child:not(.seller-rating) {
+            color: $cl-black;
+            font-weight: $fw-semi-bold;
+            margin-right: 3px;
+          }
+        }
+
+        &.clearfix {
+          .seller-rating {
+            position: relative;
+            bottom: -2px;
+            margin-right: 5px;
+          }
+
+          .star-rating {
+            > span:not(.width) {
+              opacity: 0;
+            }
+          }
+        }
+      }
+    }
+
+    &--more_seller_product {
+      .layout-grid {
+        margin: 0 -15px;
+
+        @media screen and (max-width: $screen-sm-max) {
+          margin: 0 -10px;
+        }
+
+        @media screen and (max-width: $screen-xs-max) {
+          margin: 0 -8px;
+        }
+      }
+
+      .product-item {
+        &.style-1 {
+          padding: 0 15px;
+          margin-bottom: 35px;
+
+          @media screen and (max-width: $screen-sm-max) {
+            padding: 0 10px;
+          }
+
+          @media screen and (max-width: $screen-xs-max) {
+            padding: 0 8px;
+          }
+        }
+
+        &.style-2 {
+          padding: 15px 15px 0 15px;
+          margin-bottom: 30px;
+
+          @media screen and (max-width: $screen-sm-max) {
+            padding: 10px 10px 0 10px;
+          }
+
+          @media screen and (max-width: $screen-xs-max) {
+            padding: 8px 8px 0 8px;
+          }
+        }
+      }
+    }
+  }
+
+  // Cart
+
+  #bulk-product-action {
+
+  }
+
+  // Register
+}
+
+// Dashboard
+.dokan-dashboard {
+  #haru-content-main {
+    .dokan-dashboard-wrap {
+      margin-bottom: 80px;
+
+      @media screen and (max-width: $screen-lg-max) {
+        margin-bottom: 70px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        margin-bottom: 60px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        margin-bottom: 50px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        margin-bottom: 40px;
+      }
+
+      input[type='submit'].dokan-btn,
+      a.dokan-btn,
+      .dokan-btn {
+        background-color: $cl-primary;
+        border: none;
+        border-radius: $border-radius-small;
+        color: $cl-white;
+        font-weight: $fw-semi-bold;
+
+        &:hover {
+          background-color: darken($cl-primary, 5%);
+        }
+
+        &:not(.dokan-btn-default),
+        &:not(.dokan-btn-lg) {
+          height: 36px;
+          line-height: 34px;
+          padding: 0 12px;
+        }
+      }
+
+      input[type=text],
+      input[type=email],
+      input[type=password],
+      input[type=search],
+      input[type=number],
+      input[type=url],
+      input[type=tel],
+      input[type=date],
+      select {
+        height: 36px;
+        border-radius: $border-radius-small;
+      }
+    }
+
+    // Sidebar
+    .dokan-dash-sidebar {
+      ul.dokan-dashboard-menu {
+        li {
+          &:hover,
+          &.active {
+            background: $cl-primary;
+          }
+
+          &.dokan-common-links {
+            a {
+              @media only screen and (max-width: $screen-sm-max) {
+                padding: 5%;
+                text-align: center;
+              }
+
+              &:hover {
+                background: $cl-primary;
+              }
+
+              i {
+                padding-right: 0;
+              }
+            }
+          }
+
+          a {
+            @media only screen and (max-width: $screen-sm-max) {
+              padding-left: 10px;
+            }
+
+            i {
+              @media only screen and (max-width: $screen-sm-max) {
+                padding-right: 10px;
+              }
+            }
+          }
+        }
+      }
+
+      #dokan-navigation ul.dokan-dashboard-menu {
+        @media only screen and (max-width: 450px) {
+          padding-top: 60px!important;
+        }
+      }
+    }
+
+    // Dashboash Tab
+    .dokan-dashboard-content {
+      @media only screen and (max-width: $screen-xs-max) {
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+      }
+
+      article.dashboard-content-area {
+        .dashboard-widget {
+          .widget-title {
+            color: $cl-black;
+            font-weight: $fw-semi-bold;
+
+            i {
+              color: $cl-black;
+            }
+          }
+
+          ul {
+            padding: 0;
+          }
+
+          &.big-counter {
+            li {
+              .count {
+                color: $cl-black;
+              }
+
+              &:last-child {
+                .count {
+                  border: none;
+                }
+              }
+            }
+          }
+
+          &.orders {
+           
+          }
+
+          &.sells-graph {
+            .chart-container {
+              table {
+                width: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .entry-title {
+      font-size: 24px;
+      margin-top: 0;
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 22px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        font-size: 20px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        font-size: 18px;
+      }
+    }
+
+    // Tab Products
+    .dokan-product-listing {
+      .dokan-product-listing-area {
+        @media screen and (max-width: $screen-sm-max) {
+          padding: 0;
+        }
+
+        .product-listing-top {
+          ul.dokan-listing-filter {
+            font-size: 14px;
+            color: $cl-text;
+
+            li {
+              margin-right: 8px;
+
+              @media screen and (max-width: $screen-sm-max) {
+                margin-right: 5px;
+                padding-right: 5px;
+              }
+
+              &.active {
+                a {
+                  color: $cl-primary;
+                }
+              }
+            }
+          }
+        }
+
+        .row-actions {
+          @media screen and (max-width: $screen-xs-max) {
+            display: flex;
+          }
+
+          span {
+            @media screen and (max-width: $screen-xs-max) {
+              margin-right: 3px;
+            }
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+
+        .dokan-table {
+          > thead > tr > th {
+            text-transform: none;
+          }
+
+          .product-type {
+            &:before {
+              @media screen and (max-width: $screen-xs-max) {
+                text-align: right;
+              }
+            }
+          }
+        }
+
+        .pagination-wrap {
+          ul.pagination > li {
+            &:first-child {
+              > span {
+                border-top-left-radius: $border-radius;
+                border-bottom-left-radius: $border-radius;
+              }
+            }
+
+            &:last-child {
+              > span,
+              > a {
+                border-top-right-radius: $border-radius;
+                border-bottom-right-radius: $border-radius;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Orders
+    .dokan-orders-content {
+      .dokan-orders-area {
+        ul.order-statuses-filter {
+          padding: 0;
+          font-size: 14px;
+          color: $cl-text;
+          margin-top: 0;
+
+          li {
+            &.active {
+              a {
+                color: $cl-primary;
+              }
+            }
+          }
+        }
+
+        .dokan-order-filter-serach {
+          padding: 10px 0;
+
+          .datepicker {
+            padding-bottom: 0!important;
+            font-size: 14px;
+          }
+
+          .select2-container .selection .select2-selection--single {
+            height: 36px;
+          }
+
+          .select2-container .selection .select2-selection--single .select2-selection__rendered {
+            line-height: 34px;
+            font-size: 14px;
+          }
+
+          .select2-container .selection .select2-selection--single .select2-selection__arrow {
+            height: 34px;
+          }
+
+          .select2-container--default .select2-selection--single .select2-selection__placeholder {
+            color: $cl-text;
+          }
+        }
+      }
+    }
+
+    // Withdraw
+    .dokan-withdraw-content {
+      .dokan-add-product-link {
+        @media screen and (max-width: $screen-sm-max) {
+          float: none!important;
+        }
+      }
+
+      .dokan-withdraw-area {
+        .dokan-panel-body {
+          .dokan-panel-inner-container {
+            .dokan-w5 {
+              @media screen and (max-width: $screen-xs-max) {
+                position: relative;
+                right: auto;
+                top: auto;
+                transform: none;
+              }
+
+              .dokan-btn {
+                @media screen and (max-width: $screen-xs-max) {
+                  float: none;
+                  margin-top: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .dokan-reverse-withdrawal-content {
+
+    }
+
+    #reverse-withdrawal-filter-form {
+      margin-bottom: 15px;
+
+      .dokan-btn {
+        font-size: 14px;
+      }
+    }
+
+    // Settings
+    .dokan-settings-content {
+      .dokan-settings-area {
+        .dokan-store-settign-header-wrap {
+          @media screen and (max-width: $screen-xs-max) {
+            width: 65%;
+          }
+        }
+
+        .dokan-update-setting-top {
+          @media screen and (max-width: $screen-xs-max) {
+            width: 35%;
+            text-align: right;
+          }
+        }
+      }
+
+      .store-open-close {
+        label.day.control-label {
+          @media screen and (max-width: $screen-xs-max) {
+            padding-right: 60px;
+          }
+        }
+
+        .dokan-form-group {
+          &:first-child {
+            @media screen and (max-width: $screen-xs-max) {
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+
+      #store-form {
+        .dokan-form-group {
+          &:last-child {
+            .dokan-btn {
+              margin-left: 10px;
+              margin-top: 20px;
+            }
+          }
+        }
+      }
+
+      .dokan-payment-settings-summary {
+        ul {
+          padding: 0;
+        }
+
+        .dokan-btn-theme {
+          height: 36px;
+          line-height: 36px;
+          padding: 0 10px;
+        }
+
+        .payment-methods-listing-header {
+          h2 {
+            font-size: 20px;
+
+            @media screen and (max-width: $screen-lg-max) {
+              font-size: 18px;
+            }
+
+            @media screen and (max-width: $screen-md-max) {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+
+    #edit-slug-buttons {
+      .button {
+        height: 36px;
+        line-height: 36px;
+      }
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      position: relative;
+      top: -2px;
+    }
+  }
+}
+
+.ui-datepicker {
+  .ui-datepicker-calendar {
+    margin-left: -2px;
+
+    th {
+      font-size: 14px;
+    }
+
+    td {
+      padding: 1px;
+      border: none;
+    }
+  }
+}
+
+.daterangepicker {
+  .calendar-table {
+    td,
+    th {
+      padding: 1px;
+    }
+  }
+
+  .drp-buttons {
+    .btn {
+      height: inherit;
+      line-height: inherit;
+    }
+  }
+}
+
+.dokan-message,
+.dokan-info,
+.dokan-error {
+  &:before {
+    padding-top: 0!important;
+    top: 15px!important;
+    border-radius: $border-radius-small!important;
+  }
+}
+
+.dokan-info {
+  color: $cl-white;
+}
+
+// Register
+.vendor-customer-registration {
+  input[type="checkbox"], 
+  input[type="radio"] {
+    position: relative;
+    top: -2px;
+  }
+}
+
+// Single Top Info
+.single-product-top {
+  // Sticky Product Images
+  &.horizontal,
+  &.vertical {
+    &.sticky {
+      .haru-woocommerce-tab {
+        .grid-item {
+          width: 50%;
+
+          @media screen and (max-width: $screen-sm-max) {
+
+          }
+        }
+
+        .product-item {
+          &.style-1 {
+            .product-actions .product-button {
+              margin-left: 0;
+              margin-top: 0;
+            }
+
+            .product-button--compare a.button {
+              justify-content: center;
+
+              &:before {
+                margin-right: 0;
+              }
+            }
+
+            .product-button--wishlist a {
+              &:before {
+                margin-right: 0;
+              }
+            }
+          }
+
+          &.style-2 {
+            .product-button--compare a.button {
+              justify-content: center;
+
+              &:before {
+                margin-right: 0;
+              }
+            }
+
+            .product-button--wishlist a {
+              &:before {
+                margin-right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

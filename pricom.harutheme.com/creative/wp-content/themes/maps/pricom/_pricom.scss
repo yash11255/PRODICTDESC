@@ -1,0 +1,143 @@
+// Pricom
+// Home 1
+.elementor-widget-image.banner-home-11 {
+  img {
+    @media screen and (max-width: $screen-lg-max) {
+      max-height: 600px;
+      margin-left: -15%;
+      width: auto;
+    }
+
+    @media screen and (max-width: $screen-lg-max) {
+
+    }
+
+    @media screen and (max-width: $screen-xs-max) {
+      margin-left: 0;
+    }
+  }
+}
+
+.elementor-widget-image.banner-home-12 {
+  right: -15%;
+  bottom: 0;
+  transform: translateY(0);
+  transition: all .3s;
+
+  &:hover {
+    transform: translateY(-5px);
+    transition: all .3s;
+  }
+
+  @media screen and (max-width: $screen-lg-max + 120) {
+    right: -8%;
+  }
+
+  @media screen and (max-width: $screen-lg-max + 60) {
+    right: -5%;
+  }
+
+  @media screen and (max-width: $screen-lg-max) {
+    right: 0;
+    left: -2%;
+  }
+
+  @media screen and (max-width: $screen-sm-max) {
+    right: 0;
+    left: -5%;
+    top: 10%;
+  }
+
+  @media screen and (max-width: $screen-xs-max) {
+    left: 0;
+  }
+}
+
+// Home 5
+.e-con.col-equal-height {
+  height: 100%;
+}
+
+.haru-icon-box-home-7 {
+  margin-top: calc(50% + 15px);
+
+  @media screen and (max-width: $screen-xs-max) {
+    margin-top: 0;
+  }
+}
+
+.elementor-element.e-con.section-newsletter-5,
+.elementor-element.e-container.section-newsletter-5 {
+  padding: 5% 10% 6% 10%;
+  border-radius: $border-radius;
+
+  @media screen and (max-width: $screen-lg-max) {
+    padding: 4% 8% 5% 8%;
+  }
+
+  @media screen and (max-width: $screen-xs-max) {
+    padding: 25px 20px 40px 30px;
+  }
+
+  .haru-subscriber-border {
+    .haru-subscriber {
+      border-bottom: 2px solid $cl-white;
+
+      .haru-subscriber__email-field {
+        color: $cl-white;
+        box-shadow: none;
+        font-size: 22px;
+
+        @include placeholder($cl-white);
+
+        @media screen and (max-width: $screen-lg-max) {
+          font-size: 20px;
+        }
+
+        @media screen and (max-width: $screen-md-max) {
+          font-size: 18px;
+        }
+
+        @media screen and (max-width: $screen-sm-max) {
+
+        }
+      }
+
+      .haru-subscriber__submit {
+        &:before {
+          color: $cl-white;
+          font-size: 22px;
+
+          @media screen and (max-width: $screen-lg-max) {
+            font-size: 20px;
+          }
+
+          @media screen and (max-width: $screen-md-max) {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.designer-spacer {
+  margin-bottom: 40px;
+
+  @media screen and (max-width: $screen-lg-max) {
+    margin-bottom: 35px;
+  }
+
+  @media screen and (max-width: $screen-md-max) {
+    margin-bottom: 30px;
+  }
+
+  @media screen and (max-width: $screen-sm-max) {
+    margin-bottom: 25px;
+  }
+
+  @media screen and (max-width: $screen-xs-max) {
+    margin-bottom: 20px;
+  }
+}
+

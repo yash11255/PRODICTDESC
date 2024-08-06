@@ -1,0 +1,77 @@
+// Round 1
+.round-1 {
+    background-color: #374140;
+
+    .haru-loading-site-absolute {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: 150px;
+        width: 150px;
+        margin-top: -75px;
+        margin-left: -75px;
+    }
+
+    .spinner {
+        width: 20px;
+        height: 20px;
+        background-color: $cl-white;
+        float: left;
+        margin-right: 20px;
+        margin-top: 65px;
+        border-radius:100%;
+    }
+
+    #spinner_one {
+        animation: round-1-one 1.5s infinite;
+    }
+
+    #spinner_two {
+        animation: round-1-two 1.5s infinite;
+        animation-delay: .25s;
+    }
+
+    #spinner_three {
+        animation: round-1-three 1.5s infinite;
+        animation-delay: .5s;
+    }
+}
+
+@-webkit-keyframes round-1-one {
+    75% {
+        -webkit-transform: scale(0);
+    }
+}
+
+@keyframes round-1-one {
+    75% {
+        transform: scale(0);
+        -webkit-transform: scale(0);
+    }
+}
+
+@-webkit-keyframes round-1-two {
+    75% {
+        -webkit-transform: scale(0);
+    }
+}
+
+@keyframes round-1-two {
+    75% {
+        transform: scale(0);
+        -webkit-transform:  scale(0);
+    }
+}
+
+@-webkit-keyframes round-1-three {
+    75% {
+        -webkit-transform: scale(0);
+    }
+}
+
+@keyframes round-1-three {
+    75% {
+        transform: scale(0);
+        -webkit-transform: scale(0);
+    }
+}

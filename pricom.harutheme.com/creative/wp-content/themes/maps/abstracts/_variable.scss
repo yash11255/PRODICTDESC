@@ -1,0 +1,170 @@
+// Declare SCSS variables in theme options
+$font-primary: 			'Outfit' !default; // v1: Outfit, v2: Barlow Condensed, v3: Jost
+$font-secondary: 		'Yellowtail' !default; // v1: Yellowtail, v2: Barlow Condensed, v3: Butler
+$font-menu:             'Outfit' !default; // v1: Outfit, v2: Barlow Condensed, v3: Jost
+
+$fs-base: 				16px !default; // v1: 16px, v2: 16px, v3: 16px
+$fs-menu:               14px !default; // v1: 14px, v2: 16px, v3: 16px
+$fs-small: 				13px;
+$fs-extra-small: 		11px;
+$fs-14: 				14px;
+
+$theme-url: 			'' !default;
+
+$fw-menu:              	500 !default; // v1: 500, v2: 700, v3: 600
+$fw-light: 				300 !default;
+$fw-normal: 			400 !default; // v1: 400, v2: 400
+$fw-medium: 			500 !default;
+$fw-semi-bold: 			600 !default; // v1: 600, v2: 600, v3: 500
+$fw-bold: 				700 !default; // v1: 700, v2: 700, v3: 600
+$fw-extra-bold: 		900 !default;
+
+$cl-primary:            #dd1d26 !default; // v1: #dd1d26, v2: #dd1d26, v3: #057056
+$cl-secondary:          darken($cl-primary, 5%) !default;  // 
+$cl-text: 				#7e7e7e !default;
+$cl-text-2: 			#9b9b9b !default;
+$cl-text-3: 			#ababab !default;
+$cl-text-menu: 			#000 !default;
+$cl-link:               #7e7e7e !default;
+$cl-link-hover:         #dd1d26 !default;
+$cl-link-active:        #dd1d26 !default;
+$cl-heading: 			#000 !default;
+$cl-border:        		#eee !default;
+$cl-border-2:        	#ccc !default;
+$cl-border-3:        	#d8d8d8 !default;
+$cl-border-4:        	#ababab !default;
+$cl-bg-header: 			#fff;
+
+$cl-black: 							#000;
+$cl-black-2: 						#000;
+$cl-black-3: 						#323f4b;
+$cl-black-4:						#3e4c59;
+$cl-black-5: 						#52606d;
+$cl-black-6: 						#616e7c;
+$cl-black-7: 						#7b8794;
+
+$cl-white: 							#fff;
+$cl-white-2: 						#f7f8f9;
+
+$cl-gray: 							#f5f5f5;
+$cl-gray-2: 						#f6fafc;
+$cl-gray-3: 						#f8f8f8;
+$cl-gray-4: 						#f6f9fe;
+$cl-gray-5: 						#faf6ff;
+
+$cl-red: 							#d82329;
+$cl-red-2: 							#ef3f45;
+$cl-red-3: 							#ffeff0;
+
+// Gradient
+$cl-gr-1: #ff869f !default;
+$cl-gr-2: #fa988a !default;
+$cl-gr-3: #f19a73 !default;
+$cl-gr-4: #ffd0b1 !default;
+
+$cl-gr-5: #ffa292;
+$cl-gr-6: #ffb28f;
+$cl-gr-7: #ffbb8f;
+
+$cl-gr-8: #fbab83 !default;
+
+$cl-hd-1: #b1f1b3 !default;
+$cl-hd-2: #f3eec2 !default;
+
+// Chrismast
+$cl-noel: #0c463c;
+
+// Extra
+$cl-green: #11b196;
+$cl-bg-green: #e2f5f2;
+$cl-yellow: #f7d662;
+$cl-star: #f3bb2e;
+
+$opacity-over: .6;
+$scale-ratio: 1.03;
+
+
+// Border radius Layout
+$border-radius: 				5px !default; // v1: 5px, v2: 0, v3: 0
+$border-radius-small: 			3px !default; // v1: 3px, v2: 0, v3: 0
+$border-radius-medium: 			8px !default; // v1: 8px, v2: 0, v3: 0
+$border-radius-large: 			10px !default; // v1: 10px, v2: 0, v3: 0
+$border-radius-extra-large:   	20px !default; // v1: 20px, v2: 0, v3: 0
+
+// Border radius Elements
+$border-radius-e: 				5px !default; // v1: 5px, v2: 0, v3: 30px
+$border-radius-e-tiny: 			5px !default; // v1: 5px, v2: 0, v3: 10px // For Text Area
+$border-radius-e-small: 		3px !default; // v1: 3px, v2: 0, v3: 20px
+$border-radius-e-medium: 		8px !default; // v1: 8px, v2: 0, v3: 35px
+$border-radius-e-large: 		10px !default; // v1: 10px, v2: 0, v3: 40px
+$border-radius-e-extra-large: 	20px !default; // v1: 20px, v2: 20px, v3: 45px
+
+// Dark mode
+$dark-mode: '.dark-mode';
+$background-dark: '.background-dark';
+$cl-bg-dark: 					#1d1d1d;
+$cl-bg-dark-2:					#151515;
+$cl-bg-dark-3:					#333;
+$cl-text-dark: 					#ababab;
+$cl-text-2-dark: 				#9b9b9b;
+$cl-text-3-dark: 				#696969;
+$cl-white-dark: 				#fff;
+$cl-border-dark: 				#333;
+$cl-border-2-dark: 			#323f4b;
+$cl-border-dark-3: 			#ababab;
+$cl-border-dark-4: 			#ccc;
+
+// Base height for element like button
+$e-height-base: 48px;
+$input-height-base: 48px;
+
+// Opacity
+$opacity-hover: .6;
+
+// DECLARE SOME LESS VARIABLES TO USE
+$white:                 #fff;
+$black:                 #000;
+
+//** Deprecated `$screen-xs` as of v3.0.1
+$screen-xs:                  480px;
+
+//** Deprecated `$screen-small-mobile` as of v3.0.1
+$screen-mobile:              320px;
+//** Deprecated `$screen-xs-min` as of v3.2.0
+$screen-xs-min:              $screen-xs;
+//** Deprecated `$screen-phone` as of v3.0.1
+$screen-phone:               $screen-xs-min;
+
+// Small screen / tablet
+//** Deprecated `$screen-sm` as of v3.0.1
+$screen-sm:                  768px;
+$screen-sm-min:              $screen-sm;
+//** Deprecated `$screen-tablet` as of v3.0.1
+$screen-tablet:              $screen-sm-min;
+
+// Medium screen / desktop
+//** Deprecated `$screen-md` as of v3.0.1
+$screen-md:                  992px;
+$screen-md-min:              $screen-md;
+//** Deprecated `$screen-desktop` as of v3.0.1
+$screen-desktop:             $screen-md-min;
+
+// Large screen / wide desktop
+//** Deprecated `$screen-lg` as of v3.0.1
+$screen-lg:                  1025px;
+$screen-lg-min:              $screen-lg;
+//** Deprecated `$screen-lg-desktop` as of v3.0.1
+$screen-lg-desktop:          $screen-lg-min;
+
+// Extra Large screen / wide desktop
+//** Deprecated `$screen-lg` as of v3.0.1
+$screen-xl:                  1441px;
+$screen-xl-min:              $screen-xl;
+//** Deprecated `$screen-xl-desktop` as of v3.0.1
+$screen-xl-desktop:          $screen-xl-min;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm-min - 1);
+$screen-sm-max:              ($screen-md-min - 1);
+$screen-md-max:              ($screen-lg-min - 1);
+$screen-lg-max:              ($screen-xl-min - 1);

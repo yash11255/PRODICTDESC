@@ -1,0 +1,450 @@
+$root: '.haru-counter';
+
+#{$root} {
+
+  &--style-1 {
+    padding: 40px 30px 40px 50px;
+    background: $cl-white;
+    box-shadow: 0px 20px 50px rgba($cl-black, .07);
+    border-radius: $border-radius;
+    min-height: 210px;
+
+    @media screen and (max-width: $screen-xs-max) {
+      padding: 40px 10px 30px 25px;
+    }
+
+    #{$root}__number-wrap {
+      display: flex;
+      line-height: 1;
+      font-size: 48px;
+      font-weight: $fw-semi-bold;
+      color: $cl-black;
+      background: $cl-primary;
+
+      @include bggradient1();
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      @media not all and (min-resolution:.001dpcm) { 
+        @supports (-webkit-appearance:none) {
+          display: inline;
+        }
+      }
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 42px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        font-size: 36px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        font-size: 32px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        font-size: 28px;
+      }
+    }
+
+    #{$root}__number {
+      font-weight: $fw-semi-bold;
+    }
+
+    #{$root}__number-prefix,
+    #{$root}__number-suffix {
+      white-space: pre-wrap;
+    }
+
+    #{$root}__number-prefix {
+      text-align: right;
+    }
+
+    #{$root}__number-suffix {
+      text-align: left;
+    }
+
+    #{$root}__title {
+      display: flex;
+      font-size: 20px;
+      font-weight: $fw-medium;
+      margin-top: 10px;
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 18px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        font-size: 16px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        // font-size: 15px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+
+      }
+    }
+  }
+
+  &--style-2 {
+    #{$root}__number-wrap {
+      display: flex;
+      line-height: 1;
+      font-size: 48px;
+      font-weight: $fw-semi-bold;
+      color: $cl-black;
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 42px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        font-size: 36px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        font-size: 32px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        font-size: 28px;
+      }
+    }
+
+    #{$root}__number {
+      font-weight: $fw-semi-bold;
+    }
+
+    #{$root}__number-prefix,
+    #{$root}__number-suffix {
+      white-space: pre-wrap;
+    }
+
+    #{$root}__number-prefix {
+      text-align: right;
+    }
+
+    #{$root}__number-suffix {
+      text-align: left;
+    }
+
+    #{$root}__title {
+      display: flex;
+      color: $cl-text;
+      font-size: 18px;
+      font-weight: $fw-medium;
+      margin-top: 10px;
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 17px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        font-size: 16px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        // font-size: 15px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        // font-size: 14px;
+      }
+    }
+  }
+
+  &--style-3 {
+    #{$root}__number-wrap {
+      display: flex;
+      line-height: 1;
+      font-size: 56px;
+      font-weight: $fw-bold;
+      color: $cl-black;
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 48px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        font-size: 42px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        font-size: 36px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        // font-size: 30px;
+      }
+    }
+
+    #{$root}__number {
+      font-weight: $fw-bold;
+    }
+
+    #{$root}__number-prefix,
+    #{$root}__number-suffix {
+      white-space: pre-wrap;
+    }
+
+    #{$root}__number-prefix {
+      text-align: right;
+    }
+
+    #{$root}__number-suffix {
+      text-align: left;
+    }
+
+    #{$root}__title {
+      display: flex;
+      color: $cl-black-4;
+      font-size: 24px;
+      font-weight: $fw-medium;
+      margin-top: 10px;
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 22px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        font-size: 20px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        font-size: 16px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        font-size: 16px;
+      }
+    }
+
+    #{$root}__description {
+      display: flex;
+      border-top: 1px solid $cl-border;
+      padding-top: 20px;
+      margin-top: 15px;
+    }
+  }
+
+  &--style-4 {
+    #{$root}__number-wrap {
+      display: flex;
+      line-height: 1;
+      font-size: 48px;
+      font-weight: $fw-bold;
+      color: $cl-primary;
+      display: inline-flex;
+
+      @include bggradient1();
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      @media not all and (min-resolution:.001dpcm) { 
+        @supports (-webkit-appearance:none) {
+          display: inline;
+        }
+      }
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 42px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        font-size: 36px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        font-size: 32px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        font-size: 28px;
+      }
+    }
+
+    #{$root}__number {
+      font-weight: $fw-bold;
+    }
+
+    #{$root}__number-prefix,
+    #{$root}__number-suffix {
+      white-space: pre-wrap;
+    }
+
+    #{$root}__number-prefix {
+      text-align: right;
+    }
+
+    #{$root}__number-suffix {
+      text-align: left;
+    }
+
+    #{$root}__title {
+      display: flex;
+      color: $cl-text;
+      font-size: 18px;
+      font-weight: $fw-medium;
+      margin-top: 5px;
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 17px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        font-size: 16px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        font-size: 15px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        // font-size: 14px;
+      }
+    }
+  }
+
+  &--style-5 {
+    padding: 60px 20px;
+    background: $cl-white;
+    box-shadow: 0px 20px 50px rgba($cl-black, .07);
+    border-radius: $border-radius-large;
+    min-height: 210px;
+
+    @media screen and (max-width: $screen-lg-max) {
+      padding: 60px 18px;
+    }
+
+    @media screen and (max-width: $screen-sm-max) {
+      padding: 50px 18px;
+      min-height: 180px;
+    }
+
+    @media screen and (max-width: $screen-xs-max) {
+      padding: 40px 10px 30px 25px;
+    }
+
+    #{$root}__number-wrap {
+      display: inline-flex;
+      line-height: 1;
+      font-size: 68px;
+      font-weight: $fw-semi-bold;
+      color: $cl-black;
+      background: $cl-primary;
+      text-shadow: 0 9px 20px rgba($cl-black, .1);
+
+      @include bggradient1();
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      @media not all and (min-resolution:.001dpcm) { 
+        @supports (-webkit-appearance:none) {
+          display: inline;
+        }
+      }
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 48px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        font-size: 36px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        font-size: 32px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        font-size: 28px;
+      }
+    }
+
+    #{$root}__number {
+      font-weight: $fw-semi-bold;
+    }
+
+    #{$root}__number-prefix,
+    #{$root}__number-suffix {
+      white-space: pre-wrap;
+    }
+
+    #{$root}__number-prefix {
+      text-align: right;
+    }
+
+    #{$root}__number-suffix {
+      text-align: left;
+    }
+
+    #{$root}__title {
+      display: flex;
+      font-size: 18px;
+      font-weight: $fw-medium;
+      margin-top: 10px;
+
+      @media screen and (max-width: $screen-lg-max) {
+        // font-size: 18px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        font-size: 16px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        // font-size: 15px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+
+      }
+    }
+  }
+}
+
+#{$dark-mode},
+#{$background-dark} {
+  #{$root} {
+    &--style-1 {
+      #{$root}__number-wrap {
+        color: $cl-white-dark;
+      }
+
+      #{$root}__title {
+        color: $cl-text-dark;
+      }
+    }
+
+    &--style-2 {
+      #{$root}__number-wrap {
+        color: $cl-white-dark;
+      }
+
+      #{$root}__title {
+        color: $cl-text-dark;
+      }
+    }
+
+    &--style-3 {
+      #{$root}__number-wrap {
+        color: $cl-white-dark;
+      }
+
+      #{$root}__title {
+        color: $cl-white-dark;
+      }
+
+      #{$root}__description {
+        border-top: 1px solid rgba($cl-white-dark, .6);
+        color: rgba($cl-white-dark, .7);
+      }
+    }
+  }
+}

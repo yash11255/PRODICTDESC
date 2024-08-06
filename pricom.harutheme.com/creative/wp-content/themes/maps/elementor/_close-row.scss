@@ -1,0 +1,83 @@
+$root: '.haru-close-row';
+$header: '.haru-header';
+
+#{$root} {
+  display: flex;
+
+  &--style-1 {
+    .close-row-wrap {
+      &:before {
+        content: '\e919';
+        font-family: 'haruicons';
+        font-size: 20px;
+        font-weight: $fw-normal;
+        color: $cl-black;
+        transition: all .3s;
+      }
+
+      &:hover {
+        cursor: pointer;
+        
+        &:before {
+          color: rgba($cl-black, .8);
+          transition: all .3s;
+        }
+      }
+    }
+  }
+
+  &--style-2 {
+
+  }
+
+  &--flex-start {
+
+  }
+
+  &--center {
+
+  }
+
+  &--flex-end {
+
+  }
+}
+
+#{$dark-mode},
+#{$background-dark} {
+  #{$root} {
+    &--style-1 {
+      .close-row-wrap {
+        &:before {
+          color: $cl-white-dark;
+        }
+
+        &:hover {
+          &:before {
+            color: rgba($cl-white-dark, .8);
+          }
+        }
+      }
+    }
+  }
+}
+
+#{$header} {
+  &--transparent {
+    &-light:not(.haru-header--sticky-on) {
+      &#{$header} {
+        #{$root} {
+          
+        }
+      }
+    }
+
+    &-dark:not(.haru-header--sticky-on) {
+      &#{$header} {
+        #{$root} {
+          
+        }
+      }
+    }
+  }
+}

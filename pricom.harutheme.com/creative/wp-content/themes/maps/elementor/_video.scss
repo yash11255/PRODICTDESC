@@ -1,0 +1,234 @@
+$root: '.haru-video';
+
+#{$root} {
+  &--default {
+    .elementor-custom-embed-image-overlay {
+      position: relative;
+      display: flex;
+      filter: drop-shadow(0 14px 34px rgba($cl-black, .16));
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($cl-black, .1);
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .elementor-custom-embed-play {
+      font-size: 36px;
+      background-color: $cl-white;
+      color: $cl-black;
+      width: 80px;
+      height: 80px;
+      display: inline-block;
+      line-height: 80px;
+      border-radius: 50%;
+      text-align: center;
+      box-shadow: 0 0 15px rgba($cl-black, .25);
+      transition: all .3s;
+
+      @media screen and (max-width: $screen-lg-max) {
+        width: 68px;
+        height: 68px;
+        line-height: 68px;
+        font-size: 32px;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: $cl-primary;
+        color: $cl-white;
+        transition: all .3s;
+      }
+
+      &:before {
+        content: '\e925';
+        font-family: 'haruicons';
+        position: relative;
+        right: -4px;
+
+        @media screen and (max-width: $screen-lg-max) {
+          right: -2px;
+        }
+      }
+
+      i {
+        display: none;
+      }
+    }
+  }
+
+  &--button-text {
+    .haru-button {
+      // font-size: 20px;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        i {
+          border-color: $cl-primary;
+          transition: all .3s;
+        }
+      }
+
+      i {
+        margin-left: 14px;
+        width: 28px;
+        height: 28px;
+        line-height: 22px;
+        border-radius: 50%;
+        border: 2px solid $cl-black;
+        transition: all .3s;
+
+        @media screen and (max-width: $screen-lg-max) {
+          line-height: 24px;
+        }
+
+        &:before {
+          content: '\e925';
+          font-size: 16px;
+          position: relative;
+          right: -1px;
+        }
+      }
+    }
+  }
+
+  &--button-icon {
+    .elementor-custom-embed-image-overlay {
+      text-align: center;
+    }
+
+    .haru-button-link {
+      font-size: 36px;
+      background-color: $cl-primary;
+      color: $cl-white;
+      width: 80px;
+      height: 80px;
+      display: inline-block;
+      line-height: 80px;
+      border-radius: 50%;
+      text-align: center;
+      position: relative;
+
+      @media screen and (max-width: $screen-lg-max) {
+        width: 68px;
+        height: 68px;
+        line-height: 68px;
+        font-size: 32px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 28px;
+      }
+
+      &:before {
+        content: '\e925';
+        font-family: 'haruicons';
+        position: relative;
+        right: -4px;
+
+        @media screen and (max-width: $screen-lg-max) {
+          right: -2px;
+        }
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 2px solid rgba($cl-white, .2);
+        border-radius: 50%;
+        transition: all .3s;
+
+        @media screen and (max-width: $screen-lg-max) {
+          width: 100px;
+          height: 100px;
+        }
+
+        @media screen and (max-width: $screen-xs-max) {
+          width: 80px;
+          height: 80px;
+        }
+      }
+
+      &:hover {
+        &:after {
+          border-color: rgba($cl-white, .4);
+          animation: videoSonarEffect 1.3s ease-out 75ms;
+          transition: all .3s;
+        }
+      }
+
+      i {
+        display: none;
+      }
+    }
+  }
+
+  &--rounded {
+    &-large {
+      .elementor-custom-embed-image-overlay {
+        &:before {
+          border-radius: $border-radius-large;
+        }
+
+        img {
+          border-radius: $border-radius-large;
+        }
+      }
+    }
+  }
+}
+
+#{$dark-mode},
+#{$background-dark} {
+  #{$root} {
+    &--button-text {
+      .haru-button {
+
+        &:hover {
+          i {
+            border-color: $cl-primary;
+          }
+        }
+
+        i {
+          border: 2px solid $cl-white;
+        }
+      }
+    }
+
+    &--button-icon {
+      .haru-button-link {
+        background-color: $cl-white;
+        color: $cl-black;
+
+        &:after {
+          border: 2px solid rgba($cl-white, .3);
+        }
+
+        &:hover {
+          &:after {
+            border-color: rgba($cl-white, .5);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,486 @@
+$root: '.haru-accordion';
+
+#{$root} {
+  position: relative;
+
+  &--style-1 {
+    .haru-accordion-item {
+      padding-bottom: 20px;
+    }
+
+    .haru-tab-title {
+      line-height: 1;
+      padding: 20px 18px;
+      background-color: $cl-gray-3;
+      border-radius: $border-radius;
+
+      .haru-accordion-icon-opened {
+        display: none;
+      }
+
+      &.active {
+        background-color: $cl-white;
+        box-shadow: 0 20px 50px rgba($cl-black, .07);
+
+        .haru-accordion-icon-closed {
+          display: none;
+        }
+
+        .haru-accordion-icon-opened {
+          display: inline-block;
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .haru-accordion-title {
+      font-size: 20px;
+      color: $cl-black;
+      font-weight: $fw-semi-bold;
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 18px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        font-size: 16px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        // font-size: 17px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        // font-size: 16px;
+      }
+    }
+
+    .haru-accordion-icon {
+      width: 1.5em;
+      display: inline-block;
+      margin-top: 2px;
+
+      @media screen and (max-width: $screen-lg-max) {
+        margin-top: 0;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        margin-top: -1px;
+      }
+
+      i {
+        font-weight: $fw-bold;
+        font-size: 16px;
+        color: $cl-black;
+      }
+
+      &.haru-accordion-icon-right {
+        float: right;
+        text-align: right;
+      }
+
+      &.haru-accordion-icon-left {
+        float: left;
+        text-align: left;
+      }
+    }
+
+    .haru-tab-content {
+      padding: 20px 20px 10px 20px;
+      font-size: 16px;
+    }
+  }
+
+  &--style-2,
+  &--style-3 {
+    .haru-accordion-item {
+      padding-bottom: 20px;
+    }
+
+    .haru-tab-title {
+      line-height: 1;
+      padding: 20px 18px;
+      border-radius: $border-radius;
+
+      .haru-accordion-icon-opened {
+        display: none;
+      }
+
+      &.active {
+        @include bggradient1();
+        
+        box-shadow: 0px 9px 20px rgba($cl-black, .1);
+
+        .haru-accordion-icon-closed {
+          display: none;
+        }
+
+        .haru-accordion-icon-opened {
+          display: inline-block;
+        }
+
+        .haru-accordion-title {
+          color: $cl-white;
+        }
+
+        .haru-accordion-icon {
+          i {
+            color: $cl-white;
+          }
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .haru-accordion-title {
+      font-size: 20px;
+      color: $cl-black;
+      font-weight: $fw-semi-bold;
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 18px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        font-size: 16px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        // font-size: 17px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        // font-size: 16px;
+      }
+    }
+
+    .haru-accordion-icon {
+      width: 1.5em;
+      display: inline-block;
+      margin-top: 2px;
+
+      @media screen and (max-width: $screen-lg-max) {
+        margin-top: 0;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        margin-top: -1px;
+      }
+
+      i {
+        font-weight: $fw-bold;
+        font-size: 16px;
+        color: $cl-black;
+      }
+
+      &.haru-accordion-icon-right {
+        float: right;
+        text-align: right;
+      }
+
+      &.haru-accordion-icon-left {
+        float: left;
+        text-align: left;
+      }
+    }
+
+    .haru-tab-content {
+      padding: 20px 20px 10px 20px;
+      font-size: 16px;
+    }
+  }
+
+
+  &--style-2 {
+    .haru-tab-title {
+      background: $cl-white;
+      box-shadow: 0 0 30px rgba($cl-black, .04);
+    }
+  }
+
+  &--style-3 {
+    .haru-tab-title {
+      background-color: $cl-gray-3;
+    }
+  }
+
+  &--style-4 {
+    .haru-accordion-item {
+      padding-bottom: 30px;
+
+      &:last-child {
+        padding-bottom: 12px;
+      }
+    }
+
+    .haru-tab-title {
+      line-height: 1;
+      padding: 12px 0;
+      border-bottom: 1px solid $cl-border;
+
+      .haru-accordion-icon-opened {
+        display: none;
+      }
+
+      &.active {
+        border-bottom: 1px solid $cl-primary;
+
+        .haru-accordion-title {
+          color: $cl-primary;
+        }
+
+        .haru-accordion-icon {
+          i {
+            color: $cl-primary;
+          }
+        }
+
+        .haru-accordion-icon-closed {
+          display: none;
+        }
+
+        .haru-accordion-icon-opened {
+          display: inline-block;
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .haru-accordion-title {
+      font-size: 24px;
+      color: $cl-black;
+      font-weight: $fw-semi-bold;
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 20px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        // font-size: 18px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        font-size: 18px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        
+      }
+    }
+
+    .haru-accordion-icon {
+      width: 1.5em;
+      display: inline-block;
+      margin-top: 5px;
+
+      i {
+        font-weight: $fw-bold;
+        color: $cl-black;
+      }
+
+      &.haru-accordion-icon-right {
+        float: right;
+        text-align: right;
+      }
+
+      &.haru-accordion-icon-left {
+        float: left;
+        text-align: left;
+      }
+    }
+
+    .haru-tab-content {
+      padding-top: 15px;
+    }
+  }
+
+  &--style-5 {
+    .haru-accordion-item {
+      // padding-bottom: 20px;
+      border-radius: $border-radius-large;
+
+      &:has(.haru-tab-title.active) {
+        box-shadow: 0 9px 20px rgba($cl-black, .1);
+
+        @include bggradient1();
+      }
+    }
+
+    .haru-tab-title {
+      line-height: 1;
+      padding: 44px 18px 44px 28px;
+      background-color: transparent;
+      border-radius: $border-radius;
+      border-bottom: 1px solid $cl-border;
+
+      @media screen and(max-width: $screen-lg-max) {
+        padding: 40px 18px 40px 28px;
+      }
+
+      @media screen and(max-width: $screen-xs-max) {
+        padding: 36px 18px 36px 28px;
+      }
+
+      .haru-accordion-icon-opened {
+        display: none;
+      }
+
+      &.active {
+        border-bottom: none;
+        padding-bottom: 18px;
+
+        .haru-accordion-icon {
+          &:before {
+            background-color: $cl-white;
+            border: 1px solid $cl-white;
+          }
+        }
+
+        .haru-accordion-icon-closed {
+          display: none;
+        }
+
+        .haru-accordion-icon-opened {
+          display: inline-block;
+          position: relative;
+          z-index: 1;
+        }
+
+        .haru-accordion-title {
+          color: $cl-white;
+          border-bottom: none;
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .haru-accordion-title {
+      font-size: 24px;
+      color: $cl-black;
+      font-weight: $fw-semi-bold;
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 20px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        font-size: 18px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        // font-size: 16px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        // font-size: 16px;
+      }
+    }
+
+    .haru-accordion-icon {
+      width: 1.5em;
+      display: inline-block;
+      margin-top: 5px;
+      position: relative;
+
+      @media screen and (max-width: $screen-lg-max) {
+        margin-top: 3px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        // margin-top: -1px;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 48px;
+        height: 48px;
+        border: 1px solid $cl-border;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+
+        @media screen and (max-width: $screen-lg-max) {
+          width: 44px;
+          height: 44px;
+        }
+      }
+
+      i {
+        font-weight: $fw-bold;
+        font-size: 18px;
+        color: $cl-black;
+
+        @media screen and (max-width: $screen-lg-max) {
+          font-size: 16px;
+        }
+      }
+
+      &.haru-accordion-icon-right {
+        float: right;
+        text-align: center;
+        margin-left: 32px;
+
+        @media screen and (max-width: $screen-lg-max) {
+          margin-left: 27px;
+        }
+      }
+
+      &.haru-accordion-icon-left {
+        float: left;
+        text-align: center;
+        margin-right: 32px;
+
+        @media screen and (max-width: $screen-lg-max) {
+          margin-right: 27px;
+        }
+      }
+    }
+
+    .haru-tab-content {
+      padding: 0 18px 35px 85px;
+      font-size: 16px;
+      color: $cl-white;
+
+      @media screen and (max-width: $screen-lg-max) {
+        padding: 0 18px 30px 80px;
+      }
+    }
+  }
+}
+
+#{$dark-mode},
+#{$background-dark} {
+  #{$root} {
+    &--style-1 {
+      .haru-tab-title {
+        border-bottom: 1px solid $cl-border-dark;
+      }
+
+      .haru-accordion-title {
+        color: $cl-white-dark;
+      }
+
+      .haru-accordion-icon {
+        i {
+          color: $cl-white-dark;
+        }
+      }
+    }
+
+  }
+}
+

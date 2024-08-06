@@ -1,0 +1,610 @@
+$dark-mode: '.dark-mode';
+
+// Blog
+.haru-archive-blog {            
+  // Article css
+  article {
+    border-bottom: 1px solid $cl-border;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    position: relative;
+
+    &:last-child {
+      border: none;
+      margin-bottom: 0;
+    }
+
+    // Sticky article
+    &.sticky {
+      .post-title a {
+        &:before {
+          content: "\f005";
+          font-family: "Font Awesome 5 Free";
+          color: $cl-primary;
+          top: 50%;
+          margin-right: 15px;
+          font-weight: $fw-normal;
+          transform: translateY(-50%);
+
+          @media screen and (max-width: $screen-xs-max) {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+
+    // General
+    .post-meta-info {
+      a {
+        color: $cl-heading;
+        transition: all .3s;
+
+        &:hover {
+          color: $cl-primary;
+          transition: all .3s;
+        }
+      }
+    }
+
+    // Category
+    .post-category-wrap {
+      font-size: 13px;
+      font-weight: $fw-bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      flex-wrap: wrap;
+
+      a {
+        background-color: $cl-gray;
+        // color: $cl-black;
+        padding: 5px 12px;
+        border-radius: $border-radius-small;
+        margin-left: 5px;
+        transition: all .3s;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:hover {
+          transition: all .3s;
+        }
+      }
+    }
+
+    // Author
+    .post-meta-author {
+      display: inline-block;
+      margin-right: 30px;
+
+      @media screen and (max-width: $screen-xs-max) {
+        margin-right: 20px;
+      }
+
+      &:before {
+        content: '';
+        width: 25px;
+        height: 1px;
+        background-color: $cl-text-2;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+    }
+
+    // Date
+    .post-meta-date {
+      display: inline-block;
+      margin-right: 10px;
+
+      &:before {
+        content: '\e910';
+        font-family: "Haruicons";
+        font-weight: $fw-normal;
+        margin-right: 10px;
+        position: relative;
+        bottom: -1px;
+        display: none;
+
+        @media screen and (max-width: $screen-xs-max) {
+          margin-right: 6px;
+        }
+      }
+    }
+
+    // Comment
+    .post-meta-comment {
+      display: inline-block;
+      margin-right: 10px;
+
+      @media screen and (max-width: $screen-xs-max) {
+        display: none;
+      }
+
+      &:before {
+        content: '\e91a';
+        font-family: "Haruicons";
+        font-weight: $fw-normal;
+        margin-right: 10px;
+        position: relative;
+        bottom: -1px;
+
+        @media screen and (max-width: $screen-xs-max) {
+          margin-right: 6px;
+        }
+      }
+    }
+
+    // Sticky
+    .post-meta-sticky {
+      color: $cl-primary;
+      display: inline-block;
+      font-weight: $fw-semi-bold;
+
+      &:before {
+        content: "\f005";
+        font-family: "Font Awesome 5 Free";
+        font-weight: $fw-normal;
+        margin-right: 10px;
+
+        @media screen and (max-width: $screen-xs-max) {
+          margin-right: 6px;
+        }
+      }
+    }
+
+    // Thumbnail
+    .post-thumbnail-wrap {
+      position: relative;
+      margin-bottom: 30px;
+      border-radius: $border-radius;
+      overflow: hidden;
+
+      img {
+        border-radius: $border-radius;
+      }
+
+      .post-thumbnail-link {
+        display: flex;
+        align-items: flex-start;
+      }
+
+      // Gallery navigation use from _elements.scss
+      .owl-dots {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    // Link post
+    .post-link-wrap {
+      margin-bottom: 30px;
+      border-radius: $border-radius;
+      overflow: hidden;
+
+      .post-content-link {
+        background: #eeeeee;
+        height: 60px;
+        display: flex;
+
+        &:before {
+          content: '\f0c1';
+          font-family: "Font Awesome 5 Free";
+          font-weight: $fw-bold;
+          width: 60px;
+          line-height: 60px;
+          background: $cl-primary;
+          color: $cl-white;
+          text-align: center;
+        }
+
+        a {
+          color: $cl-black;
+          margin-left: 20px;
+          line-height: 60px;
+          font-weight: $fw-semi-bold;
+          text-transform: uppercase;
+          text-decoration: underline;
+
+          &:hover {
+            color: $cl-primary;
+            transition: all .3s;
+          }
+        }
+      }
+
+      .post-set-link {
+        display: inline-flex;
+        align-items: center;
+        padding: 0 15px;
+      }
+    }
+
+    // Audio post
+    .post-audio-wrap {
+      margin-bottom: 30px;
+      border-radius: $border-radius;
+      overflow: hidden;
+    }
+
+    .post-set-audio {
+      background: #eeeeee;
+      height: 60px;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+    }
+
+    // Quote post
+    .post-quote-wrap {
+      padding: 15px;
+      background: #eeeeee;
+      border-radius: $border-radius;
+      margin-bottom: 30px;
+      text-align: center;
+
+      &:before {
+        content: '\e946';
+        font-family: 'Haruicons';
+        font-size: 32px;
+
+        @media screen and (max-width: $screen-md-max) {
+          font-size: 30px;
+        }
+
+        @media screen and (max-width: $screen-xs-max) {
+          font-size: 28px;
+        }
+      }
+
+      blockquote {
+        font-family: $font-secondary;
+        border-left: none;
+        // font-style: italic;
+        margin: 0;
+      }
+
+      .post-quote {
+        color: $cl-black;
+        font-size: 24px;
+        font-weight: $fw-medium;
+        margin-bottom: 20px;
+
+        @media screen and (max-width: $screen-lg-max) {
+          font-size: 22px;
+        }
+
+        @media screen and (max-width: $screen-md-max) {
+          font-size: 20px;
+        }
+
+        @media screen and (max-width: $screen-xs-max) {
+          font-size: 18px;
+        }
+
+        &:before {
+          content: '\f10d';
+          font-family: "Font Awesome 5 Free";
+          font-weight: $fw-bold;
+          margin-right: 10px;
+          color: $cl-primary;
+          display: none;
+        }
+
+        &:after {
+          content: '\f10e';
+          font-family: "Font Awesome 5 Free";
+          font-weight: $fw-bold;
+          margin-left: 10px;
+          color: $cl-primary;
+          display: none;
+        }
+      }
+
+      cite {
+        font-style: normal;
+
+        a {
+          color: $cl-black;
+          font-size: $fs-base;
+          font-weight: $fw-semi-bold;
+          transition: all .3s;
+
+          &:hover {
+            color: $cl-primary;
+            transition: all .3s;
+          }
+        }
+      }
+    }
+
+    // Content
+    .post-title {
+      line-height: 1.4;
+      margin-top: 15px;
+      word-wrap: break-word;
+
+      @media screen and (max-width: $screen-xs-max) {
+        padding: 0;
+      }
+
+      a {
+        font-size: 36px;
+
+        @media screen and (max-width: $screen-lg-max) {
+          font-size: 32px;
+        }
+
+        @media screen and (max-width: $screen-md-max) {
+          font-size: 28px;
+        }
+
+        @media screen and (max-width: $screen-sm-max) {
+          font-size: 24px;
+        }
+
+        @media screen and (max-width: $screen-xs-max) {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .post-excerpt {
+      margin-top: 15px;
+      word-break: break-word;
+    }
+
+    .post-read-more {
+      margin-top: 30px;
+
+      .read-more {
+        &:after {
+          content: '\f054';
+          display: none;
+          font-family: "Font Awesome 5 Free";
+          font-weight: $fw-bold;
+          margin-left: 6px;
+        }
+      }
+    }
+
+    // Format Standard
+    &.format-standard:not(.has-post-thumbnail) {
+      .post-meta-category {
+        margin-top: 0;
+      }
+    }
+
+    // Large Image and fix theme unit test
+    &.large-image {
+      &:not(.has-post-thumbnail) {
+        .post-meta-info {
+          // margin-top: -10px;
+        }
+      }
+    }
+
+    // Medium image
+    &.medium-image {
+      .post-title {
+        padding: 0;
+
+        a {
+          font-size: 18px;
+
+          @media screen and ( max-width:$screen-xs-max ) {
+            // font-size: 16px;
+          }
+        }
+      }
+
+      // Has thumbnail
+      &.has-post-thumbnail:not(.format-link):not(.format-quote):not(.format-audio) {
+        .post-wrap {
+          display: flex;
+          flex-direction: row;
+
+          @media screen and ( max-width:$screen-xs-max ) {
+            display: block;
+          }
+
+          .post-thumbnail-wrap {
+            flex: 0 0 50%;
+            width: 50%;
+            padding-right: 10px;
+            margin-bottom: 0;
+
+            @media screen and ( max-width:$screen-xs-max ) {
+              padding-right: 0;
+              margin-bottom: 30px;
+              width: 100%;
+            }
+          }
+
+          .post-content-wrap {
+            flex: 0 0 50%;
+            padding-left: 10px;
+
+            @media screen and ( max-width:$screen-xs-max ) {
+              padding-left: 0;
+            }
+
+            // Responsive
+            @media screen and ( max-width:$screen-sm-max ) {
+              width: 100%;
+
+              .post-detail {
+                margin-left: 0;
+
+                .post-meta-category {
+                  margin-top: 15px;
+                }
+              }
+            }
+
+            @media screen and ( max-width:$screen-xs-max ) {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      // Not has thumbnail
+      &:not(.has-post-thumbnail) {
+        .post-content-wrap {
+          padding-left: 0;
+        }
+      }
+
+      &.format-audio,
+      &.format-link,
+      &.format-quote {
+        
+      }
+
+      .post-meta-comment {
+        display: none;
+      }
+    }
+
+    &.grid {
+      border: none;
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: calc(100% - 30px);
+        bottom: 0;
+        left: 15px;
+        background-color: $cl-border;
+        height: 1px;
+      }
+
+      .post-title {
+        padding: 0;
+        // margin-bottom: 0;
+
+        a {
+          font-size: 18px;
+
+          @media screen and (max-width: $screen-md-max) {
+            // font-size: 16px;
+          }
+
+          @media screen and (max-width: $screen-xs-max) {
+            
+          }
+        }
+      }
+
+      // Not has thumbnail
+      &:not(.has-post-thumbnail) {
+
+      }
+
+      &.format-audio,
+      &.format-link,
+      &.format-quote {
+        
+      }
+
+      .post-meta-comment {
+        display: none;
+      }
+    }
+  }
+
+  // Layout Grid
+  .layout-grid {
+    margin: 0 -15px;
+
+    article {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    &.grid-columns {
+      &-2,
+      &-3,
+      &-4 {
+        .grid-item {
+          @media screen and (max-width: $screen-xs-max) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  // Paging css similar haru-page-links
+  .archive-pagination {
+    margin-top: 30px;
+    text-align: center;
+  }
+}
+
+#{$dark-mode} {
+  .haru-archive-blog {
+    article {
+      border-color: $cl-border-dark;
+
+      // General
+      .post-meta-info {
+        a {
+          color: $cl-white-dark;
+
+          &:hover {
+            color: $cl-primary;
+          }
+        }
+      }
+
+      // Author
+      .post-meta-author {
+        border-color: $cl-border-2-dark;
+      }
+
+      // Link post
+      .post-link-wrap {
+        .post-content-link {
+          background: $cl-bg-dark-3;
+
+          a {
+            color: $cl-text-dark;
+
+            &:hover {
+              color: $cl-primary;
+            }
+          }
+        }
+      }
+
+      // Audio post
+      .post-set-audio {
+        background: $cl-bg-dark-3;
+      }
+
+      // Quote post
+      .post-quote-wrap {
+        background: $cl-bg-dark-3;
+
+        cite {
+          a {
+            color: $cl-white-dark;
+
+            &:hover {
+              color: $cl-primary;
+            }
+          }
+        }
+      }
+
+      &.grid {
+        &:before {
+          background-color: $cl-border-dark;
+        }
+      }
+    }
+  }
+}

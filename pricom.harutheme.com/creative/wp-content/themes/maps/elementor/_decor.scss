@@ -1,0 +1,127 @@
+$root: '.haru-decor';
+
+#{$root} {
+  &--style-1 {
+    #{$root}__content {
+
+    }
+
+    #{$root}__circle {
+      padding-bottom: 100%;
+      border-radius: 50%;
+
+      &--gradient {
+        background: linear-gradient(203.02deg, $cl-primary 18.73%, rgba($cl-primary, 0) 98.41%);
+      }
+    }
+  }
+
+  &--style-2 {
+    #{$root}__circle {
+      padding-bottom: 100%;
+      border-radius: 50%;
+
+      &--gradient-2 {
+        background: linear-gradient(216.35deg, $cl-primary 14.79%, rgba($cl-primary, 0) 93.62%);
+      }
+    }
+  }
+
+  &--style-3 {
+    #{$root}__ellipse {
+      padding-bottom: 77%;
+      border-radius: 50%;
+
+      &--blur {
+        background: $cl-primary;
+        filter: blur(150px)!important;
+      }
+    }
+  }
+
+  &--style-4 {
+    #{$root}__dotted {
+      padding-bottom: 100%;
+      background: transparent;
+      background-size: 28px 28px!important;
+      background-position: -5px -5px;
+    }
+  }
+
+  &--style-5 {
+    #{$root}__circle {
+      padding-bottom: 100%;
+      border-radius: 50%;
+      position: relative;
+
+      &:before {
+        content: '';
+        border-radius: 50%;
+        border: 2px solid $cl-border;
+        position: absolute;
+        width: 75%;
+        height: 75%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &:after {
+        content: '';
+        border-radius: 50%;
+        border: 2px solid $cl-border;
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &--layered {
+        border: 2px solid $cl-border;
+      }
+    }
+  }
+
+  &--style-6 {
+    #{$root}__blink {
+      svg {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &--style-7 {
+    #{$root}__circle {
+      padding-bottom: 100%;
+      border-radius: 50%;
+
+      &--background {
+        background: $cl-primary;
+      }
+    }
+  }
+
+  &--style-8 {
+    #{$root}__circle {
+      padding-bottom: 100%;
+      border-radius: 50%;
+
+      &--gradient-2 {
+        background: linear-gradient(101.31deg, $cl-primary 2.11%, $cl-primary 50.57%, $cl-primary 85.38%, $cl-primary 105.05%);
+      }
+    }
+  }
+}
+
+#{$dark-mode},
+#{$background-dark} {
+  #{$root} {
+    &--style-1 {
+      
+    }
+  }
+}
+

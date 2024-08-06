@@ -1,0 +1,393 @@
+// Buttons
+$root: '.haru-button';
+$haru-icon: '.haru-icon';
+
+#{$root} {
+  display: inline-block;
+  color: $cl-white;
+  fill: $cl-white;
+  line-height: 1;
+  padding: 0 25px;
+  position: relative;
+  font-weight: $fw-semi-bold;
+  text-align: center;
+  transition: all .3s;
+
+  &#{$root}--size {
+    &-large {
+      height: 52px;
+      line-height: 52px;
+      font-size: 18px;
+      padding: 0 45px;
+
+      @media screen and (max-width: $screen-lg-max) {
+        height: 48px;
+        line-height: 48px;
+        font-size: 16px;
+        padding: 0 35px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        // height: 40px;
+        // line-height: 40px;
+      }
+
+      #{$haru-icon} {
+        margin-left: 8px;
+      }
+
+      &#{$root}--outline {
+        line-height: 50px;
+      }
+    }
+
+    &-medium {
+      height: $e-height-base;
+      line-height: $e-height-base;
+      padding: 0 36px;
+
+      @media screen and (max-width: $screen-lg-max) {
+        // height: 48px;
+        // line-height: 48px;
+        padding: 0 30px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        // height: 40px;
+        // line-height: 40px;
+      }
+
+      .phosphor {
+        font-size: 18px;
+        position: relative;
+        bottom: -2px;
+      }
+    }
+
+    &-normal {
+      height: 40px;
+      line-height: 40px;
+      padding: 0 25px;
+    }
+
+    &-small {
+      height: 32px;
+      line-height: 32px;
+      padding: 0 20px;
+      font-size: 14px;
+      font-weight: $fw-medium;
+    }
+  }
+
+  &#{$root}--bg {
+    &-primary {
+      background-color: $cl-primary;
+      // box-shadow: 0 3px 8px rgba($cl-black, .18);
+
+      &:hover {
+        background-color: darken($cl-primary, 5%);
+        color: $cl-white;
+      }
+
+      &:focus {
+        background-color: $cl-primary;
+        color: $cl-white;
+      }
+    }
+
+    &-gray {
+      background-color: $cl-gray;
+      // box-shadow: 0 3px 8px rgba($cl-black, .18);
+      color: $cl-black-2;
+
+      &:hover {
+        background-color: $cl-primary;
+        color: $cl-white;
+      }
+
+      &:focus {
+        color: $cl-white;
+      }
+    }
+
+    &-black {
+      background-color: $cl-black;
+      // box-shadow: 0 3px 8px rgba($cl-black, .18);
+      color: $cl-white;
+
+      &:hover {
+        color: $cl-white;
+        background-color: $cl-primary;
+      }
+
+      &:focus {
+        color: $cl-white;
+      }
+
+      #{$haru-icon} {
+        background-color: $cl-white;
+      }
+    }
+
+    &-white {
+      background-color: $cl-white;
+      // box-shadow: 0 3px 8px rgba($cl-black, .18);
+      color: $cl-black;
+
+      &:hover {
+        color: $cl-white;
+        background-color: $cl-primary;
+      }
+
+      &:focus {
+        color: $cl-primary;
+      }
+
+      #{$haru-icon} {
+        background-color: $cl-black;
+      }
+    }
+
+    &-gradient {
+      &-orange {
+        background-color: $cl-primary;
+        
+        @include bggradient1();
+        
+        &:hover,
+        &:focus {
+          color: $cl-white;
+        }
+
+        #{$haru-icon} {
+          background-color: $cl-white;
+        }
+      }
+    }
+  }
+
+  &#{$root}--border {
+    &-primary {
+      background-color: transparent;
+      border: 1px solid $cl-primary;
+      line-height: $e-height-base - 2px;
+      color: $cl-primary;
+
+      &:hover {
+        background-color: $cl-primary;
+        color: $cl-white;
+      }
+    }
+
+    &-black {
+      background-color: transparent;
+      border: 1px solid $cl-black;
+      line-height: $e-height-base - 2px;
+      color: $cl-black;
+
+      &:hover {
+        background-color: $cl-primary;
+        border: 1px solid $cl-primary;
+        color: $cl-white;
+      }
+    }
+  }
+
+  &#{$root}--outline {
+    &-gray {
+      background-color: transparent;
+      border: 2px solid $cl-border;
+      line-height: $e-height-base - 4px;
+      color: $cl-black;
+
+      &:hover {
+        background-color: $cl-primary;
+        border: 2px solid $cl-primary;
+        color: $cl-white;
+      }
+    }
+  }
+
+  &#{$root}--round {
+    &-small {
+      border-radius: $border-radius-e-small;
+    }
+
+    &-normal {
+      border-radius: $border-radius-e;
+    }
+
+    &-large {
+      border-radius: $border-radius-e-large;
+    }
+
+    &-full {
+      border-radius: 50%;
+    }
+  }
+
+  &#{$root}--text {
+    &-primary {
+      color: $cl-primary;
+
+      &:hover {
+        color: darken($cl-primary, 5%);
+      }
+
+      #{$haru-icon} {
+        background-color: $cl-primary;
+      }
+    }
+
+    &-white {
+      color: $cl-white;
+
+      &:hover {
+        color: $cl-primary;
+      }
+
+      #{$haru-icon} {
+        background-color: $cl-white;
+      }
+    }
+
+    &-black {
+      color: $cl-black;
+      padding: 0;
+
+      &:hover {
+        color: $cl-primary;
+      }
+
+      #{$haru-icon} {
+        background-color: $cl-black;
+      }
+    }
+
+    &-gray {
+      color: $cl-black-6;
+      padding: 0;
+
+      &:hover {
+        color: $cl-primary;
+      }
+
+      #{$haru-icon} {
+        background-color: $cl-black-6;
+      }
+    }
+  }
+
+  &#{$root}--shadow {
+    &-yes {
+      box-shadow: 0px 3px 8px rgba($cl-black, .18);
+    }
+    
+    &-white {
+      box-shadow: 0px 0px 9px rgba($cl-black, .07);
+      color: $cl-heading;
+
+      &:hover {
+        background-color: $cl-primary;
+        color: $cl-white;
+      }
+    }
+  }
+
+  &#{$root}--icon {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &#{$root}--fullwidth {
+    display: block;
+    width: 100%;
+  }
+
+  &#{$root}--loading {
+    &:before {
+      content: '\f110';
+      font-family: "Font Awesome 5 Free";
+      font-weight: $fw-bold;
+      animation-name: haruSpin;
+      animation-duration: 2000ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      margin-right: 3px;
+      display: none;
+    }
+  }
+
+  &.loading {
+    pointer-events: none;
+
+    &:before {
+      display: inline-block;
+    }
+  }
+}
+
+// Dark Mode, Background Dark
+#{$dark-mode},
+#{$background-dark} {
+  #{$root} {
+    color: $cl-white-dark;
+ 
+    &#{$root}--bg {
+      &-primary {
+        background-color: $cl-primary;
+
+        &:hover {
+          background-color: darken($cl-primary, 5%);
+          color: $cl-white;
+        }
+      }
+
+      &-black {
+        background-color: $cl-white-dark;
+        color: $cl-heading;
+
+        &:hover {
+          background-color: $cl-primary;
+          color: $cl-white-dark;
+
+          #{$haru-icon} {
+            color: $cl-white-dark;
+          }
+        }
+
+        #{$haru-icon} {
+          background-color: $cl-heading;
+        }
+      }
+
+      &-white {
+        background-color: $cl-white;
+        color: $cl-primary;
+
+        &:hover {
+          color: $cl-primary;
+        }
+
+        #{$haru-icon} {
+          background-color: $cl-primary;
+        }
+      }
+    }
+
+    &#{$root}--outline {
+      &-gray {
+        border: 1px solid $cl-border-dark-3;
+        color: $cl-white-dark;
+
+        &:hover {
+          border: 1px solid $cl-primary;
+        }
+      }
+    }
+
+    &#{$root}--text {
+
+    }
+  }
+}

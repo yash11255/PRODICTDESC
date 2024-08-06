@@ -1,0 +1,389 @@
+$root: '.haru-nav-menu-popup';
+$haru-item: '.haru-citem';
+$haru-menu-toggle: '.haru-menu-toggle-popup';
+$header: '.haru-header';
+
+#{$root} {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  -webkit-tap-highlight-color: rgba($cl-black, 0);
+
+  .menu-label {
+    border-radius: 2px;
+    color: $cl-white;
+    padding: 2px 3px;
+    font-size: 9px;
+    text-align: center;
+    vertical-align: baseline;
+    margin-left: 5px;
+    position: relative;
+    top: -8px;
+  }
+
+  .menu-icon {
+    height: 16px;
+    line-height: 16px;
+    margin-right: 8px;
+
+    img {
+      max-height: 100%;
+    }
+  }
+
+  .sub-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 30px;
+    height: 100%;
+    font-size: 16px;
+    transform: translateY(-50%);
+    z-index: 9;
+
+    i {
+      font-style: normal;
+      font-family: "haruicons";
+      display: inline-block;
+      line-height: 1;
+      transition: all .3s;
+      
+      &:before {
+        content: '\e902';
+      }
+    }
+
+    &.active {
+      i {
+        transform: rotate(-45deg);
+        transition: all .3s;
+      }
+    }
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    line-height: normal;
+    -webkit-tap-highlight-color: rgba($cl-black, 0);
+  }
+
+  a,
+  li {
+    position: relative;
+    display: block;
+  }
+
+  li {
+    border-width: 0;
+  }
+
+  &--dropdown {
+    ul:not(.sub-menu),
+    li {
+      display: block;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      line-height: normal;
+      -webkit-tap-highlight-color: rgba($cl-black, 0);
+    }
+
+    ul.sub-menu {
+      display: none;
+    }
+
+    // Sub Menu position
+    ul {
+      ul {
+        a,
+        a:hover,
+        a:focus,
+        a:active {
+          border-left: 8px solid transparent; 
+        }
+
+        ul {
+          a,
+          a:hover,
+          a:focus,
+          a:active {
+            border-left: 16px solid transparent; 
+          }
+
+          ul {
+            a,
+            a:hover,
+            a:focus,
+            a:active {
+              border-left: 24px solid transparent; 
+            }
+
+            ul {
+              a,
+              a:hover,
+              a:focus,
+              a:active {
+                border-left: 32px solid transparent; 
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .sub-arrow {
+      justify-content: flex-end;
+    }
+
+    #{$root} {
+      font-size: 28px;
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 24px
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        font-size: 22px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        font-size: 20px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        font-size: 18px;
+      }
+
+      ul.sub-menu {
+        font-size: 18px;
+
+        @media screen and (max-width: $screen-lg-max) {
+          font-size: 17px
+        }
+
+        @media screen and (max-width: $screen-md-max) {
+          font-size: 16px;
+        }
+
+        @media screen and (max-width: $screen-sm-max) {
+          font-size: $fs-base;
+        }
+
+        @media screen and (max-width: $screen-xs-max) {
+          font-size: $fs-base;
+        }
+      }
+
+      // General
+      li {
+        a {
+          color: rgba($cl-white, .6);
+          font-weight: $fw-bold;
+          padding: 8px 15px 8px 0;
+          transition: all .3s;
+
+          &:hover,
+          &:focus,
+          &.highlighted,
+          &.haru-titem-active {
+            color: $cl-primary;
+            transition: all .3s;
+          }
+        }
+      }
+
+      // Level 0
+      > li {
+        > a {
+          padding-left: 0;
+          color: $cl-white;
+          transition: all .3s;
+
+          &:hover,
+          &:focus,
+          &.highlighted,
+          &.haru-titem-active {
+            color: $cl-primary;
+            transition: all .3s;
+          }
+        }
+      }
+
+      .menu-item-has-children {
+        a {
+          padding-right: 50px;
+        }
+      }
+    }
+
+    &#{$root}__container {
+      width: 500px;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  &__container {
+    padding: 10vh 15px;
+    z-index: 99;
+
+    @media screen and (max-width: $screen-sm-max) {
+      padding: 10vh 15px 6vh 15px;
+    }
+    
+
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: #333;  
+    }
+
+    &::-moz-scrollbar-track {
+      border-radius: 10px;
+      background-color: #333;  
+    }
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      background-color: #333;
+    }
+
+    &::-moz-scrollbar {
+      width: 5px;
+      background-color: #333;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;   
+      background-color: rgba($cl-white, .3);
+    }
+
+    &::-moz-scrollbar-thumb {
+      border-radius: 10px;   
+      background-color: rgba($cl-white, .3);
+    }
+  }
+}
+
+.haru-nav-menu-popup-bg {
+  .mfp-close {
+    opacity: 1;
+    font-size: 0;
+    top: 3vh;
+    right: 2vh;
+    width: 48px;
+    height: 48px;
+    line-height: 46px;
+    border-radius: 50%;
+    border: 1px solid $cl-white;
+    color: $cl-white;
+
+    @media screen and (max-width: $screen-sm-max) {
+      width: 40px;
+      height: 40px;
+      line-height: 38px;
+    }
+
+    &:hover {
+      background-color: $cl-white;
+      color: $cl-primary;
+    }
+
+    &:before {
+      content: '\e919';
+      font-family: 'haruicons';
+      font-size: 20px;
+      
+      @media screen and (max-width: $screen-sm-max) {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+// Use when Edit
+.elementor-edit-mode {
+  .section-popup-menu {
+    background-color: #0b0b0b;
+  }
+}
+
+#{$haru-menu-toggle} {
+  display: block;
+  text-align: center;
+  font-size: 32px;
+  width: 32px;
+  height: 32px;
+  line-height: 1;
+  cursor: pointer;
+  border: 0 solid;
+  border-radius: $border-radius-small;
+  color: $cl-black;
+
+  @media screen and (max-width: $screen-lg-max) {
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+  }
+
+  @media screen and (max-width: $screen-md-max) {
+    font-size: 28px;
+    width: 28px;
+    height: 28px;
+  }
+
+  @media screen and (max-width: $screen-sm-max) {
+    font-size: 26px;
+    width: 26px;
+    height: 26px;
+  }
+
+  @media screen and (max-width: $screen-xs-max) {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+  }
+
+  &.haru-active {
+    i:before {
+      content: '\e919';
+    }
+  }
+}
+
+
+// Dark Mode
+#{$dark-mode},
+#{$background-dark} {
+  #{$haru-menu-toggle} {
+    color: $cl-white-dark;
+  }
+
+  #{$root} {
+    &--dropdown {
+      
+    }
+  }
+}
+
+#{$header} {
+  &--transparent {
+    &-light:not(.haru-header--sticky-on) {
+      #{$haru-menu-toggle} {
+        color: $cl-white-dark;
+      }
+    }
+
+    &-dark:not(.haru-header--sticky-on) {
+      #{$haru-menu-toggle} {
+        color: $cl-black;
+      }
+    }
+  }
+}

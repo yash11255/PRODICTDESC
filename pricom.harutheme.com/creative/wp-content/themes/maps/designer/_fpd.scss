@@ -1,0 +1,14 @@
+#fpd-start-customizing-button {
+  background-color: $cl-primary;
+  border-radius: $border-radius;
+  color: $cl-white;
+  padding: 10px 30px;
+  color: $cl-white;
+  font-weight: $fw-bold;
+  transition: all .3s;
+
+  &:hover {
+    background-color: darken($cl-primary, 5%);
+    transition: all .3s;
+  }
+}

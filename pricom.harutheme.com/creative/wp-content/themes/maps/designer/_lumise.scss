@@ -1,0 +1,73 @@
+// Single
+#lumise-customize-button {
+  max-width: 100%;
+  margin: 12px 0 15px;
+  text-align: center;
+}
+
+// Loop
+.product-item {
+  .lumise-button {
+    display: block!important;
+    line-height: inherit!important;
+    padding: 10px 16px!important;
+    margin: 18px auto 0 auto!important;
+    border-radius: $border_radius!important;
+    font-weight: $fw-bold;
+    max-width: 180px;
+  }
+
+  .product-actions {
+    .lumise-button {
+      display: none!important;
+    }
+  }
+}
+
+// Cart
+.woocommerce {
+  a.lumise-edit-design {
+    font-size: inherit;
+  }
+
+  .lumise-edit-design-wrp {
+    margin-top: 10px;
+  }
+
+  .lumise-cart-thumbnails {
+
+    img {
+      margin-left: 5px;
+    }
+  }
+
+  .woocommerce-cart-form {
+    .product-name {
+      &:has(.lumise-edit-design-wrp) {
+        color: $cl-black;
+
+        .variation {
+          margin-bottom: 0;
+        }
+
+        .lumise-edit-design {
+          background-color: $cl-primary!important;
+
+          &:hover {
+            box-shadow: none;
+            color: $cl-white!important;
+            background-color: darken($cl-primary, 5%)!important;
+          }
+        }
+      }
+    }  
+  }
+}
+
+.cart_item {
+  > a {
+    > img {
+      display: none;
+    }
+  }
+}

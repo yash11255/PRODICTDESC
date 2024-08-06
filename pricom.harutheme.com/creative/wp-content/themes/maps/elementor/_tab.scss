@@ -1,0 +1,121 @@
+$root: '.haru-tab';
+
+#{$root} {
+
+	ul {
+		list-style: none;
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	li {
+		
+	}
+
+	&__nav {
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			align-items: center;
+		}
+
+		li {
+			display: flex;
+			flex: 1 1 auto;
+			justify-content: center;
+			align-items: center;
+			background-color: #f1f1f1;
+			cursor: pointer;
+			padding: 10px 20px;
+			text-align: center;
+
+			@media screen and (max-width: $screen-xs-max) {
+	          flex: 0 0 100%;
+	          margin: 0 0 10px;
+	        }
+
+			&.active-default,
+			&.active,
+			&:hover {
+				background-color: $cl-primary;
+				color: $cl-white;
+
+				svg path {
+					fill: $cl-white!important;
+				}
+			}
+		}
+
+		img,
+		svg {
+			width: 16px;
+			margin-right: 10px;
+		}
+
+		img {
+			margin-right: 10px;
+		}
+
+		.top-icon {
+			li {
+				flex-wrap: wrap;
+			}
+
+			img,
+			i,
+			svg {
+				margin-bottom: 10px;
+			}
+
+			#{$root}__title {
+		    flex: 1 1 100%;
+		    line-height: 1;
+			}
+			
+		}
+	}
+
+	#{$root}__content {
+		.active-default,
+		.active {
+			display: block;
+			width: 100%;
+			padding: 20px;
+			opacity: 1;
+			animation: fadeIn linear .3s;
+		}
+
+		> div,
+		.inactive {
+			display: none;
+		}
+	}
+
+	&__icon {
+		display: flex;
+		margin-right: 10px;
+	}
+
+	&__title {
+
+	}
+
+	&--vertical {
+		display: flex;
+
+		#{$root}__nav {
+			flex: 0 0 auto;
+		}
+
+		#{$root}__nav > ul {
+			flex-flow: column wrap;
+
+			li {
+				width: 100%;
+				justify-content: start;
+			}
+		}
+	}
+}

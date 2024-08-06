@@ -1,0 +1,600 @@
+/*-----------------------------------
+ * BACK TO TOP
+ *-----------------------------------*/
+.back-to-top {
+  background: rgba($cl-black, .3);
+  border-radius: $border-radius-small;
+  display: block;
+  position: fixed;
+  right: 30px;
+  bottom: -50px;
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  z-index: 999;
+  text-align: center;
+  transition: all .3s;
+
+  @media screen and (max-width: $screen-lg-max) {
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+  }
+
+  @media screen and (max-width: $screen-xs-max) {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  &:before {
+    content: '\e917';
+    font-family: "phosphor";
+    font-weight: $fw-bold;
+    color: $cl-white;
+    font-size: 18px;
+  }
+
+  &.in {
+    bottom: 30px;
+  }
+
+  &:hover {
+    background: rgba($cl-black, .5);
+  }
+
+  // Has bottom Sticky
+  &.has-bottom-sticky, {
+    bottom: 90px;
+  }
+
+  // Has toolbar Sticky
+  &.has-toolbar-sticky {
+    opacity: 0;
+    visibility: hidden;
+    bottom: 50px;
+
+    &.in {
+      opacity: 1;
+      visibility: visible;
+      bottom: 70px;
+    }
+  }
+}
+
+.switch-theme-mode {
+  position: fixed;
+  left: 4vh;
+  bottom: 2vh;
+  z-index: 99;
+  transform: rotate(-90deg);
+  transform-origin: left top;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.active {
+    .button-switch-mode {
+      // background-color: $cl-primary;
+    }
+
+    .button-switch {
+      // left: auto;
+      // right: 2px;
+      transform: translateX(100%);
+      transition: all .3s;
+
+      @media screen and (max-width: $screen-sm-max) {
+        background-color: $cl-black;
+      }
+    }
+  }
+
+  .button-switch-mode {
+    height: 30px;
+    display: inline-block;
+    min-width: 160px;
+    border-radius: 30px;
+    background-color: #ddd;
+    position: relative;
+    transition: background-color .3s;
+    position: relative;
+
+    @media screen and (max-width: $screen-sm-max) {
+      min-width: 60px;
+      height: 20px;
+    }
+
+    @media screen and (max-width: $screen-xs-max) {
+      min-width: 40px;
+    }
+  }
+
+  .button-switch-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 2px;
+
+    .button-switch-dark,
+    .button-switch-light {
+      flex: 0 0 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: $fw-semi-bold;
+      color: $cl-text;
+
+      @media screen and (max-width: $screen-sm-max) {
+        font-size: 0;
+      }
+    }
+  }
+
+  .button-switch {
+    width: calc(50% - 2px);
+    height: 26px;
+    line-height: 1;
+    border-radius: 26px;
+    background-color: $cl-white;
+    color: $cl-black;
+    font-weight: $fw-semi-bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transform: translateX(0);
+    transition: all .3s;
+
+    @media screen and (max-width: $screen-sm-max) {
+      font-size: 0;
+      height: 16px;
+      border-radius: 16px;
+    }
+  }
+}
+
+
+/*-----------------------------------
+ * AJAX LOADING OVERFLOW
+ *-----------------------------------*/
+.haru-ajax-overflow {
+  display: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba($cl-black, .5);
+  transition: all .3s;
+
+  &.active {
+    display: table;
+    z-index: 99999;
+  }
+
+  .haru-ajax-loading {
+    width: 60px;
+    height: 50px;
+    background-color: $cl-white;
+    display: inline-block;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    box-shadow: 0 1px 8px rgba($cl-black, .2);
+
+    .loading-wrapper {
+      width: 38px;
+      height: 38px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+
+    }
+  }
+
+  // Spinner copy from loading.scss
+  .spinner {
+    width: 5px;
+    height: 5px;
+    background-color: $cl-primary;
+    position: absolute;
+    border-radius: 50%;
+
+    animation: round-9 .8s infinite;
+  }
+
+  #spinner_one {
+    top: 5px;
+    left: 5px;
+
+  }
+
+  #spinner_two {
+    top: 0;
+    left: 16px;
+    animation-delay: .1s;
+  }
+
+  #spinner_three {
+    top: 5px;
+    left: 27px;
+    animation-delay: .2s;
+  }
+
+  #spinner_four {
+    top: 16px;
+    left: 31px;
+    animation-delay: .3s;
+  }
+
+  #spinner_five {
+    top: 27px;
+    left: 27px;
+    animation-delay: .4s;
+  }
+
+  #spinner_six {
+    top: 31px;
+    left: 16px;
+    animation-delay: .5s;
+  }
+
+  #spinner_seven {
+    top: 27px;
+    left: 5px;
+    animation-delay: .6s;
+  }
+
+  #spinner_eight {
+    top: 16px;
+    left: 0;
+    animation-delay: .7s;
+  }
+}
+
+/*-----------------------------------
+ * SOCIAL SHARE
+ *-----------------------------------*/
+.haru-social-share {
+  &__label {
+    font-weight: $fw-medium;
+    color: $cl-heading;
+    margin-right: 15px;
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: inline-block;
+
+    li {
+      display: inline-block;
+
+      a {
+        font-size: 16px;
+        padding: 6px 8px;
+        transition: all .3s;
+
+        @media screen and (max-width: $screen-sm-max) {
+          // margin-bottom: 17px;
+        }
+
+        @media screen and (max-width: $screen-xs-max) {
+          // font-size: 16px;
+        }
+
+        &:hover {
+          transition: all .3s;
+        }
+      }
+    }
+  }
+
+  &__facebook {
+    a {
+      &:before {
+        content: '\f39e';
+        font-family: "Font Awesome 5 Brands";
+      }
+    }
+  }
+
+  &__twitter {
+    a {
+      &:before {
+        content: '\f099';
+        font-family: "Font Awesome 5 Brands";
+      }
+    }
+  }
+
+  &__linkedin {
+    a {
+      &:before {
+        content: '\f0e1';
+        font-family: "Font Awesome 5 Brands";
+      }
+    }
+  }
+
+  &__tumblr {
+    a {
+      &:before {
+        content: '\f173';
+        font-family: "Font Awesome 5 Brands";
+      }
+    }
+  }
+
+  &__pinterest {
+    a {
+      &:before {
+        content: '\f0d2';
+        font-family: "Font Awesome 5 Brands";
+      }
+    }
+  }
+
+  &__vk {
+    a {
+      &:before {
+        content: '\f189';
+        font-family: "Font Awesome 5 Brands";
+      }
+    }
+  }
+
+  &__telegram {
+    a {
+      &:before {
+        content: '\f3fe';
+        font-family: "Font Awesome 5 Brands";
+      }
+    }
+  }
+
+  &__whatsapp {
+    a {
+      &:before {
+        content: '\f232';
+        font-family: "Font Awesome 5 Brands";
+        font-weight: $fw-bold;
+      }
+    }
+  }
+
+  &__email {
+    a {
+      &:before {
+        content: '\f0e0'; // f0e0, 
+        font-family: "Font Awesome 5 Free";
+        font-weight: $fw-bold;
+      }
+    }
+  }
+
+  // Toggle
+  &--toggle {
+    .haru-social-share {
+      &__wrap {
+        position: relative;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      &__label {
+        margin-right: 0;
+        user-select: none;
+        font-size: 16px;
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+
+        &:before {
+          content: '\e90c';
+          font-family: "vicons";
+          font-weight: $fw-normal;
+          font-size: 20px;
+          margin-right: 8px;
+        }
+
+        &:after {
+          border-bottom-width: 10px;
+          border-bottom-style: solid;
+          left: 50%;
+          color: $cl-primary;
+          position: absolute;
+          content: "";
+          width: 0;
+          height: 0;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          bottom: 100%;
+          transform: translateX(-50%);
+          opacity: 0;
+          visibility: hidden;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &.active {
+          background-color: $cl-primary;
+          color: $cl-white;
+
+          &:after {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+
+      &__list {
+        display: none;
+        position: absolute;
+        bottom: calc(100% + 10px);
+        left: 0;
+        width: 100%;
+        border-radius: $border-radius;
+        overflow: hidden;
+        z-index: 99;
+
+        li {
+          display: block;
+
+          a {
+            font-size: 14px;
+            padding: 0 8px;
+            height: 32px;
+            line-height: 32px;
+            display: block;
+            color: $cl-white;
+            text-align: center;
+            transition: all .3s;
+
+            &:hover {
+              background-color: $cl-primary;
+              color: $cl-white;
+              transition: all .3s;
+            }
+
+            @media screen and (max-width: $screen-sm-max) {
+              margin-bottom: 17px;
+            }
+
+            @media screen and (max-width: $screen-xs-max) {
+              font-size: 16px;
+            }
+
+            &:hover {
+              transition: all .3s;
+            }
+          }
+        }
+      }
+
+      &__facebook {
+        a {
+          background-color: #3b5998;
+        }
+      }
+
+      &__twitter {
+        a {
+          background-color: #00acee;
+        }
+      }
+
+      &__linkedin {
+        a {
+          background-color: #0e76a8;
+        }
+      }
+
+      &__tumblr {
+        a {
+          background-color: #34526f;
+        }
+      }
+
+      &__pinterest {
+        a {
+          background-color: #c8232c;
+        }
+      }
+
+      &__vk {
+        a {
+          background-color: #4c75a3;
+        }
+      }
+
+      &__telegram {
+        a {
+          background-color: #0088cc;
+        }
+      }
+
+      &__whatsapp {
+        a {
+          background-color: #34b7f1;
+        }
+      }
+
+      &__email {
+        a {
+          
+        }
+      }
+    }
+  }
+}
+
+// Bottom Toolbar
+#haru-bottom-toolbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: $cl-white;
+  box-shadow: 0 0 10px rgba($cl-black, .1);
+  max-height: 60px;
+  z-index: 9;
+  display: none;
+  transition: all .3s;
+
+  @media screen and (max-width: $screen-sm-max) {
+    display: block;
+  }
+}
+
+.bottom-bar-title {
+  font-size: 12px;
+  font-weight: $fw-semi-bold;
+  color: $cl-black;
+  padding-top: 5px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+$toolbar: '.haru-toolbar';
+
+#{$toolbar} {
+  &--loading {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+// Dark Mode
+.dark-mode {
+  .haru-social-share {
+    &__label {
+      color: $cl-white-dark;
+    }
+  }
+}
+

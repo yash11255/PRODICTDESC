@@ -1,0 +1,606 @@
+$root: '.haru-timeline';
+
+#{$root} {
+  .timeline-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &--style-1 {
+    .timeline-slider-nav {
+      position: relative;
+      margin-bottom: 100px;
+
+
+      @media screen and(max-width: $screen-lg-max) {
+        margin-bottom: 90px;
+      }
+
+      @media screen and(max-width: $screen-md-max) {
+        margin-bottom: 80px;
+      }
+
+      @media screen and(max-width: $screen-sm-max) {
+        margin-bottom: 60px;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        background-color: $cl-black;
+        height: 1px;
+        bottom: 8px;
+      }
+    }
+
+    .timeline-thumb {
+      position: relative;
+      padding-bottom: 48px;
+      margin-bottom: 8px;
+
+      @media screen and(max-width: $screen-md-max) {
+        padding-bottom: 36px;
+      }
+
+      @media screen and(max-width: $screen-sm-max) {
+        padding-bottom: 24px;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 16px;
+        height: 16px;
+        background-color: $cl-black;
+        border-radius: 50%;
+
+        @media screen and(max-width: $screen-sm-max) {
+          width: 12px;
+          height: 12px;
+          bottom: -6px;
+        }
+      }
+    }
+
+    .timeline-dot {
+      font-size: 40px;
+      color: $cl-heading;
+
+      @media screen and(max-width: $screen-lg-max) {
+        font-size: 36px;
+      }
+
+      @media screen and(max-width: $screen-md-max) {
+        font-size: 32px;
+      }
+
+      @media screen and(max-width: $screen-sm-max) {
+        font-size: 28px;
+      }
+
+      @media screen and(max-width: $screen-xs-max) {
+        font-size: 24px;
+      }
+    }
+
+    .timeline-slider-for {
+      margin: 0 -25px;
+
+      @media screen and(max-width: $screen-lg-max) {
+        margin: 0 -20px;
+      }
+
+      @media screen and(max-width: $screen-md-max) {
+        margin: 0 -15px;
+      }
+    }
+
+    .timeline-item {
+      padding: 0 25px;
+
+      @media screen and(max-width: $screen-lg-max) {
+        padding: 0 20px;
+      }
+
+      @media screen and(max-width: $screen-md-max) {
+        padding: 0 15px;
+      }
+
+      &:hover {
+        .timeline-item__image {
+          &:before {
+            opacity: 1;
+            visibility: visible;
+            transition: all .3s;
+          }
+
+          img {
+            transform: scale(1.05);
+            transition: all .5s;
+          }
+        }
+      }
+
+      &__image {
+        position: relative;
+        overflow: hidden;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba($cl-black, $opacity-over);
+          opacity: 0;
+          visibility: hidden;
+          z-index: 1;
+          transition: all .3s;
+        }
+
+        img {
+          width: 100%;
+          transform: scale(1.0);
+          transition: all .5s;
+        }
+      }
+
+      &__title {
+        font-size: 24px;
+        padding-top: 15px;
+
+        @media screen and(max-width: $screen-lg-max) {
+          font-size: 22px;
+        }
+
+        @media screen and(max-width: $screen-md-max) {
+          font-size: 20px;
+        }
+      }
+
+      &__description {
+        padding-top: 10px;
+      }
+
+      &__video-title {
+        padding-top: 3px;
+        text-transform: uppercase;
+
+        @media screen and(max-width: $screen-sm-max) {
+          font-size: 14px;
+        }
+      }
+
+      &__award {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 30px;
+      }
+
+      &__award-image {
+        flex: 0 0 33.333333%;
+      }
+    }
+
+    .slick-prev {
+      left: 25px;
+
+      @media screen and(max-width: $screen-lg-max) {
+        left: 20px;
+      }
+
+      @media screen and(max-width: $screen-md-max) {
+        left: 15px;
+      }
+    }
+
+    .slick-next {
+      right: 25px;
+
+      @media screen and(max-width: $screen-lg-max) {
+        right: 20px;
+      }
+
+      @media screen and(max-width: $screen-md-max) {
+        right: 15px;
+      }
+    }
+  }
+
+  &--style-2 {
+    .timeline-item {
+      display: flex;
+      border-top: 1px solid $cl-border-2;
+      padding: 20px 0 25px;
+
+      @media screen and(max-width: $screen-xs-max) {
+        display: block;
+      }
+
+      &:last-child {
+        border-bottom: 1px solid $cl-border-2;
+      }
+
+      &__year {
+        flex: 0 0 120px;
+        font-size: 24px;
+        color: $cl-black;
+
+        @media screen and(max-width: $screen-lg-max) {
+          font-size: 22px;
+          flex: 0 0 110px;
+        }
+
+        @media screen and(max-width: $screen-md-max) {
+          font-size: 20px;
+          flex: 0 0 100px;
+        }
+
+        @media screen and(max-width: $screen-sm-max) {
+          font-size: 18px;
+          flex: 0 0 90px;
+        }
+
+        @media screen and(max-width: $screen-xs-max) {
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+      }
+
+      &__content {
+        flex: 1;
+      }
+
+      &__meta {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      &__winner {
+        font-size: 24px;
+        font-weight: $fw-semi-bold;
+        margin-top: 0;
+        margin-bottom: 5px;
+
+        @media screen and(max-width: $screen-lg-max) {
+          font-size: 22px;
+        }
+
+        @media screen and(max-width: $screen-md-max) {
+          font-size: 20px;
+        }
+
+        @media screen and(max-width: $screen-sm-max) {
+          font-size: 18px;
+        }
+
+        @media screen and(max-width: $screen-xs-max) {
+          margin-bottom: 10px;
+        }
+      }
+
+      &__video {
+        margin-right: 5px;
+        margin-bottom: -1px;
+      }
+
+      &__video-title {
+        margin: 0;
+        font-weight: $fw-medium;
+        text-transform: uppercase;
+
+        @media screen and(max-width: $screen-xs-max) {
+          font-size: 14px;
+        }
+      }
+
+      &__url {
+        margin-left: auto;
+        padding-top: 10px;
+        flex: 0 0 100px;
+
+        a {
+          font-size: 18px;
+          font-weight: $fw-semi-bold;
+          color: $cl-black;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          transition: all .3s;
+
+          @media screen and(max-width: $screen-lg-max) {
+            font-size: 17px;
+          }
+
+          @media screen and(max-width: $screen-md-max) {
+            font-size: 16px;
+          }
+
+          @media screen and(max-width: $screen-sm-max) {
+            font-size: 15px;
+          }
+
+          @media screen and(max-width: $screen-xs-max) {
+            justify-content: flex-start;
+          }
+
+
+          &:hover {
+            color: $cl-primary;
+            transition: all .3s;
+          }
+        }
+
+        i {
+          font-size: 24px;
+          margin-left: 6px;
+          margin-bottom: -5px;
+
+          @media screen and(max-width: $screen-lg-max) {
+            font-size: 22px;
+          }
+
+          @media screen and(max-width: $screen-md-max) {
+            font-size: 20px;
+          }
+
+          @media screen and(max-width: $screen-sm-max) {
+            font-size: 18px;
+          }
+
+          @media screen and(max-width: $screen-xs-max) {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &--style-3 {
+    .timeline-item {
+      display: flex;
+      border-top: 1px solid $cl-border-2;
+      padding: 20px 0 25px;
+
+      @media screen and(max-width: $screen-xs-max) {
+        display: block;
+      }
+
+      &__year {
+        flex: 0 0 120px;
+        font-size: 24px;
+        color: $cl-black;
+
+        @media screen and(max-width: $screen-lg-max) {
+          font-size: 22px;
+          flex: 0 0 110px;
+        }
+
+        @media screen and(max-width: $screen-md-max) {
+          font-size: 20px;
+          flex: 0 0 100px;
+        }
+
+        @media screen and(max-width: $screen-sm-max) {
+          font-size: 18px;
+          flex: 0 0 90px;
+        }
+
+        @media screen and(max-width: $screen-xs-max) {
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+      }
+
+      &__content {
+        flex: 1;
+        display: flex;
+        align-items: center;
+
+        @media screen and(max-width: $screen-xs-max) {
+          display: block;
+        }
+      }
+
+      &__meta {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-left: auto;
+        padding-top: 8px;
+        justify-content: flex-end;
+
+        @media screen and(max-width: $screen-xs-max) {
+          justify-content: flex-start;
+        }
+      }
+
+      &__winner {
+        font-size: 24px;
+        font-weight: $fw-semi-bold;
+        margin: 0;
+
+        @media screen and(max-width: $screen-lg-max) {
+          font-size: 22px;
+        }
+
+        @media screen and(max-width: $screen-md-max) {
+          font-size: 20px;
+        }
+
+        @media screen and(max-width: $screen-sm-max) {
+          font-size: 18px;
+        }
+
+        @media screen and(max-width: $screen-xs-max) {
+
+        }
+      }
+
+      &__video {
+        margin-right: 5px;
+        margin-bottom: -1px;
+      }
+
+      &__video-title {
+        margin: 0;
+        font-weight: $fw-medium;
+        text-transform: uppercase;
+
+        @media screen and(max-width: $screen-xs-max) {
+          font-size: 14px;
+        }
+      }
+
+      &__url {
+        margin-left: 100px;
+        padding-top: 10px;
+        flex: 0 0 100px;
+
+        @media screen and(max-width: $screen-lg-max) {
+          margin-left: 80px;
+        }
+
+        @media screen and(max-width: $screen-md-max) {
+          margin-left: 60px;
+        }
+
+        @media screen and(max-width: $screen-sm-max) {
+          margin-left: 40px;
+        }
+
+        @media screen and(max-width: $screen-xs-max) {
+          margin-left: 0;
+        }
+
+        a {
+          font-size: 16px;
+          font-weight: $fw-semi-bold;
+          color: $cl-black;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          transition: all .3s;
+
+          @media screen and(max-width: $screen-lg-max) {
+            font-size: 15px;
+          }
+
+          @media screen and(max-width: $screen-xs-max) {
+            justify-content: flex-start;
+          }
+
+          &:hover {
+            color: $cl-primary;
+            transition: all .3s;
+          }
+        }
+
+        i {
+          font-size: 16px;
+          margin-left: 5px;
+          margin-bottom: -2px;
+
+          @media screen and(max-width: $screen-lg-max) {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+#{$dark-mode},
+#{$background-dark} {
+  #{$root} {
+    &--style-1 {
+      .timeline-slider-nav {
+        &:before {
+          background-color: $cl-white;
+        }
+      }
+
+      .timeline-thumb {
+        &:before {
+          background-color: $cl-white;
+        }
+      }
+
+      .timeline-dot {
+        color: $cl-white;
+      }
+
+      .timeline-item {
+        &__award-image {
+          img {
+            filter: brightness(0) invert(1);
+          }
+        }
+      }
+    }
+
+    &--style-2 {
+      .timeline-item {
+        border-top: 1px solid $cl-border-dark;
+
+        &:last-child {
+          border-bottom: 1px solid $cl-border-dark;
+        }
+
+        &__year {
+          color: $cl-white-dark;
+        }
+
+        &__festival {
+          color: $cl-text-3-dark;
+        }
+
+        &__url {
+          a {
+            color: $cl-white-dark;
+
+            &:hover {
+              color: $cl-primary;
+            }
+          }
+        }
+      }
+    }
+
+    &--style-3 {
+      .timeline-item {
+        border-top: 1px solid $cl-border-dark;
+
+        &__year {
+          color: $cl-white-dark;
+        }
+
+        &__festival {
+          color: $cl-text-3-dark;
+        }
+
+        &__url {
+          margin-left: 100px;
+          padding-top: 10px;
+          flex: 0 0 100px;
+
+          a {
+            color: $cl-white-dark;
+
+            &:hover {
+              color: $cl-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}

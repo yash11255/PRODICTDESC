@@ -1,0 +1,225 @@
+$root: '.haru-woo-product-slider';
+
+#{$root} {
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    @media screen and(max-width: $screen-xs-max) {
+      max-width: calc(100vw - 0px);
+    }
+  }
+
+  #{$root}__item {
+    position: relative;
+    overflow: hidden;
+  }
+
+  #{$root}__image {
+    width: 100%;
+    transition: all .3s;
+  }
+
+  // Layout
+  &--slick {
+    .slick-next,
+    .slick-prev {
+      width: 48px;
+      height: 48px;
+      line-height: 48px;
+    }
+
+    .haru-slick--nav-center {
+      .slick-next {
+        right: -60px;
+
+        @media screen and(max-width: $screen-sm-max) {
+          
+        }
+
+        @media screen and(max-width: $screen-xs-max) {
+          
+        }
+      }
+
+      .slick-prev {
+        left: -60px;
+
+        @media screen and(max-width: $screen-sm-max) {
+          
+        }
+
+        @media screen and(max-width: $screen-xs-max) {
+          
+        }
+      }
+    }
+
+    .haru-slick--nav-center-center {
+      .slick-next {
+        right: -8px;
+
+        @media screen and(max-width: $screen-sm-max) {
+          
+        }
+
+        @media screen and(max-width: $screen-xs-max) {
+          
+        }
+      }
+
+      .slick-prev {
+        left: -8px;
+
+        @media screen and(max-width: $screen-sm-max) {
+          
+        }
+
+        @media screen and(max-width: $screen-xs-max) {
+          
+        }
+      }
+    }
+
+    .slick-dots {
+      margin: 20px 0 0;
+
+      @media screen and(max-width: $screen-lg-max) {
+        margin: 15px 0 0;
+      }
+
+      @media screen and(max-width: $screen-md-max) {
+        margin: 10px 0 0;
+      }
+
+      @media screen and(max-width: $screen-sm-max) {
+        margin: 5px 0 0;
+      }
+
+      @media screen and(max-width: $screen-xs-max) {
+        margin: 0 0 0;
+      }
+
+      button {
+       
+      }
+
+      li {
+        &.slick-active {
+          button {
+            
+          }
+        }
+      }
+    }
+
+    .product-item {
+      &.style-2 {
+        padding: 15px;
+
+        @media screen and(max-width: $screen-sm-max) {
+          padding: 10px;
+        }
+
+        @media screen and(max-width: $screen-xs-max) {
+          padding: 8px;
+        }
+      }
+    }
+
+    &#{$root}--product-style-2 {
+      .slick-list {
+        overflow: visible;
+      }
+
+      .slick-slide {
+        padding-top: 25px;
+        padding-bottom: 30px;
+        transition: all .3s;
+
+        &:not(.slick-active) {
+          opacity: 0;
+          visibility: hidden;
+          transition: all .3s;
+        }
+      }
+    }
+  }
+
+  // Padding
+  &--padding {
+    &#{$root}--slick {
+      #{$root}__list {
+        @media screen and(max-width: $screen-xs-max) {
+          max-width: calc(100vw - 16px);
+        }
+      }
+
+      .haru-slick {
+        margin: 0 -15px;
+
+        @media screen and (max-width: $screen-sm-max) {
+          margin: 0 -10px;
+        }
+
+        @media screen and (max-width: $screen-xs-max) {
+          margin: 0 -8px;
+        }
+      }
+
+      .slick-slide {
+        padding: 0 15px;
+
+        @media screen and (max-width: $screen-sm-max) {
+          padding: 0 10px;
+        }
+
+        @media screen and (max-width: $screen-xs-max) {
+          padding: 0 8px;
+        }
+      }
+
+      // .slick-prev {
+      //   left: 15px;
+
+      //   @media screen and (max-width: $screen-sm-max) {
+      //     left: 10px;
+      //   }
+
+      //   @media screen and (max-width: $screen-xs-max) {
+      //     left: 8px;
+      //   }
+      // }
+
+      // .slick-next {
+      //   right: 15px;
+
+      //   @media screen and (max-width: $screen-sm-max) {
+      //     right: 10px;
+      //   }
+
+      //   @media screen and (max-width: $screen-xs-max) {
+      //     right: 8px;
+      //   }
+      // }
+    }
+
+    &#{$root}--product-style-2 {
+      .slick-slide {
+        padding: 0;
+      }
+    }
+  }
+}
+
+#{$dark-mode},
+#{$background-dark} {
+  #{$root} {
+    #{$root}__item {
+      img {
+        // filter: brightness(0) invert(1);
+      }
+    }
+  }
+}

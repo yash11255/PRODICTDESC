@@ -1,0 +1,145 @@
+$root: '.haru-content-slideshow';
+
+#{$root} {
+  #{$root}__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &--slick {
+    #{$root}__list {
+      @media screen and(max-width: $screen-xs-max) {
+        max-width: calc(100vw - 0px);
+      }
+    }
+
+    .slick-dots {
+      position: absolute;
+      bottom: 45px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      @media screen and(max-width: $screen-md-max) {
+        bottom: 35px;
+      }
+
+      @media screen and(max-width: $screen-sm-max) {
+        bottom: 20px;
+      }
+
+      @media screen and(max-width: $screen-xs-max) {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        transform: none;
+        margin-top: 20px;
+      }
+
+      button {
+        background-color: $cl-white;
+
+        @media screen and(max-width: $screen-xs-max) {
+          background-color: $cl-black;
+        }
+      }
+
+      li {
+        &.slick-active {
+          button {
+            border: 1px solid $cl-white;
+
+            @media screen and(max-width: $screen-xs-max) {
+              border: 1px solid $cl-black;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &--slick-2 {
+    #{$root}__list {
+      @media screen and(max-width: $screen-xs-max) {
+        max-width: calc(100vw - 0px);
+      }
+    }
+
+    .slick-next,
+    .slick-prev {
+      width: 48px;
+      height: 48px;
+      line-height: 48px;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .slick-next {
+      right: 15px;
+    }
+
+    .slick-prev {
+      left: 15px;
+    }
+
+    .slick-dots {
+      position: absolute;
+      bottom: 45px;
+      left: 25%;
+      transform: translateX(-50%);
+
+      @media screen and(max-width: $screen-md-max) {
+        bottom: 35px;
+      }
+
+      @media screen and(max-width: $screen-sm-max) {
+        bottom: 20px;
+      }
+
+      @media screen and(max-width: $screen-xs-max) {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        transform: none;
+        margin-top: 20px;
+      }
+
+      button {
+        background-color: $cl-white;
+
+        @media screen and(max-width: $screen-xs-max) {
+          background-color: rgba($cl-black, .3);
+        }
+      }
+
+      li {
+        &.slick-active {
+          button {
+            border: 1px solid $cl-white;
+
+            @media screen and(max-width: $screen-xs-max) {
+              border: 1px solid $cl-black;
+            }
+          }
+        }
+      }
+    }
+
+    &:hover {
+      .slick-next,
+      .slick-prev {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+#{$dark-mode},
+#{$background-dark} {
+  #{$root} {
+    &--slick {
+      
+    }
+  }
+}

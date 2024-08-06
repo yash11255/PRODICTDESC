@@ -1,0 +1,53 @@
+$root: '.haru-logo-footer';
+
+#{$root} {
+  a {
+    display: flex;
+  }
+
+  #{$root}__retina,
+  #{$root}__dark,
+  #{$root}__dark-retina {
+    display: none;
+  }
+
+  @media only screen and (min--moz-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-device-pixel-ratio: 2) {
+    #{$root}__default {
+      display: none;
+    }
+
+    #{$root}__retina {
+      display: block;
+    }
+  }
+}
+
+#{$dark-mode} {
+  #{$root} {
+    #{$root}__dark {
+      display: block;
+    }
+
+    #{$root}__default,
+    #{$root}__retina,
+    #{$root}__dark-retina {
+      display: none;
+    }
+
+    @media only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min-device-pixel-ratio: 2) {
+      #{$root}__dark {
+        display: none;
+      }
+
+      #{$root}__dark-retina {
+        display: block;
+      }
+    }
+  }
+}

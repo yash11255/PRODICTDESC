@@ -1,0 +1,338 @@
+/*-----------------------------------
+ * WOOCOMMERCE MY ACCOUNT
+ *-----------------------------------*/
+.woocommerce-my-account-wrap {
+  display: flex;
+
+  @media screen and (max-width: $screen-xs-max) {
+    display: block;
+  }
+}
+
+.woocommerce-my-account-title {
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-top: 0;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  border-bottom: 1px solid $cl-border;
+
+  @media screen and (max-width: $screen-xs-max) {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
+
+.woocommerce-my-account-menu {
+  flex: 0 0 25%;
+  border-right: 1px solid $cl-border;
+  padding-right: 30px;
+
+  @media screen and (max-width: $screen-xs-max) {
+    padding-right: 0;
+    border-right: none;
+    border: 1px dashed $cl-border;
+    margin-bottom: 30px;
+  }
+}
+
+.woocommerce-MyAccount-content {
+  flex: 0 0 75%;
+  padding-left: 30px;
+
+  @media screen and (max-width: $screen-xs-max) {
+    padding-left: 0;
+  }
+
+  a {
+    color: $cl-heading;
+
+    &:hover {
+      color: $cl-primary;
+    }
+  }
+
+  .dokan-btn {
+    font-weight: $fw-semi-bold;
+    margin-top: 10px;
+    padding: 13px 25px;
+    border-radius: $border-radius-e-small;
+  }
+}
+
+.woocommerce-MyAccount-navigation {
+  ul {
+    list-style: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 15px 0;
+
+    li {
+      &.is-active,
+      &:hover {
+        background-color: $cl-gray-2;
+        a {
+          color: $cl-primary;
+        }
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      a {
+        display: block;
+        font-weight: $fw-semi-bold;
+        color: $cl-heading;
+        padding: 13px 15px;
+        transition: all .3s;
+      }
+    }
+  }
+}
+
+// Similar cart table
+.account-orders-table {
+  @media screen and (max-width: $screen-xs-max) {
+    display: block;
+  }
+
+  thead {
+    @media screen and (max-width: $screen-xs-max) {
+      display: none;
+    }
+  }
+
+  tbody,
+  tfoot,
+  tr {
+    @media screen and (max-width: $screen-xs-max) {
+      display: block;
+    }
+  }
+
+  td {
+    @media screen and (max-width: $screen-xs-max) {
+      display: block;
+      margin-bottom: 10px!important;
+      padding: 0 0 10px!important;
+      text-align: right!important;
+    }
+
+    &:before {
+      @media screen and (max-width: $screen-xs-max) {
+        content: attr(data-title);
+        float: left;
+        padding-top: 3px;
+        color: $cl-heading;
+        text-transform: uppercase;
+        font-weight: $fw-semi-bold;
+        font-size: 12px;
+      }
+    }
+
+    &:last-child {
+      @media screen and (max-width: $screen-xs-max) {
+        border: none!important;
+      }
+    }
+  }
+
+  .amount {
+    color: $cl-primary;
+    font-weight: $fw-semi-bold;
+  }
+}
+
+.woocommerce-orders-table__cell-order-number {
+  a {
+    color: $cl-heading;
+    font-weight: $fw-semi-bold;
+    transition: all .3s;
+
+    &:hover {
+      color: $cl-primary;
+    }
+  }
+}
+
+.woocommerce-Address-title {
+  h3 {
+    display: inline-block;
+  }
+
+  .edit {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: $fw-semi-bold;
+    margin-left: 3px;
+  }
+}
+
+.woocommerce-EditAccountForm {
+  fieldset {
+    @media screen and (max-width: $screen-xs-max) {
+      margin-top: 35px;
+    }
+  }
+}
+
+fieldset {
+  margin-bottom: 20px;
+  padding: 20px 40px;
+  border: 2px solid $cl-border;
+  border-radius: $border-radius;
+
+  @media screen and (max-width: $screen-sm-max) {
+    padding: 15px 30px;
+  }
+
+  @media screen and (max-width: $screen-xs-max) {
+    padding: 10px 15px;
+  }
+
+  legend {
+    margin-bottom: 0;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-weight: $fw-semi-bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    width: auto;
+
+    @media screen and (max-width: $screen-xs-max) {
+      font-size: 16px;
+    }
+  }
+}
+
+// Logged out
+.customer_login_form_wrap {
+  h2 {
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .woocommerce-form {
+    border: 1px solid $cl-border;
+    box-shadow: 1px 1px 2px rgba($cl-black, .1);
+    padding: 20px;
+
+    @media screen and (max-width: $screen-xs-max) {
+      padding: 15px;
+    }
+  }
+
+  .woocommerce-form-login {
+    > .form-row:not(.woocommerce-form-row--wide) {
+      display: flex;
+      align-items: center;
+      padding-top: 5px;
+
+      label {
+        order: 2;
+        margin-bottom: 0;
+        margin-left: 5px;
+      }
+    }
+
+    &__submit.button {
+      padding: 0 35px;
+    }
+  }
+
+  .lost_password {
+    a {
+      color: $cl-primary;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+#{$dark-mode} {
+  .woocommerce-my-account-title {
+    border-bottom: 1px solid $cl-border-dark;
+  }
+
+  .woocommerce-my-account-menu {
+    border-right: 1px solid $cl-border-dark;
+
+    @media screen and (max-width: $screen-xs-max) {
+      border: 1px dashed $cl-border-dark;
+    }
+  }
+
+  .woocommerce-MyAccount-content {
+    a {
+      color: $cl-white-dark;
+
+      &:hover {
+        color: $cl-primary;
+      }
+    }
+  }
+
+  .woocommerce-MyAccount-navigation {
+    ul {
+      li {
+        &.is-active,
+        &:hover {
+          background-color: $cl-bg-dark-3;
+
+          a {
+            color: $cl-primary;
+          }
+        }
+
+        a {
+          color: $cl-white-dark;
+        }
+      }
+    }
+  }
+
+  // Similar cart table
+  .account-orders-table {
+    td {
+      &:before {
+        @media screen and (max-width: $screen-xs-max) {
+          color: $cl-white-dark;
+        }
+      }
+
+      &:last-child {
+        @media screen and (max-width: $screen-xs-max) {
+          border: none!important;
+        }
+      }
+    }
+  }
+
+  .woocommerce-orders-table__cell-order-number {
+    a {
+      color: $cl-white-dark;
+
+      &:hover {
+        color: $cl-primary;
+      }
+    }
+  }
+
+  fieldset {
+    border: 2px solid $cl-border-dark;
+  }
+
+  // Logged out
+  .customer_login_form_wrap {
+    .woocommerce-form {
+      border: 1px solid $cl-border-dark;
+      box-shadow: 1px 1px 2px rgba($cl-white, .1);
+    }
+  }
+}
+

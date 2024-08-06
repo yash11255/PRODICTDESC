@@ -1,0 +1,120 @@
+// Page 404
+.haru-content-404 {
+  .page-content {
+    margin-top: 60px;
+    margin-bottom: 100px;
+    text-align: center;
+
+    @media screen and (max-width: $screen-lg-max) {
+      margin-top: 50px;
+      margin-bottom: 90px;
+    }
+
+    @media screen and (max-width: $screen-md-max) {
+      margin-top: 40px;
+      margin-bottom: 80px;
+    }
+
+    @media screen and (max-width: $screen-sm-max) {
+      margin-top: 30px;
+      margin-bottom: 70px;
+    }
+
+    @media screen and (max-width: $screen-xs-max) {
+      margin-top: 20px;
+      margin-bottom: 60px;
+    }
+
+    .haru-title-404 {
+      line-height: 1;
+      font-size: 250px;
+      color: $cl-primary;
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 230px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        font-size: 210px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        font-size: 180px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        font-size: 120px;
+      }
+    }
+
+    p.txt2 {
+      color: $cl-heading;
+      font-size: 36px;
+      letter-spacing: 0px;
+      margin-top: 30px;
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 32px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        font-size: 28px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        font-size: 24px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        font-size: 20px;
+      }
+
+    }
+
+    p.txt3 {
+      color: $cl-text;
+      padding-bottom: 30px;
+    }
+  }
+}
+
+// Special header
+body {
+  &.header-transparent {
+    .haru-content-404 {
+      .page-content {
+        padding-top: 100px;
+
+        @media screen and (max-width: $screen-lg-max) {
+          padding-top: 90px;
+        }
+
+        @media screen and (max-width: $screen-md-max) {
+          padding-top: 80px;
+        }
+
+        @media screen and (max-width: $screen-sm-max) {
+          padding-top: 30px;
+        }
+
+        @media screen and (max-width: $screen-xs-max) {
+          padding-top: 20px;
+        }
+      }
+    }
+  }
+}
+
+#{$dark-mode} {
+  .haru-content-404 {
+    .page-content {
+      p.txt2 {
+        color: $cl-white-dark;
+      }
+
+      p.txt3 {
+        color: $cl-text-dark;
+      }
+    }
+  }
+}

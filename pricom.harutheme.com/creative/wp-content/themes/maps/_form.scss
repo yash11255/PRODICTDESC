@@ -1,0 +1,468 @@
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=search],
+input[type=number],
+input[type=url],
+input[type=tel],
+input[type=date], 
+select,
+textarea {
+  appearance: none;
+  max-width: 100%;
+  width: 100%;
+  border: 1px solid $cl-gray;
+  border-radius: $border-radius-e;
+  background-color: $cl-gray;
+  box-shadow: none;
+  color: inherit;
+  vertical-align: middle;
+  transition: border-color .5s ease;
+
+  &:focus {
+    border: 1px solid $cl-primary;
+    outline: none;
+  }
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=search],
+input[type=number],
+input[type=url],
+input[type=tel],
+input[type=date],
+select {
+  height: $input-height-base;
+  padding: 0 15px;
+}
+
+textarea {
+  padding: 15px;
+  border-radius: $border-radius-e-tiny;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  margin-top: 0;
+  margin-right: 5px;
+  padding: 0;
+  vertical-align: middle;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  background-color: $cl-primary;
+  display: inline-block;
+  color: $cl-white;
+  fill: $cl-white;
+  height: $e-height-base;
+  line-height: $e-height-base;
+  border: none;
+  border-radius: $border-radius-e;
+  padding: 0 35px;
+  font-weight: $fw-semi-bold;
+  text-align: center;
+  transition: all .3s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: darken($cl-primary, 5%);
+    transition: all .3s;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+select {
+  position: relative;
+  background-position: right 8px top 50%;
+  cursor: pointer;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2U9IiNiYmIiPjxwYXRoIGQ9Ik02IDlsNiA2IDYtNiIvPjwvc3ZnPg==);
+  background-size: auto 18px;
+  background-repeat: no-repeat;
+  max-width: 100%;
+
+  // &:after {
+  //   content: '\e904';
+  //   font-family: 'haruicons';
+  //   position: absolute;
+  //   right: 15px;
+  //   top: 50%;
+  //   transform: translateY(-50%);
+  // }
+}
+
+$root: '.contact-form';
+
+#{$root} {
+  &__col {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 20px;
+
+    &--submit {
+      
+    }
+
+    &--cv,
+    &--file {
+      @media screen and (max-width: $screen-xs-max) {
+        display: block;
+      }
+
+      #{$root}__label {
+        @media screen and (max-width: $screen-xs-max) {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    &--cols-2 {
+      #{$root}__col {
+        display: flex;
+        align-items: center;
+        width: 50%;
+
+        &:first-child {
+          padding-right: 15px;
+
+          @media screen and (max-width: $screen-sm-max) {
+            padding-right: 10px;
+          }
+
+          @media screen and (max-width: $screen-xs-max) {
+            padding-right: 8px;
+          }
+        }
+
+        &:last-child {
+          padding-left: 15px;
+
+          @media screen and (max-width: $screen-sm-max) {
+            padding-left: 10px;
+          }
+
+          @media screen and (max-width: $screen-xs-max) {
+            padding-left: 8px;
+          }
+        }
+      }
+    }
+
+    &--cols-3,
+    &--cols-4 {
+      margin: 0 -15px 20px -15px;
+
+      @media screen and (max-width: $screen-sm-max) {
+        margin: 0 -10px 20px -10px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        margin: 0 -8px 16px -8px;
+      }
+
+      #{$root}__col {
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+
+        @media screen and (max-width: $screen-sm-max) {
+          padding: 0 10px;
+        }
+
+        @media screen and (max-width: $screen-xs-max) {
+          padding: 0 8px;
+        }
+      }
+    }
+
+    &--cols-3 {
+      #{$root}__col {
+        width: 33.3333%;
+
+        @media screen and (max-width: $screen-xs-max) {
+          width: 50%;
+          margin-bottom: 5px;
+        }
+      }
+    }
+
+    &--cols-4 {
+      #{$root}__col {
+        width: 25%;
+
+        @media screen and (max-width: $screen-xs-max) {
+          width: 50%;
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+
+  &__label {
+    flex: 0 0 150px;
+    font-size: 16px;
+    color: $cl-black;
+
+    &--auto {
+      flex: 0 0 auto;
+      margin-right: 45px;
+    }
+
+    &--block {
+      flex: 0 0 100%;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__required {
+    color: $cl-primary;
+    margin-left: 8px;
+  }
+
+  &__title {
+    font-size: 28px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: flex-end;
+
+    @media screen and (max-width: $screen-lg-max) {
+      font-size: 24px;
+    }
+
+    @media screen and (max-width: $screen-md-max) {
+      font-size: 22px;
+    }
+
+    @media screen and (max-width: $screen-sm-max) {
+      font-size: 20px;
+    }
+
+    @media screen and (max-width: $screen-xs-max) {
+      font-size: 18px;
+    }
+
+    &:after {
+      content: '';
+      height: 1px;
+      flex: 1;
+      background-color: $cl-border;
+      margin-bottom: 9px;
+      margin-left: 10px;
+    }
+  }
+
+  &__input {
+    flex: 1;
+
+    input[type=text],
+    input[type=email],
+    input[type=password],
+    input[type=search],
+    input[type=number],
+    input[type=url],
+    input[type=tel],
+    input[type=date],
+    select,
+    textarea {
+      // background-color: $cl-white;
+      // border: none;
+    }
+  }
+
+  &__submit {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+
+    button,
+    [type="button"],
+    [type="reset"],
+    [type="submit"] {
+      background-color: $cl-primary;
+      box-shadow: 0px 3px 8px rgba($cl-black, .18);
+      color: $cl-white;
+      height: $e-height-base;
+      line-height: $e-height-base;
+      font-size: 15px;
+      font-weight: $fw-semi-bold;
+      border-radius: $border-radius-e;
+      border: none;
+      padding: 0 35px;
+      min-width: 170px;
+      max-width: 100%;
+      text-align: center;
+      transition: all .3s;
+
+      &:hover {
+        background-color: darken($cl-primary, 5%);
+        transition: all .3s;
+      }
+    }
+
+    &--center {
+      margin-left: auto;
+      margin-right: auto;
+      transform: translateX(36px);
+    }
+
+    &--right {
+      margin-left: auto;
+
+      &#{$root}__submit {
+        flex-direction: row-reverse;
+      }
+    }
+
+    &--left {
+      margin-right: auto;
+    }
+  }
+
+  &__file {
+    display: flex;
+    align-items: center;
+
+    input[type="file"] {
+      display: none;
+    }
+
+    &-upload {
+      height: $e-height-base;
+      line-height: $e-height-base;
+      padding: 0 40px;
+      background-color: $cl-black-2;
+      color: $cl-white;
+      font-weight: $fw-semi-bold;
+      border-radius: $border-radius-e;
+      display: flex;
+      align-items: center;
+
+      &:before {
+        content: '\e95a';
+        font-family: 'phosphor';
+        font-weight: $fw-normal;
+        font-size: 20px;
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &-uploaded {
+      margin-left: 10px;
+    }
+  }
+
+  // Special
+  &__message {
+    textarea {
+      max-height: 150px;
+    }
+  }
+}
+
+// Reset some libraries CSS
+button.mfp-close,
+button.mfp-arrow {
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+// CF7
+.wpcf7 form .wpcf7-response-output {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+// Row, Colum
+.haru-field {
+  margin-bottom: 30px;
+}
+
+.haru-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+[class*="haru-col-"] {
+  padding: 0 15px;
+}
+
+.haru-col-sm-6 {
+  flex: 0 0 50%;
+  
+  @media screen and (max-width: $screen-xs-max) {
+    flex: 0 0 100%;
+  }
+}
+
+.haru-col-sm-12 {
+  flex: 0 0 100%;
+}
+
+.haru-col-xs-12 {
+  @media screen and (max-width: $screen-xs-max) {
+    flex: 0 0 100%;
+  }
+}
+
+// Dark Mode
+.dark-mode {
+  input[type=text],
+  input[type=email],
+  input[type=password],
+  input[type=search],
+  input[type=number],
+  input[type=url],
+  input[type=tel],
+  input[type=date], 
+  select,
+  textarea {
+    border: 1px solid $cl-bg-dark-3;
+    background-color: $cl-bg-dark-3;
+
+    &:focus {
+      border: 1px solid $cl-primary;
+    }
+  }
+
+  #{$root}__label {
+    color: $cl-white-dark;
+  }
+
+  #{$root}__submit {
+    button,
+    [type="button"],
+    [type="reset"],
+    [type="submit"] {
+      background-color: $cl-white-dark;
+      color: $cl-black;
+
+      &:hover {
+        background-color: $cl-primary;
+        color: $cl-white;
+        transition: all .3s;
+      }
+    }
+  }
+}

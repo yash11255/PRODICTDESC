@@ -1,0 +1,714 @@
+$root: '.haru-social';
+
+#{$root} {
+
+  ul {
+    list-style: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &--none {
+    li {
+      margin: 0 12px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        #{$root}__title {
+          color: $cl-primary;
+          transition: all .3s;
+        }
+      }
+    }
+
+    #{$root}__title {
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: 10px;
+      font-weight: $fw-semi-bold;
+      color: $cl-black;
+      transition: all .3s;
+    }
+  }
+
+  &--style-1 {
+    li {
+      margin: 0 12px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    a {
+      &:hover {
+        #{$root}__icon {
+          background-color: $cl-primary;
+          color: $cl-white;
+          transition: all .3s;
+        }
+      }
+    }
+
+    #{$root}__icon {
+      background-color: $cl-black-3;
+      border-radius: 50%;
+      color: $cl-white;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .3s;
+
+      svg path {
+        fill: $cl-black-3;
+      }
+    }
+
+    // SVG
+  }
+
+  &--style-2 {
+    li {
+      margin: 0 20px;
+
+      @media screen and(max-width: $screen-lg-max) {
+        margin: 0 18px
+      }
+
+      @media screen and(max-width: $screen-md-max) {
+        margin: 0 16px;
+      }
+
+      @media screen and(max-width: $screen-sm-max) {
+        margin: 0 14px;
+      }
+
+      @media screen and(max-width: $screen-sm-max) {
+        margin: 0 12px;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    a {
+      &:hover {
+        #{$root}__title {
+          color: $cl-primary;
+          transition: all .3s;
+        }
+      }
+    }
+
+    #{$root}__title {
+      color: $cl-heading;
+      font-weight: $fw-semi-bold;
+      font-size: 20px;
+      transition: all .3s;
+
+      @media screen and(max-width: $screen-lg-max) {
+        font-size: 18px;
+      }
+
+      @media screen and(max-width: $screen-md-max) {
+        font-size: 17px;
+      }
+
+      @media screen and(max-width: $screen-sm-max) {
+
+      }
+
+      @media screen and(max-width: $screen-xs-max) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &--style-3 {
+    li {
+      margin: 0 15px;
+
+      @media screen and(max-width: $screen-lg-max) {
+        margin: 0 13px;
+      }
+
+      @media screen and(max-width: $screen-md-max) {
+        margin: 0 11px;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    a {
+      &:hover {
+        #{$root}__icon {
+          color: $cl-primary;
+          transition: all .3s;
+        }
+      }
+    }
+
+    #{$root}__icon {
+      color: $cl-text-2;
+      font-size: 20px;
+      transition: all .3s;
+
+      @media screen and(max-width: $screen-lg-max) {
+        font-size: 19px;
+      }
+
+      @media screen and(max-width: $screen-md-max) {
+        font-size: 18px;
+      }
+
+      @media screen and(max-width: $screen-sm-max) {
+        // font-size: 17px;
+      }
+
+      @media screen and(max-width: $screen-xs-max) {
+        // font-size: 16px;
+      }
+
+      svg path {
+        fill: $cl-text-2;
+      }
+    }
+
+    // SVG
+  }
+
+  &--style-4 {
+    ul {
+      display: flex;
+      justify-content: space-between;
+
+      @media screen and (max-width: $screen-xs-max) {
+        display: block;
+      }
+    }
+
+    li {
+      flex: 1;
+      position: relative;
+      text-align: center;
+
+      @media screen and (max-width: $screen-xs-max) {
+        border-bottom: 1px solid $cl-border;
+      }
+
+      &:last-child {
+        @media screen and (max-width: $screen-xs-max) {
+          border: none;
+        }
+      }
+    }
+
+    a {
+      display: block;
+      padding: 25px 0;
+
+      @media screen and (max-width: $screen-xs-max) {
+        padding: 20px 0;
+      }
+
+      &:hover {
+        background-color: #ebf1fc;
+
+        #{$root}__icon {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        #{$root}__title {
+          opacity: 0;
+          visibility: hidden;
+          transition: all .3s;
+        }
+      }
+    }
+
+    #{$root}__icon {
+      font-size: 22px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all .3s;
+
+      .fa-facebook,
+      .fa-facebook-f,
+      .fa-facebook-messenger,
+      .fa-facebook-square {
+        color: #3b5998;
+      }
+
+      .fa-instagram {
+        color: #3f729b;
+      }
+
+      .fa-twitter,
+      .fa-twitter-square {
+        color: #3998F2;
+      }
+
+      .fa-vimeo,
+      .fa-vimeo-square,
+      .fa-vimeo-v {
+        color: #1ab7ea;
+      }
+
+      .fa-pinterest,
+      .fa-pinterest-square,
+      .fa-pinterest-p {
+        color: #e60023;
+      }
+
+      .fa-youtube-square,
+      .fa-youtube {
+        color: #ff0000;
+      }
+    }
+
+    #{$root}__title {
+      color: $cl-black;
+      font-weight: $fw-medium;
+      font-size: 18px;
+      opacity: 1;
+      visibility: visible;
+      transition: all .3s;
+
+      @media screen and(max-width: $screen-lg-max) {
+        font-size: 18px;
+      }
+
+      @media screen and(max-width: $screen-md-max) {
+        font-size: 16px;
+      }
+
+      @media screen and(max-width: $screen-sm-max) {
+
+      }
+
+      @media screen and(max-width: $screen-xs-max) {
+
+      }
+    }
+
+    &#{$root}--specimen {
+      #{$root}__title {
+        font-weight: $fw-bold;
+        font-style: italic;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &--style-5 {
+    li {
+      margin: 0 8px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    a {
+      &:hover {
+        #{$root}__icon {
+          border: 1px solid $cl-primary;
+          background-color: $cl-primary;
+          color: $cl-white;
+          transition: all .3s;
+
+          svg path {
+            fill: $cl-white;
+          }
+        }
+      }
+    }
+
+    #{$root}__icon {
+      border-radius: 50%;
+      border: 1px solid $cl-border;
+      background-color: transparent;
+      color: $cl-heading;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .3s;
+
+      svg path {
+        fill: $cl-heading;
+      }
+    }
+
+    // SVG
+  }
+
+  &--style-6 {
+    li {
+      margin: 0 15px;
+
+      @media screen and(max-width: $screen-lg-max) {
+        margin: 0 13px;
+      }
+
+      @media screen and(max-width: $screen-md-max) {
+        margin: 0 11px;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    a {
+      &:hover {
+        #{$root}__icon {
+          color: rgba($cl-black, .6);
+          transition: all .3s;
+        }
+      }
+    }
+
+    #{$root}__icon {
+      color: $cl-black;
+      font-size: 20px;
+      transition: all .3s;
+
+      @media screen and(max-width: $screen-lg-max) {
+        font-size: 19px;
+      }
+
+      @media screen and(max-width: $screen-md-max) {
+        font-size: 18px;
+      }
+
+      @media screen and(max-width: $screen-sm-max) {
+        // font-size: 17px;
+      }
+
+      @media screen and(max-width: $screen-xs-max) {
+        // font-size: 16px;
+      }
+
+      svg path {
+        fill: $cl-black;
+      }
+    }
+
+    // SVG
+  }
+
+  &--size {
+    &-large {
+      &#{$root}--style-3,
+      &#{$root}--style-6 {
+        li {
+          margin: 0 20px;
+
+          @media screen and(max-width: $screen-lg-max) {
+            margin: 0 15px;
+          }
+
+          &:first-child {
+            margin-left: 0;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+
+        #{$root}__icon {
+          font-size: 24px;
+
+          @media screen and(max-width: $screen-lg-max) {
+            font-size: 22px;
+          }
+
+          @media screen and(max-width: $screen-md-max) {
+            font-size: 20px;
+          }
+
+          @media screen and(max-width: $screen-sm-max) {
+            font-size: 18px;
+          }
+
+          @media screen and(max-width: $screen-xs-max) {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    &-small {
+      &#{$root}--style-3,
+      &#{$root}--style-6 {
+        li {
+          margin: 0 10px;
+
+          @media screen and(max-width: $screen-lg-max) {
+            
+          }
+
+          @media screen and(max-width: $screen-md-max) {
+           
+          }
+
+          &:first-child {
+            margin-left: 0;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+
+        #{$root}__icon {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+#{$dark-mode},
+#{$background-dark} {
+  #{$root} {
+
+    &--style-2 {
+      a {
+        &:hover {
+          #{$root}__title {
+            color: $cl-primary;
+          }
+        }
+      }
+
+      #{$root}__title {
+        color: $cl-white-dark;
+      }
+    }
+
+    &--style-3 {
+      a {
+        &:hover {
+          #{$root}__icon {
+            color: $cl-primary;
+          }
+        }
+      }
+
+      #{$root}__icon {
+        color: $cl-white-dark;
+
+        svg path {
+          fill: $cl-white-dark;
+        }
+      }
+
+      // SVG
+    }
+
+    &--style-3 {
+      // Already
+
+      &#{$root}--opacity {
+        a {
+          &:hover {
+            #{$root}__icon {
+              color: $cl-primary;
+            }
+
+            svg path {
+              fill: $cl-primary;
+            }
+          }
+        }
+
+        #{$root}__icon {
+          color: $cl-text-2;
+
+          svg path {
+            fill: $cl-text-2;
+          }
+        }
+      }
+    }
+
+    &--style-4 {
+      li {
+        @media screen and (max-width: $screen-xs-max) {
+          border-bottom: 1px solid $cl-border-dark;
+        }
+
+        &:last-child {
+          @media screen and (max-width: $screen-xs-max) {
+            border: none;
+          }
+        }
+      }
+
+      a {
+        &:has(> .haru-social__icon .fa-facebook),
+        &:has(> .haru-social__icon .fa-facebook-f),
+        &:has(> .haru-social__icon .fa-facebook-messenger),
+        &:has(> .haru-social__icon .fa-facebook-square) {
+          &:hover {
+            background-color: #3b5998;
+          }
+        }
+
+        &:has(> .haru-social__icon .fa-instagram) {
+          &:hover {
+            background-color: #3f729b;
+          }
+        }
+
+        &:has(> .haru-social__icon .fa-twitter),
+        &:has(> .haru-social__icon .fa-twitter-square) {
+          &:hover {
+            background-color: #3998F2;
+          }
+        }
+
+        &:has(> .haru-social__icon .fa-vimeo),
+        &:has(> .haru-social__icon .fa-vimeo-v),
+        &:has(> .haru-social__icon .fa-vimeo-square) {
+          &:hover {
+            background-color: #1ab7ea;
+          }
+        }
+
+        &:has(> .haru-social__icon .fa-pinterest),
+        &:has(> .haru-social__icon .fa-pinterest-square),
+        &:has(> .haru-social__icon .fa-pinterest-p) {
+          &:hover {
+            background-color: #e60023;
+          }
+        }
+
+        &:has(> .haru-social__icon .fa-youtube),
+        &:has(> .haru-social__icon .fa-youtube-square) {
+          &:hover {
+            background-color: #ff0000;
+          }
+        }
+
+        &:hover {
+          background-color: $cl-primary;
+
+          #{$root}__icon {
+            color: $cl-white-dark;
+
+            .fa-facebook,
+            .fa-facebook-f,
+            .fa-facebook-messenger,
+            .fa-facebook-square {
+              color: $cl-white-dark;
+            }
+
+            .fa-instagram {
+              color: $cl-white-dark;
+            }
+
+            .fa-twitter,
+            .fa-twitter-square {
+              color: $cl-white-dark;
+            }
+
+            .fa-vimeo,
+            .fa-vimeo-square,
+            .fa-vimeo-v {
+              color: $cl-white-dark;
+            }
+
+            .fa-pinterest,
+            .fa-pinterest-square,
+            .fa-pinterest-p {
+              color: $cl-white-dark;
+            }
+
+            .fa-youtube-square,
+            .fa-youtube {
+              color: $cl-white-dark;
+            }
+          }
+        }
+      }
+
+      #{$root}__title {
+        color: $cl-white-dark;
+      }
+    }
+
+    &--style-5 {
+      a {
+        &:hover {
+          #{$root}__icon {
+            border: 1px solid $cl-primary;
+            background-color: $cl-primary;
+            color: $cl-white;
+          }
+        }
+      }
+
+      #{$root}__icon {
+        border: 1px solid $cl-border-dark;
+        background-color: transparent;
+        color: $cl-white;
+
+        svg path {
+          fill: $cl-white;
+        }
+      }
+
+      // SVG
+    }
+  }
+}

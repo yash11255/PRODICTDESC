@@ -1,0 +1,327 @@
+/*-----------------------------------
+ * WOOCOMMERCE WISHLIST
+ *-----------------------------------*/
+
+#yith-wcwl-form {
+  .wishlist-title-container {
+    text-align: center;
+  }
+
+  .wishlist-title {
+    margin-bottom: 40px;
+
+    h2 {
+      color: $cl-heading;
+      font-size: 18px;
+      margin: 0;
+      padding: 0;
+      text-transform: uppercase;
+
+      @media screen and (max-width: $screen-xs-max) {
+        font-size: 16px;
+      }
+    }
+
+    .show-title-form {
+      padding: 0;
+      background-color: transparent;
+      color: inherit;
+      line-height: inherit;
+      height: auto;
+    }
+  }
+}
+
+.wishlist_table {
+  thead {
+    background-color: $cl-gray!important;
+
+    th {
+      border-width: 1px!important;
+      border-top: none!important;
+    }
+  }
+
+  tr {
+    .product-remove {
+      text-align: center;
+    }
+
+    .product-thumbnail {
+      width: 10%;
+
+      a {
+        max-width: 100px!important;
+      }
+    }
+
+    .product-name {
+      a {
+        color: $cl-heading;
+        font-weight: $fw-semi-bold;
+      }
+    }
+    
+    .product-price {
+      font-weight: $fw-semi-bold;
+    }
+
+    .product-stock-status {
+      .wishlist-in-stock {
+        color: $cl-primary;
+      }
+
+      .wishlist-out-of-stock{
+        color: red;
+      }
+    }
+
+    // Copy from woocommercer.scss
+    .product-add-to-cart {
+      a {
+        background: $cl-primary;
+        color: $cl-white;
+        display: inline-block;
+        font-weight: $fw-bold;
+        outline: none;
+        border: none;
+        height: $e-height-base;
+        line-height: $e-height-base;
+        padding: 0 25px;
+        line-height: $e-height-base;
+        min-width: 130px;
+        border-radius: $border-radius-e-small;
+        transition: all .3s;
+
+        &:hover {
+          background: darken($cl-primary, 5%);
+          color: $cl-white;
+          transition: all .3s;
+        }
+
+        &.lumise-button {
+          margin-top: 10px!important;
+        }
+      }
+    }
+  }
+
+  &.mobile {
+    margin: 0;
+    padding: 0;
+
+    li {
+      position: relative;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid $cl-border;
+
+      &:last-child {
+        border: none;
+        padding-bottom: 0;
+      }
+
+      .item-wrapper {
+        width: 100%;
+
+        .product-thumbnail {
+          max-width: 80px;
+        }
+
+        .item-details {
+          width: calc(100% - 100px);
+
+          h3 {
+            font-size: $fs-14;
+            font-weight: $fw-semi-bold;
+            margin-top: 0;
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      table.item-details-table {
+        td {
+          font-size: 12px!important;
+          font-weight: $fw-semi-bold!important;
+          padding: 3px 0!important;
+
+          &.label {
+            color: $cl-heading;
+          }
+        }
+      }
+
+      table.additional-info {
+        td {
+          font-size: 13px!important;
+          font-weight: $fw-semi-bold!important;
+          padding: 6px 0!important;
+
+          &.label {
+            color: $cl-heading;
+          }
+        }
+      }
+
+      .product-remove {
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 14px;
+      }
+
+      .additional-info-wrapper {
+        .product-add-to-cart {
+          margin-bottom: 0;
+
+          a {
+            background: $cl-primary;
+            color: $cl-white;
+            font-weight: $fw-semi-bold;
+            outline: none;
+            border: none;
+            height: $e-height-base;
+            line-height: $e-height-base;
+            padding: 0 25px!important;
+            line-height: $e-height-base;
+            min-width: 130px;
+            margin-bottom: 0!important;
+            display: block;
+            width: 100%;
+            border-radius: $border-radius;
+            transition: all .3s;
+
+            &:hover {
+              background: darken($cl-primary, 5%);
+              color: $cl-white;
+              transition: all .3s;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+table.wishlist_table thead th {
+  border-color: $cl-border;
+}
+
+.yith-wcwl-share {
+  float: none!important;
+
+  .yith-wcwl-share-title {
+    font-size: 18px;
+    text-transform: uppercase;
+
+    @media screen and (max-width: $screen-xs-max) {
+      font-size: 16px;
+    }
+  }
+
+  .share-button {
+    a {
+      border-radius: $border-radius;
+      min-width: 30px;
+      min-height: 30px;
+      padding: 7px 5px;
+      color: $cl-white;
+      transition: all .3s;
+
+      &:hover {
+        color: $cl-white;
+        transition: all .3s;
+      }
+    }
+
+    .fa {
+      font-family: 'FontAwesome';
+    }
+  }
+}
+
+.yith-wcwl-after-share-section {
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  .copy-target {
+    flex: 0 0 50%;
+    margin-right: 15px;
+
+    @media screen and (max-width: $screen-xs-max) {
+      flex: 0 0 100%;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  .copy-trigger {
+    color: $cl-black;
+    font-weight: $fw-semi-bold;
+    text-decoration: underline;
+    transition: all .3;
+
+    &:hover {
+      color: $cl-primary;
+      transition: all .3s;
+    }
+  }
+}
+
+#{$dark-mode} {
+  #yith-wcwl-form {
+    .wishlist-title {
+      h2 {
+        color: $cl-white-dark;
+      }
+    }
+  }
+
+  .wishlist_table {
+    thead {
+      background-color: $cl-bg-dark-3!important;
+    }
+
+    tr {
+      .product-name {
+        a {
+          color: $cl-white-dark;
+        }
+      }
+    }
+
+    &.mobile {
+      li {
+        border-bottom: 1px solid $cl-border-dark;
+
+        &:last-child {
+          border: none;
+        }
+
+        table.item-details-table {
+          td {
+            &.label {
+              color: $cl-white-dark;
+            }
+          }
+        }
+
+        table.additional-info {
+          td {
+            &.label {
+              color: $cl-white-dark;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  table.wishlist_table thead th {
+    border-color: $cl-border-dark;
+  }
+}
+

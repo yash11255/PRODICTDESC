@@ -1,0 +1,107 @@
+/*-----------------------------------
+ * BLOG
+ *-----------------------------------*/
+@import "blog/archive";
+@import "blog/single";
+@import "blog/sidebar-blog";
+@import "blog/sidebar-block";
+@import "blog/search";
+@import "blog/comments";
+
+// jPlayer audio
+.jp-audio {
+  .jp-play,
+  .jp-pause,
+  .jp-mute,
+  .jp-unmute {
+    &:before {
+      font-family: "Font Awesome 5 Free";
+      font-weight: $fw-bold;
+      font-size: 16px;
+      line-height: 18px;
+      position: relative;
+      top: 2px;
+    }
+  }
+
+  .jp-play {
+    &:before {
+      content: '\f04b';
+    }
+  }
+
+  .jp-pause {
+    &:before {
+      content: '\f04c';
+    }
+  }
+
+  .jp-mute {
+    display: none;
+
+    &:before {
+      content: '\f028';
+    }
+  }
+
+  .jp-unmute {
+    &:before {
+      content: '\f026';
+    }
+  }
+
+  .jp-volume {
+    li {
+      margin-right: 3px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .jp-interface {
+    height: 60px;
+  }
+
+  .jp-controls {
+    height: 60px;
+    line-height: 60px;
+
+    a {
+      color: $cl-white;
+
+      &:hover {
+        color: $cl-primary;
+        transition: all .3s;
+      }
+    }
+  }
+
+  .jp-progress {
+    width: calc(100% - 200px);
+
+    .jp-seek-bar {
+      height: 6px;
+      border-radius: 6px;
+
+      .jp-play-bar {
+        background: $cl-primary;
+        border-radius: 6px;
+      }
+    }
+  }
+
+  .jp-volume {
+    .jp-volume-bar {
+      height: 6px;
+      border-radius: 6px;
+
+      .jp-volume-bar-value {
+        background: $cl-primary;
+        height: 6px;
+        border-radius: 6px;
+      }
+    }
+  }
+}

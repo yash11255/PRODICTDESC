@@ -1,0 +1,369 @@
+// Comments (also use for page comment)
+#comments {
+  padding-top: 20px;
+  clear: both;
+
+  @media screen and (max-width: $screen-xs-max) {
+    padding-top: 0;
+  }
+
+  .haru-heading {
+    text-align: center;
+  }
+
+  // Comment List
+  .comment-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    list-style-type: none;
+
+    li {
+      // Trackback, Pingback
+      &.trackback,
+      &.pingback {
+        .comment-body {
+          .author-avatar {
+            width: 0;
+          }
+
+          .comment-text {
+            padding-left: 0;
+          }
+        }
+      }
+
+      .comment-body {
+        padding: 10px 0;
+        margin-bottom: 10px;
+      }
+
+      .author-avatar {
+          width: 90px;
+          float: left;
+
+          @media screen and ( max-width:$screen-xs-max ) {
+            width: 50px;
+          }
+
+          img {
+            border-radius: 50%;
+          }
+        }
+
+      .comment-text {
+        padding-left: 90px;
+
+        @media screen and ( max-width:$screen-xs-max ) {
+          padding-left: 65px;
+        }
+
+        .author {
+          .author-name {
+            color: $cl-heading;
+            font-size: 16px;
+            font-weight: $fw-medium;
+            text-transform: capitalize;
+
+            @media screen and ( max-width:$screen-xs-max ) {
+              font-size: $fs-base;
+            }
+
+            a {
+              color: $cl-heading;
+              font-weight: $fw-medium;
+
+              &:hover {
+                color: $cl-primary;
+                transition: all .3s;
+              }
+            }
+          }
+        }
+
+        .comment-meta {
+          .comment-meta-date {
+            // color: $cl-text-2;
+            float: left;
+            font-size: $fs-small + 2px;
+            padding-top: 2px;
+          }
+
+          .comment-meta-action {
+            a {
+              // color: $cl-text-2;
+              font-weight: $fw-medium;
+              margin-left: 15px;
+              font-size: $fs-small + 2px;
+
+              &:hover {
+                color: $cl-primary;
+              }
+
+              &:first-child {
+                padding-left: 15px;
+                border-left: 1px solid $cl-border;
+              }
+            }
+          }
+        }
+
+        .text {
+          margin-top: 6px;
+          line-height: 1.8;
+        }
+      }
+
+      .children {
+        border-left: 1px solid $cl-border;
+        margin-left: 70px;
+        margin-bottom: 20px;
+        padding-left: 15px;
+
+        @media screen and(max-width: $screen-sm-max) {
+          margin-left: 35px;
+          padding-left: 10px;
+        }
+
+        @media screen and(max-width: $screen-xs-max) {
+          margin-left: 10px;
+          padding-left: 5px;
+          border-left: none;
+        }
+      }
+    }
+
+    .children {
+      list-style: none;
+      list-style-type: none;
+    }
+  }
+
+  // Comment Form
+  .comment-form {
+    text-align: center;
+  }
+
+  .comment-respond {
+    padding-top: 15px;
+    padding-bottom: 25px;
+
+    @media screen and ( max-width:$screen-sm-max ) {
+      padding-top: 20px;
+    }
+
+    @media screen and ( max-width:$screen-xs-max ) {
+      padding-top: 10px;
+    }
+  }
+
+  // Comment form reply and post comment form
+  #respond-wrapper,
+  .comment-respond {
+    // Use for theme check
+    .comment-reply-title {
+      small {
+        font-size: 50%;
+
+        @media screen and ( max-width:$screen-xs-max ) {
+          font-size: $fs-14;
+          font-weight: $fw-normal;
+          
+        }
+      }
+
+      a:not([style*="display: none"]) {
+        margin-left: 20px;
+
+        @media screen and ( max-width:$screen-xs-max ) {
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .comment-form {
+      input[type=checkbox] {
+        position: relative;
+        top: -1px;
+      }
+
+      .logged-in-as {
+        margin-top: -8px;
+        margin-bottom: 15px;
+
+        a {
+          color: $cl-heading;
+
+          &:hover {
+            color: $cl-primary;
+          }
+        }
+      }
+
+      .comment-form-comment {
+        margin-bottom: 20px;
+      }
+
+      .form-submit {
+        display: inline-block;
+      }
+
+      #cancel-comment-reply-link {
+        display: inline-block;
+        height: $e-height-base;
+        border: 1px solid $cl-primary;
+        border-radius: $border-radius;
+        padding: 0 25px;
+        margin-left: 15px;
+        line-height: $e-height-base - 2px;
+        font-weight: $fw-semi-bold;
+        color: $cl-primary;
+        transition: all .3s;
+
+        &:hover {
+          background-color: $cl-primary;
+          color: $white;
+          transition: all .3s;
+        }
+      }
+    }
+  }
+
+  #respond-wrapper {
+    > .comment-respond {
+      padding-bottom: 0;
+    }
+  }
+}
+
+// Comment enable in Setting/Discussion
+.comment-navigation {
+  margin-bottom: 20px;
+  text-align: right;
+
+  span, 
+  a {
+    display: inline-block;
+    padding: 0 10px;
+    margin: 0 3px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: $border-radius;
+    font-weight: $fw-semi-bold;
+    transition: all .3s;
+    
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  span.current {
+    background-color: $cl-primary;
+    color: $cl-white;
+  }
+}
+
+.comment-form-cookies-consent {
+  margin-bottom: 25px;
+}
+
+.comment-require-login {
+  padding-top: 10px;
+
+  a {
+    color: $cl-black;
+    text-decoration: underline;
+    transition: all .3s;
+
+    &:hover {
+      color: $cl-primary;
+      transition: all .3s;
+    }
+  }
+}
+
+// Dark Mode
+.dark-mode {
+  #comments {
+    // Comment List
+    .comment-list {
+      li {
+        .comment-text {
+          .author {
+            .author-name {
+              color: $cl-white-dark;
+
+              a {
+                color: $cl-white-dark;
+
+                &:hover {
+                  color: $cl-primary;
+                  transition: all .3s;
+                }
+              }
+            }
+          }
+
+          .comment-meta {
+            .comment-meta-action {
+              a {
+                color: $cl-white-dark;
+
+                &:hover {
+                  color: $cl-primary;
+                }
+
+                &:first-child {
+                  border-left: 1px solid $cl-border-dark;
+                }
+              }
+            }
+          }
+        }
+
+        .children {
+          border-left: 1px solid $cl-border-dark;
+        }
+      }
+
+      .children {
+        list-style: none;
+        list-style-type: none;
+      }
+    }
+
+    // Comment form reply and post comment form
+    #respond-wrapper,
+    .comment-respond {
+      .comment-form {
+        .logged-in-as {
+          a {
+            color: $cl-white-dark;
+
+            &:hover {
+              color: $cl-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Comment enable in Setting/Discussion
+  .comment-navigation {
+    span, 
+    a {
+      color: $cl-white-dark;
+    }
+
+    span.current {
+      background-color: $cl-white-dark;
+      color: $cl-primary;
+    }
+  }
+}

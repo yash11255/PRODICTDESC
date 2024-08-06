@@ -1,0 +1,137 @@
+$root: '.haru-wishlist';
+$header: '.haru-header';
+
+#{$root} {
+  display: flex;
+
+  &--style-1 {
+    .my-wishlist-wrap {
+      position: relative;
+
+      .haru-wishlist-link {
+        color: $cl-black;
+
+        &:before {
+          content: '\e901';
+          font-size: 20px;
+          font-family: 'phosphor';
+          font-weight: $fw-normal;
+        }
+
+        span.total {
+          background-color: $cl-primary;
+          border-radius: 50%;
+          color: $cl-white;
+          position: absolute;
+          top: -2px;
+          right: -10px;
+          width: 18px;
+          height: 18px;
+          line-height: 18px;
+          font-size: 12px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  &--style-2 {
+    display: block;
+    line-height: 1;
+    position: relative;
+    text-align: center;
+
+    .my-wishlist-wrap {
+      .haru-wishlist-link {
+        color: $cl-black;
+        position: relative;
+
+        &:before {
+          content: '\e901';
+          font-size: 20px;
+          font-family: 'phosphor';
+          font-weight: $fw-normal;
+        }
+
+        span.total {
+          background-color: $cl-primary;
+          border-radius: 50%;
+          color: $cl-white;
+          position: absolute;
+          top: -6px;
+          right: -12px;
+          width: 16px;
+          height: 16px;
+          line-height: 16px;
+          font-size: 10px;
+          text-align: center;
+        }
+      }
+    }
+
+    .bottom-bar-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &--flex-start {
+    &#{$root} {
+      
+    }
+  }
+
+  &--center {
+    &#{$root} {
+      
+    }
+  }
+
+  &--flex-end {
+    &#{$root} {
+     
+    }
+  }
+}
+
+#{$dark-mode},
+#{$background-dark} {
+  #{$root} {
+    
+  }
+}
+
+#{$header} {
+  &--transparent {
+    &-light:not(.haru-header--sticky-on) {
+      &#{$header} {
+        #{$root} {
+          &--style-1 {
+            .haru-wishlist-link {
+              color: $cl-white;
+            }
+          }
+
+          &--style-2 {
+            .my-wishlist-wrap {
+              .haru-wishlist-link {
+                color: $cl-white;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &-dark:not(.haru-header--sticky-on) {
+      &#{$header} {
+        #{$root} {
+          
+        }
+      }
+    }
+  }
+}

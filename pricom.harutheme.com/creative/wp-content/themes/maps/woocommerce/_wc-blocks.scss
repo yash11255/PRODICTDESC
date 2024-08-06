@@ -1,0 +1,99 @@
+// Notices
+.wc-block-components-notice-banner {
+  svg {
+  	display: none;
+  }
+
+  .button {
+    min-width: 120px;
+    text-align: center;
+    margin-left: auto;
+    order: 2;
+  }
+
+  a:not(.button) {
+    color: $cl-primary;
+    margin-left: 2px;
+    text-decoration: underline;
+
+    @media screen and (max-width: $screen-xs-max) {
+      margin-left: 0;
+    }
+  }
+
+  &.is-success {
+  	.wc-block-components-notice-banner__content {
+		  border-top-color: $cl-primary;
+
+		  &:before {
+		    content: '\e93e';
+		    color: $cl-primary;
+		  }
+	  }
+	}
+
+	&.is-info {
+		.wc-block-components-notice-banner__content {
+		  border-top-color: darken($cl-primary, 5%);
+
+		  &:before {
+		    content: '\e93f';
+		    color: darken($cl-primary, 5%);
+		  }
+	  }
+	}
+
+	&.is-error {
+		.wc-block-components-notice-banner__content {
+		  border-top-color: darken($cl-primary, 15%);
+		  flex-wrap: wrap;
+		  
+		  &:before {
+		    content: '\e939';
+		    color: darken($cl-primary, 15%);
+		  }
+
+		  li {
+		    flex: 0 0 100%;
+		  }
+	  }
+	}
+
+	&__content {
+		padding: 15px 20px 15px 60px;
+	  margin: 0 0 30px;
+	  position: relative;
+	  background-color: $cl-gray-2;
+	  border-top: 3px solid $cl-primary;
+	  list-style: none outside;
+	  width: auto;
+	  word-break: break-word;
+	  display: flex;
+	  align-items: center;
+
+	  @media screen and (max-width: $screen-xs-max) {
+	    display: block;
+	    margin: 0 0 20px;
+	  }
+
+    &:before {
+	    content: '\e93e';
+	    font-family: 'haruicons';
+	    font-size: 18px;
+	    font-weight: $fw-bold;
+	    display: inline-block;
+	    position: absolute;
+	    top: 50%;
+	    margin-top: -16px;
+	    left: 30px;
+
+	    @media screen and (max-width: $screen-xs-max) {
+	      left: 25px;
+	    }
+	  }
+	}
+}
+
+// Cart
+
+// Checkout

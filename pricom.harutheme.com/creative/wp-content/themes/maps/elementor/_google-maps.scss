@@ -1,0 +1,41 @@
+$root: '.haru-google-maps';
+
+#{$root} {
+  position: relative;
+
+  iframe {
+    border: 0;
+    scrolling: 'no';
+    margin: 0;
+  }
+
+  &--style-1 {
+    iframe {
+      filter: brightness( 100% ) contrast( 100% ) saturate( 0% ) blur( 0px ) hue-rotate( 0deg );
+    }
+  }
+
+  &--style-2 {
+    iframe {
+      filter: brightness( 100% ) contrast( 100% ) saturate( 100% ) blur( 0px ) hue-rotate( 190deg );
+    }
+  }
+}
+
+#{$dark-mode},
+#{$background-dark} {
+  #{$root} {
+    &--style-1 {
+      iframe {
+        filter: brightness( 100% ) contrast( 100% ) saturate( 0% ) blur( 0px ) hue-rotate( 0deg );
+      }
+    }
+
+    &--style-2 {
+      iframe {
+        filter: brightness( 100% ) contrast( 100% ) saturate( 0% ) blur( 0px ) hue-rotate( 0deg );
+      }
+    }
+  }
+}
+

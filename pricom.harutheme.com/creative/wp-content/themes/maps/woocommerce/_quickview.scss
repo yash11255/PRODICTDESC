@@ -1,0 +1,122 @@
+// Product Quick View
+html {
+  &.quickview-open-popup {
+    overflow-y: hidden;
+  }
+}
+
+.mfp-quick-view {
+  .product-quick-view {
+    .mfp-close {
+      font-size: 0;
+      width: 48px;
+      height: 48px;
+      top: -48px;
+      right: -15px;
+      opacity: 1;
+
+      &:hover {
+        opacity: .8;
+        transition: all .3s;
+
+        &:before {
+          color: $cl-white;
+        }
+      }
+
+      &:before {
+        content: '\e957';
+        font-family: 'phosphor';
+        font-size: 24px;
+        color: $cl-white;
+        transition: all .3s;
+      }
+    }
+  }
+}
+
+.product-quick-view {
+  background-color: $cl-white;
+  margin: 30px auto;
+  max-width: 900px;
+  position: relative;
+  box-shadow: 0 2px 3px rgba($cl-black, .5);
+
+  .single-product-top {
+    padding: 15px 0 15px 15px;
+
+    .single-product-image-wrap {
+      .product-label__item {
+        font-size: 12px;
+      }
+    }
+
+    .product_title {
+      margin-bottom: 5px;
+    }
+
+    .product_meta {
+      margin-top: 30px;
+    }
+  }
+
+  .summary {
+    overflow: auto;
+    overflow-x: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: calc(100% - 15px);
+    padding-right: 15px;
+    padding-bottom: 10px;
+
+    @media screen and (max-width: $screen-xs-max) {
+      position: relative;
+      width: 100%;
+      padding-top: 0;
+    }
+  }
+
+  .woocommerce-review-link {
+    pointer-events: none;
+  }
+
+  .mfp-close {
+    &:hover {
+      background-color: transparent;
+      border: none;
+      color: $cl-primary;
+    }
+  }
+
+  .wc-dnd-file-upload {
+    display: none;
+  }
+
+  .woocommerce-variation-add-to-cart {
+    .button[onclick] {
+      display: none;
+    }
+  }
+}
+
+.haru-scroll-content {
+  @include scrollbars(3px, $cl-primary, #ededed, 0);
+}
+
+#{$dark-mode} {
+  .product-quick-view {
+    background-color: $cl-bg-dark;
+    box-shadow: 0 2px 3px rgba($cl-black, .5);
+  }
+
+  .mfp-close {
+    color: $cl-text-dark;
+
+    &:hover {
+      color: $cl-primary;
+    }
+  }
+}
+

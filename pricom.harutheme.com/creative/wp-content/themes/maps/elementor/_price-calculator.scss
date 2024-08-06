@@ -1,0 +1,400 @@
+$root: '.haru-price-calculator';
+
+#{$root} {
+
+  &--style-1 {
+    background-color: $cl-white;
+    display: flex;
+    box-shadow: 10px 20px 64px rgba($cl-black, .12);
+    border-radius: $border-radius;
+
+    @media screen and (max-width: $screen-xs-max) {
+      flex-wrap: wrap;
+    }
+
+    #{$root}__main {
+      flex: 0 0 55%;
+      padding: 40px 50px 30px 50px;
+      border-right: 1px dashed $cl-border;
+
+      @media screen and (max-width: $screen-lg-max) {
+        padding: 35px 45px 35px 45px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        flex: 0 0 100%;
+        padding: 20px 25px 20px 25px;
+      }
+    }
+
+    #{$root}__content {
+      flex: 0 0 45%;
+      padding: 40px 50px 30px 50px;
+
+      @media screen and (max-width: $screen-lg-max) {
+        padding: 35px 45px 35px 45px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        flex: 0 0 100%;
+        padding: 0 25px 30px 25px;
+      }
+    }
+
+    #{$root}__main-title {
+      font-size: 24px;
+    }
+
+    #{$root}__main-list {
+      padding: 15px 0 30px;
+      margin: 0;
+      list-style: none;
+    }
+
+    #{$root}__main-item  {
+      margin-bottom: 12px;
+      display: flex;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:before {
+        content: '\e925';
+        font-family: 'phosphor';
+        font-weight: $fw-bold;
+        display: inline-block;
+        border-radius: 50%;
+        background-color: $cl-bg-green;
+        color: $cl-green;
+        font-size: 12px;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        margin-right: 10px;
+        flex: 0 0 24px;
+        text-align: center;
+        position: relative;
+        bottom: -2px;
+      }
+
+      > span {
+        font-weight: $fw-medium;
+      }
+
+      &.content-disable {
+        &:before {
+          background-color: $cl-gray;
+          color: $cl-text-3;
+        }
+
+        > span {
+          color: $cl-text-3;
+        }
+      }
+    }
+
+    .haru-button {
+      display: block;
+    }
+
+    #{$root}__top {
+      margin-bottom: 25px;
+    }
+
+    #{$root}__title {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    #{$root}__base {
+      margin-bottom: 45px;
+
+      @media screen and (max-width: $screen-lg-max) {
+        margin-bottom: 40px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        margin-bottom: 35px;
+      }
+    }
+
+    #{$root}__options {
+      margin-bottom: 40px;
+
+      @media screen and (max-width: $screen-xs-max) {
+        margin-bottom: 30px;
+      }
+    }
+
+    #{$root}__list {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      list-style-type: none;
+      background-color: $cl-gray;
+      border-radius: $border-radius;
+      padding: 5px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      li {
+        display: flex;
+        flex: 1 1 auto;
+        justify-content: center;
+        // height: 40px;
+        // line-height: 40px;
+        border-radius: $border-radius - 4px;
+        padding: 6px 20px;
+        font-weight: $fw-bold;
+        max-width: 50%;
+        text-align: center;
+        user-select: none;
+
+        &.active {
+          background-color: $cl-white;
+          color: $cl-black;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    #{$root}__calculated {
+      display: flex;
+      align-items: flex-end;
+      line-height: 1;
+    }
+
+    #{$root}__price-calculated {
+      font-size: 48px;
+      color: $cl-black;
+      font-weight: $fw-bold;
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 42px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        font-size: 36px;
+      }
+    }
+
+    #{$root}__price-base {
+      font-size: 20px;
+      margin-left: 20px;
+      margin-bottom: 5px;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 1px;
+        background-color: $cl-text;
+      }
+    }
+
+
+  }
+
+  &--style-2 {
+    #{$root}__list {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    #{$root}__item {
+      display: flex;
+      background: $cl-white;
+      box-shadow: 0 0 10px rgba($cl-black, .12);
+      border-radius: $border-radius;
+      border: 2px solid $cl-white;
+      padding: 25px 30px;
+      margin-bottom: 30px;
+
+      @media screen and (max-width: $screen-lg-max) {
+        padding: 20px 25px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        margin-bottom: 25px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        flex-wrap: wrap;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &.active {
+        border: 2px solid $cl-primary;
+        box-shadow: 0 24px 50px rgba($cl-black, .1);
+
+        #{$root}__check {
+          &:before {
+            background-color: $cl-primary;
+          }
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    #{$root}__info {
+      flex: 1;
+
+      @media screen and (max-width: $screen-xs-max) {
+        flex: 0 0 100%;
+      }
+    }
+
+    #{$root}__title {
+      font-size: 32px;
+      display: flex;
+      align-items: center;
+      margin-top: 0;
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 28px;
+      }
+
+      @media screen and (max-width: $screen-md-max) {
+        font-size: 26px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        font-size: 24px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        font-size: 20px;
+      }
+    }
+
+    #{$root}__check {
+      display: inline-flex;
+      width: 28px;
+      height: 28px;
+      border: 2px solid $cl-border-2;
+      border-radius: 50%;
+      margin-right: 15px;
+      position: relative;
+      bottom: -1px;
+
+      @media screen and (max-width: $screen-lg-max) {
+        width: 24px;
+        height: 24px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        bottom: 0;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        width: 20px;
+        height: 20px;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 18px;
+        height: 18px;
+        background-color: transparent;
+        border-radius: 50%;
+
+        @media screen and (max-width: $screen-lg-max) {
+          width: 14px;
+          height: 14px;
+        }
+
+        @media screen and (max-width: $screen-xs-max) {
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
+
+    #{$root}__description {
+      font-size: 18px;
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 16px;
+      }
+
+      @media screen and (max-width: $screen-sm-max) {
+        font-size: $fs-base;
+      }
+    }
+
+    #{$root}__price {
+      flex: 0 0 25%;
+      min-width: 140px;
+      text-align: right;
+
+      @media screen and (max-width: $screen-xs-max) {
+        flex: 0 0 100%;
+      }
+    }
+
+    #{$root}__price-number {
+      font-size: 24px;
+      font-weight: $fw-bold;
+      color: $cl-black;
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 22px;
+      }
+    }
+
+    #{$root}__price-unit {
+      font-size: 18px;
+
+      @media screen and (max-width: $screen-lg-max) {
+        font-size: 16px;
+      }
+    }
+
+    #{$root}__button {
+      &:not(:empty) {
+        margin-top: 30px;
+      }
+
+      .haru-button {
+        width: 100%;
+      }
+    }
+  }
+
+}
+
+#{$dark-mode},
+#{$background-dark} {
+  #{$root} {
+    &--style-1 {
+      
+    }
+
+  }
+}

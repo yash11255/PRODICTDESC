@@ -1,0 +1,107 @@
+@font-face {
+    font-family: 'pricons';
+    src: url('fonts/pricons.eot?sty3hs');
+    src: url('fonts/pricons.eot?sty3hs#iefix') format('embedded-opentype'), url('fonts/pricons.ttf?sty3hs') format('truetype'), url('fonts/pricons.woff?sty3hs') format('woff'), url('fonts/pricons.svg?sty3hs#pricons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="pricon-"],
+[class*=" pricon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'pricons' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.pricon-no-dollar:before {
+    content: "\e914";
+}
+
+.pricon-cube:before {
+    content: "\e900";
+}
+
+.pricon-supplies:before {
+    content: "\e901";
+}
+
+.pricon-equalizer:before {
+    content: "\e902";
+}
+
+.pricon-delivery:before {
+    content: "\e903";
+}
+
+.pricon-credit-card:before {
+    content: "\e904";
+}
+
+.pricon-box-order:before {
+    content: "\e905";
+}
+
+.pricon-database:before {
+    content: "\e906";
+}
+
+.pricon-design:before {
+    content: "\e907";
+}
+
+.pricon-ecology:before {
+    content: "\e908";
+}
+
+.pricon-global:before {
+    content: "\e909";
+}
+
+.pricon-globe-address:before {
+    content: "\e90a";
+}
+
+.pricon-mix-circle:before {
+    content: "\e90b";
+}
+
+.pricon-package:before {
+    content: "\e90c";
+}
+
+.pricon-payment:before {
+    content: "\e90d";
+}
+
+.pricon-phone:before {
+    content: "\e90e";
+}
+
+.pricon-printer:before {
+    content: "\e90f";
+}
+
+.pricon-printing:before {
+    content: "\e910";
+}
+
+.pricon-return:before {
+    content: "\e911";
+}
+
+.pricon-tree:before {
+    content: "\e912";
+}
+
+.pricon-universe:before {
+    content: "\e913";
+}

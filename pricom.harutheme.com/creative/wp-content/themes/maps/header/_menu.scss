@@ -1,0 +1,416 @@
+/* Menu Default */
+.haru-header-default {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  position: relative;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    line-height: normal;
+    -webkit-tap-highlight-color: rgba($cl-black, 0);
+  }
+
+  .haru-logo {
+    padding: 20px 0;
+
+    @media screen and (max-width: $screen-xs-max) {
+      padding: 15px 0;
+    }
+
+    img {
+      max-height: 46px;
+
+      @media screen and (max-width: $screen-xs-max) {
+        max-height: 35px;
+      }
+    }
+  }
+}
+
+.haru-header-content {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.header-cart-default {
+  margin-left: 15px;
+
+  &.haru-cart {
+    .haru-cart-wrap {
+      position: relative;
+
+      .haru-cart-content {
+        .cart_list {
+          margin: 20px 0 0;
+        }
+      }
+    }
+  }
+}
+
+// Menu Style
+#header-primary-menu {
+  @media screen and (max-width: $screen-sm-max) {
+    display: none;
+  }
+}
+
+.haru-main-menu {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+
+  @media screen and (max-width: $screen-sm-max) {
+    display: block;
+    position: fixed;
+    top: 65px;
+    right: 0;
+    left: 0;
+    max-height: calc(100vh - 60px);
+    overflow: auto;
+    background-color: $cl-white;
+    box-shadow: 0px 15px 20px rgba($cl-black, .1);
+    z-index: 99;
+    position: absolute;
+  }
+
+  a,
+  li {
+    position: relative;
+    display: block;
+  }
+
+  li {
+    border-width: 0;
+  }
+
+  // Level 0
+  > li {
+    > a {
+      display: flex;
+      align-items: center;
+
+      @media screen and (max-width: $screen-sm-max) {
+        justify-content: space-between;
+      }
+    }
+  }
+
+  a { 
+    position: relative;
+    text-decoration: none; 
+    transition: all .3s;
+
+    &:hover {
+      transition: all .3s;
+    }
+  }
+
+  li {
+    list-style: none;
+
+    &.current-menu-item {
+      > a {
+
+      }
+    }    
+  }
+
+  // Menu style
+  > li {
+    // Only level 0
+    > a {
+      padding: 35px 15px;
+      font-weight: $fw-menu;
+      color: $cl-black;
+
+      @media screen and (max-width: $screen-sm-max) {
+        padding: 13px 15px;
+      }
+
+      &:hover {
+        color: $cl-primary;
+      }
+
+      &:focus {
+        @media screen and (max-width: $screen-sm-max) {
+          color: $cl-white;
+          background-color: $cl-primary;
+        }
+      }
+    }
+
+    &.current-menu-item {
+      > a {
+        color: $cl-primary;
+
+        @media screen and (max-width: $screen-sm-max) {
+          color: $cl-white;
+          background-color: $cl-primary;
+        }
+      }
+    }
+
+    // GENERAL
+    a {
+      white-space: nowrap;
+
+      // Caret symbol
+      &:after {
+        content: '\e903'; 
+        font-family: 'haruicons';
+        padding-left: 6px;
+        font-size: $fs-base;
+        position: relative;
+
+        @media screen and (max-width: $screen-sm-max) {
+          display: none;
+        }
+      }
+
+      &:only-child:after { 
+        content: '';
+        padding-left: 0;
+      }
+    }
+  }
+
+  .menu-item-has-children {
+    &:hover {
+      // Level 1
+      > .sub-menu {
+        opacity: 1;
+        visibility: visible;
+        top: 100%;
+        left: 0;
+        z-index: 99;
+        transform: translateY(0);
+        transition: all .3s;
+
+        > .menu-item-has-children {
+          &:hover {
+            // Level 2
+            > .sub-menu {
+              opacity: 1;
+              visibility: visible;
+              top: 0;
+              left: auto;
+              right: 100%;
+              z-index: 99;
+              transition: all .3s;
+
+              @media screen and (max-width: $screen-sm-max) {
+                left: 0;
+                right: auto;
+              }
+
+              > .menu-item-has-children {
+                &:hover {
+                  // Level 3
+                  > .sub-menu {
+                    opacity: 1;
+                    visibility: visible;
+                    top: 0;
+                    left: 100%;
+                    z-index: 99;
+                    transition: all .3s;
+
+                    > .menu-item-has-children {
+                      &:hover {
+                        // Level 4
+                        > .sub-menu {
+                          opacity: 1;
+                          visibility: visible;
+                          top: 0;
+                          left: 100%;
+                          z-index: 99;
+                          transition: all .3s;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    > .sub-menu {
+      box-shadow: 0px 15px 20px rgba($cl-black, .1);
+
+      @media screen and (max-width: $screen-sm-max) {
+        box-shadow: none;
+      }
+    }
+
+    .sub-toggle {
+      position: absolute;
+      right: 10px;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      text-align: center;
+      top: 23px;
+      transform: translateY(-50%);
+      z-index: 9;
+
+      &.active {
+        &:before {
+          content: '\e90d';
+        }
+      }
+
+      &:before {
+        content: '\e903'; 
+        font-family: 'haruicons';
+      }
+    }
+
+    a {
+      &:after {
+        float: right;
+      }
+    }
+  }
+
+  // Sub Menu general
+  ul.sub-menu {
+    position: absolute;
+    min-width: 240px;
+    background-color: $cl-white;
+    transform: translateY(10px);
+    opacity: 0;
+    visibility: hidden;
+    // transition: all .3s;
+
+    @media screen and (max-width: $screen-sm-max) {
+      position: relative;
+      transform: none;
+      opacity: 1;
+      visibility: visible;
+      display: none;
+      font-size: 13px;
+    }
+
+    .menu-item {
+      a {
+        padding: 13px 15px;
+        color: $cl-black;
+
+        &:hover {
+          background-color: $cl-primary;
+          color: $cl-white;
+        }
+      }
+
+      &.current-menu-item {
+        > a {
+          background-color: $cl-primary;
+          color: $cl-white;
+        }
+      }
+    }
+
+    a {
+      @media screen and (max-width: $screen-sm-max) {
+        border-left: 8px solid transparent;
+      }
+    }
+
+    ul {
+      a {
+        @media screen and (max-width: $screen-sm-max) {
+          border-left: 16px solid transparent;
+        }
+      }
+
+      ul {
+        a {
+          @media screen and (max-width: $screen-sm-max) {
+            border-left: 24px solid transparent;
+          }
+        }
+
+        ul {
+          a {
+            @media screen and (max-width: $screen-sm-max) {
+              border-left: 32px solid transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.haru-toggle-default {
+  margin: 15px 0;
+  display: none;
+  height: 30px;
+  position: relative;
+  vertical-align: middle;
+  width: 30px;
+
+  @media screen and (max-width: $screen-sm-max) {
+    display: inline-block;
+  }
+
+  &:before,
+  &:after {
+    background: none repeat scroll 0 0 $cl-black;
+    content: "";
+    height: 2px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    width: 80%;
+    transition: all .3s;
+  }
+
+  &:before {
+    top: 20%;
+    transform-origin: top left;
+  }
+
+  &:after {
+    bottom: 20%;
+    transform-origin: bottom left;
+  }
+
+  span {
+    background: none repeat scroll 0 0 $cl-black;
+    bottom: 0;
+    display: block;
+    height: 2px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80%;
+    transition: all .3s;
+  }
+
+  &.active {
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+
+    span {
+      background: transparent;
+    }
+  }
+}
